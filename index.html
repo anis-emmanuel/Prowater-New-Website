@@ -15,7 +15,7 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--f);overflow-x:hidden;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--off);color:var(--f);overflow-x:hidden;}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(77,156,68,0.12);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
@@ -124,7 +124,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .slead{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:540px;}
 
 /* ── NUMBERS ── */
-.numbers{background:#fff;padding:72px 5%;border-top:1px solid rgba(77,156,68,0.1);border-bottom:1px solid rgba(77,156,68,0.1);}
+.numbers{background:var(--off);padding:72px 5%;border-top:1px solid rgba(77,156,68,0.1);border-bottom:1px solid rgba(77,156,68,0.1);}
 .nums{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
 .num-i{text-align:center;padding:0 20px;border-right:1px solid rgba(77,156,68,0.15);position:relative;}
 .num-i:last-child{border-right:none;}
@@ -146,8 +146,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .cmp-table{width:100%;border-collapse:separate;border-spacing:0;min-width:700px;}
 
 /* Column headers */
-.cmp-table thead tr th{padding:0 0 20px;text-align:center;font-size:13px;font-weight:700;vertical-align:bottom;}
-.cmp-table thead tr th:first-child{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.3);padding-bottom:20px;width:200px;}
+.cmp-table thead tr th{padding:20px 0 0;text-align:center;font-size:13px;font-weight:700;vertical-align:bottom;position:relative;}
+.cmp-table thead tr th:first-child{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.3);padding-bottom:20px;width:200px;vertical-align:bottom;}
 .cmp-col-head{border-radius:16px 16px 0 0;padding:18px 14px 14px;display:flex;flex-direction:column;align-items:center;gap:6px;}
 .cmp-col-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:2px;}
 .cmp-col-name{font-size:13px;font-weight:800;line-height:1.2;text-align:center;}
@@ -160,7 +160,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 /* ProWater column (highlighted) */
 .cmp-star .cmp-col-head{background:linear-gradient(160deg,rgba(77,156,68,.4),rgba(162,204,58,.2));border:1.5px solid rgba(162,204,58,.4);border-bottom:none;position:relative;}
 .cmp-star .cmp-col-name{color:#A2CC3A;}
-.cmp-best-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#4D9C44,#A2CC3A);color:#0C3A40;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.cmp-best-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#4D9C44,#A2CC3A);color:#0C3A40;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:20px;white-space:nowrap;z-index:2;}
 
 /* Rows */
 .cmp-table tbody tr td{padding:12px 10px;font-size:13px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);}
@@ -189,6 +189,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
   .cmp-table-wrap{margin:0 -5%;}
   .cmp-sec{padding:72px 5%;}
 }
+
+/* chip override for dark sections */
+.cmp-sec .chip{color:var(--teal2);}
+.cmp-sec .chip::before{background:linear-gradient(90deg,var(--teal2),var(--lime));}
+.cmp-sec .sh2{color:#fff;}
+.how .chip::before{background:linear-gradient(90deg,var(--teal2),var(--lime));}
 
 /* ── HOW ── */
 .how{background:var(--f);}
@@ -1073,7 +1079,7 @@ footer{background:#040e08;padding:52px 5% 28px;}
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="sec" style="background:#fff" id="reviews">
+<section class="sec" style="background:var(--off)" id="reviews">
   <div class="testi-wrap">
     <div class="chip">What customers say</div>
     <h2 class="sh2" style="margin-bottom:8px">Trusted by societies<br><em>across Bangalore</em></h2>
@@ -1169,7 +1175,7 @@ footer{background:#040e08;padding:52px 5% 28px;}
 </section>
 
 <!-- FAQ -->
-<section class="sec" style="background:#fff" id="faq">
+<section class="sec" style="background:var(--sky)" id="faq">
   <div class="sec-inner">
     <div class="faq-wrap">
       <div style="text-align:center;margin-bottom:44px"><div class="chip" style="justify-content:center">FAQ's</div><h2 class="sh2" style="text-align:center">Common questions,<br>straight answers</h2></div>
@@ -1196,7 +1202,7 @@ footer{background:#040e08;padding:52px 5% 28px;}
 </section>
 
 <!-- CONTACT -->
-<section class="sec" style="background:#fff" id="contact">
+<section class="sec" style="background:var(--off)" id="contact">
   <div class="sec-inner">
     <div class="chip">Get in Touch</div>
     <h2 class="sh2" style="margin-bottom:8px">Ready to get<br><em>pure water?</em></h2>
