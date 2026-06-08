@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProWater — Pure Water, Piped to Your Home</title>
+<title>ProWater — Piped RO Water on Subscription | Bangalore</title>
+<meta name="description" content="ProWater pipes centralised RO-purified water directly to your kitchen tap. Zero setup cost for societies, lifetime free maintenance, live quality monitoring. Now serving 50+ societies across Bangalore. Plans from ₹299/month.">
+<meta name="keywords" content="piped RO water Bangalore, RO water subscription, society water supply, RWA water solution, drinking water Bangalore, water purifier alternative">
+<link rel="canonical" href="https://prowater.in/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ProWater — Piped RO Water on Subscription | Bangalore">
+<meta property="og:description" content="Pure RO water piped to your kitchen tap. Zero setup cost, lifetime free maintenance, live quality monitoring. Serving 50+ societies across Bangalore from ₹299/month.">
+<meta property="og:url" content="https://prowater.in/">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ProWater — Piped RO Water on Subscription | Bangalore">
+<meta name="twitter:description" content="Pure RO water piped to your kitchen tap. Zero setup cost for societies. From ₹299/month.">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -361,6 +372,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 @media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.testi-grid{grid-template-columns:1fr;}}
 
+/* Societies */
+.soc-wrap{max-width:1040px;margin:0 auto;}
+.soc-areas{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:40px;}
+.soc-area{background:#fff;border:1px solid rgba(77,156,68,.14);border-radius:18px;padding:24px 22px;transition:transform .25s,box-shadow .25s;}
+.soc-area:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(22,84,92,.1);}
+.soc-area-hd{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;color:var(--f);margin-bottom:16px;}
+.soc-pin{width:26px;height:26px;border-radius:8px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.soc-pin svg{width:14px;height:14px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.soc-list{display:flex;flex-direction:column;gap:9px;}
+.soc-list span{font-size:13px;color:var(--slate);display:flex;align-items:center;gap:7px;}
+.soc-list span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--teal2);flex-shrink:0;}
+.soc-cta{text-align:center;background:#fff;border:1px solid rgba(77,156,68,.16);border-radius:20px;padding:32px 28px;}
+.soc-cta p{font-size:15px;color:var(--slate);margin-bottom:18px;}
+.soc-cta p strong{color:var(--f);}
+@media(max-width:900px){.soc-areas{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.soc-areas{grid-template-columns:1fr;}}
+
 /* ── PLANS ── */
 .plans-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:24px;}
 .bill-sw{display:flex;align-items:center;gap:12px;}
@@ -653,8 +681,8 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
       </div>
       <div class="lp-bars">
         <div class="lb-row"><span class="lb-name">Bacterial Safety</span><div class="lb-track"><div class="lb-fill" id="lq-bacbar" style="width:99%"></div></div><span class="lb-val" id="lq-bac">99.9%</span></div>
-        <div class="lb-row"><span class="lb-name">Hardness</span><div class="lb-track"><div class="lb-fill" style="width:92%"></div></div><span class="lb-val">Low</span></div>
-        <div class="lb-row"><span class="lb-name">Taste Score</span><div class="lb-track"><div class="lb-fill" style="width:88%"></div></div><span class="lb-val">High</span></div>
+        <div class="lb-row"><span class="lb-name">Hardness</span><div class="lb-track"><div class="lb-fill" id="lq-hardbar" style="width:92%"></div></div><span class="lb-val" id="lq-hard">Low</span></div>
+        <div class="lb-row"><span class="lb-name">Taste Score</span><div class="lb-track"><div class="lb-fill" id="lq-tastebar" style="width:88%"></div></div><span class="lb-val" id="lq-taste">High</span></div>
       </div>
       <div class="lp-chips">
         <div class="lp-chip"><div class="lp-chip-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span id="lq-apt">Ashish JK · <strong>Normal</strong></span></div>
@@ -1273,6 +1301,41 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   </div>
 </section>
 
+<!-- SOCIETIES -->
+<section class="sec" style="background:var(--sky)" id="societies">
+  <div class="soc-wrap rv">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="chip" style="justify-content:center">Now Serving</div>
+      <h2 class="sh2" style="text-align:center">Live in <em>50+ societies</em><br>across Bangalore</h2>
+      <p class="slead" style="text-align:center;margin:8px auto 0;max-width:480px">From HSR to Whitefield — ProWater is already flowing into homes across the city. Your society could be next.</p>
+    </div>
+
+    <div class="soc-areas rv stagger">
+      <div class="soc-area">
+        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>HSR Layout</div>
+        <div class="soc-list"><span>Ashish JK</span><span>Sai Poorna Premiere</span><span>CBR Akruti</span></div>
+      </div>
+      <div class="soc-area">
+        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Sarjapur Road</div>
+        <div class="soc-list"><span>MJR Clique Hydra</span><span>SVS Ananda</span><span>Prabhavati</span></div>
+      </div>
+      <div class="soc-area">
+        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Whitefield</div>
+        <div class="soc-list"><span>Brigade Cosmopolis</span><span>Prestige Shantiniketan</span><span>+ more</span></div>
+      </div>
+      <div class="soc-area">
+        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Electronic City</div>
+        <div class="soc-list"><span>Concorde Manhattans</span><span>Gopalan Enterprises</span><span>+ more</span></div>
+      </div>
+    </div>
+
+    <div class="soc-cta">
+      <p>Don't see your society? <strong>We're expanding fast.</strong></p>
+      <a href="#contact" class="btn-main">Bring ProWater to your society →</a>
+    </div>
+  </div>
+</section>
+
 <!-- PLANS -->
 <section class="sec" style="background:var(--off)" id="plans">
   <div class="sec-inner">
@@ -1551,16 +1614,30 @@ function submitForm(){
   // Build one reading per society for a given slot. Seed combines the society
   // index and the slot, so each society has its own value that's stable within
   // the slot and changes once the slot rolls over.
+  // Hardness & Taste are mostly good but occasionally less-than-perfect, so the
+  // panel reads as a real sensor feed rather than suspiciously flawless.
+  var hardLevels=[
+    {label:'Low',    bar:92},
+    {label:'Low',    bar:88},
+    {label:'Medium', bar:64},
+    {label:'Medium', bar:58}
+  ];
+  var tasteLevels=[
+    {label:'High', bar:90},
+    {label:'High', bar:86},
+    {label:'Good', bar:74},
+    {label:'Good', bar:68}
+  ];
   function readingsFor(slot){
     return apts.map(function(name,idx){
       var rnd=seeded((slot*1000)+(idx+1));
-      return {
-        ph:(6.9+rnd()*0.7).toFixed(1),    // 6.9–7.6 (safe)
-        tds:Math.round(45+rnd()*95),       // 45–140 ppm (RO range)
-        pur:(98.6+rnd()*1.3).toFixed(1),   // 98.6–99.9 %
-        bac:(99.4+rnd()*0.5).toFixed(1),   // 99.4–99.9 %
-        apt:name
-      };
+      var ph=(6.9+rnd()*0.7).toFixed(1);     // 6.9–7.6 (safe)
+      var tds=Math.round(45+rnd()*95);        // 45–140 ppm (RO range)
+      var pur=(98.6+rnd()*1.3).toFixed(1);    // 98.6–99.9 %
+      var bac=(99.4+rnd()*0.5).toFixed(1);    // 99.4–99.9 %
+      var hard=hardLevels[Math.floor(rnd()*hardLevels.length)];
+      var taste=tasteLevels[Math.floor(rnd()*tasteLevels.length)];
+      return {ph:ph,tds:tds,pur:pur,bac:bac,hard:hard,taste:taste,apt:name};
     });
   }
 
@@ -1569,7 +1646,7 @@ function submitForm(){
   var i=0;
 
   function paint(d){
-    var els=[$('lq-ph'),$('lq-tds'),$('lq-pur'),$('lq-bac'),$('lq-apt')];
+    var els=[$('lq-ph'),$('lq-tds'),$('lq-pur'),$('lq-bac'),$('lq-apt'),$('lq-hard'),$('lq-taste')];
     els.forEach(function(e){ if(e) e.style.opacity='0'; });
     setTimeout(function(){
       $('lq-ph').textContent=d.ph;
@@ -1577,6 +1654,10 @@ function submitForm(){
       $('lq-pur').textContent=d.pur+'%';
       $('lq-bac').textContent=d.bac+'%';
       var bb=$('lq-bacbar'); if(bb) bb.style.width=d.bac+'%';
+      var hv=$('lq-hard'); if(hv) hv.textContent=d.hard.label;
+      var hb=$('lq-hardbar'); if(hb) hb.style.width=d.hard.bar+'%';
+      var tv=$('lq-taste'); if(tv) tv.textContent=d.taste.label;
+      var tb=$('lq-tastebar'); if(tb) tb.style.width=d.taste.bar+'%';
       $('lq-apt').innerHTML=d.apt+' &middot; <strong>Normal</strong>';
       els.forEach(function(e){ if(e) e.style.opacity=''; });
     },150);
@@ -1584,15 +1665,14 @@ function submitForm(){
 
   paint(readings[0]);
 
-  // Every second: advance to the next society. If the 4-hour slot has rolled
-  // over, regenerate everyone's values first (so the same society now shows a
-  // new reading), then keep cycling names.
+  // Every 10 seconds: advance to the next society. If the 4-hour slot has
+  // rolled over, regenerate everyone's values first, then keep cycling names.
   setInterval(function(){
     var nowSlot=currentSlot();
     if(nowSlot!==slot){ slot=nowSlot; readings=readingsFor(slot); }
     i=(i+1)%apts.length;
     paint(readings[i]);
-  }, 1000);
+  }, 10000);
 })();
 
 /* Savings Calculator */
@@ -1764,6 +1844,71 @@ function closeWAChat(){
 /* Fade label */
 /* Fade label */
 setTimeout(function(){var l=document.getElementById('wa-label');if(l){l.style.opacity='0';l.style.transition='opacity .3s';setTimeout(function(){if(l&&l.parentNode)l.parentNode.removeChild(l);},300);}},5000);
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ProWater",
+  "description": "Piped centralised RO-purified water on subscription, delivered directly to your kitchen tap. Zero setup cost for societies, lifetime free maintenance, and live IoT quality monitoring.",
+  "url": "https://prowater.in/",
+  "telephone": "+91-95387-39904",
+  "email": "support@prowater.in",
+  "priceRange": "₹299–₹499/month",
+  "areaServed": {
+    "@type": "City",
+    "name": "Bengaluru"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3rd Floor, Raj Mansion, 15b, 18th A Main Rd, Sector 3, HSR Layout",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560102",
+    "addressCountry": "IN"
+  },
+  "hasMap": "https://maps.app.goo.gl/PWdDFdw1RUfGVfA46"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the society pay anything for installation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. ProWater funds and installs the entire system — the RO plant, piping, and dispensers. The society pays zero, upfront or ever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can only some residents subscribe, not the whole building?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. There is no society-wide mandate. Each resident subscribes individually to whichever plan suits them, and anyone can join or cancel at any time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does lifetime free AMC mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For as long as you are a subscriber, ProWater covers all maintenance — filter replacements, dispenser repairs, servicing, and spare parts — at zero additional charge, with a same-day response SLA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which cities are currently covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ProWater is currently live across Bengaluru, serving 50+ societies. Contact us to check availability at your exact location."
+      }
+    }
+  ]
+}
 </script>
 </body>
 </html>
