@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --f:#0C3A40;--f2:#1D5731;
+  --f:#16545C;--f2:#1D5731;
   --teal:#4D9C44;--teal2:#A2CC3A;--teal-g:#A2CC3A;
   --sky:#EEF7E0;--lime:#A2CC3A;--gold:#F5C842;
   --white:#fff;--off:#F6FFFE;--slate:#4A6580;--muted:#7B93A8;
@@ -162,7 +162,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .cmp-star .cmp-col-head{background:linear-gradient(160deg,rgba(77,156,68,.4),rgba(162,204,58,.2));border:1.5px solid rgba(162,204,58,.4);border-bottom:none;position:relative;}
 .cmp-star .cmp-col-name{color:#A2CC3A;}
 .cmp-star .cmp-col-sub{color:#F5C842;opacity:1;}
-.cmp-best-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#4D9C44,#A2CC3A);color:#0C3A40;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:20px;white-space:nowrap;z-index:2;}
+.cmp-best-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#4D9C44,#A2CC3A);color:#16545C;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:20px;white-space:nowrap;z-index:2;}
 
 /* Rows */
 .cmp-table tbody tr td{padding:12px 10px;font-size:13px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);}
@@ -270,8 +270,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .calc-sec{background:var(--sky);padding:90px 5%;}
 .calc-inner{max-width:1000px;margin:0 auto;}
 .calc-hdr{margin-bottom:44px;}
-.calc-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(12,58,64,.08);}
-.calc-controls{padding:38px 34px;border-right:1px solid rgba(12,58,64,.08);}
+.calc-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(22,84,92,.08);}
+.calc-controls{padding:38px 34px;border-right:1px solid rgba(22,84,92,.08);}
 .calc-row{margin-bottom:28px;}
 .calc-row:last-child{margin-bottom:0;}
 .calc-label{display:block;font-size:14px;font-weight:600;color:var(--f);margin-bottom:14px;}
@@ -307,7 +307,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 @media(max-width:768px){
   .calc-sec{padding:64px 5%;}
   .calc-card{grid-template-columns:1fr;}
-  .calc-controls{border-right:none;border-bottom:1px solid rgba(12,58,64,.08);padding:30px 22px;}
+  .calc-controls{border-right:none;border-bottom:1px solid rgba(22,84,92,.08);padding:30px 22px;}
   .calc-result{padding:30px 22px;}
   .calc-save-big{font-size:32px;}
 }
@@ -479,10 +479,19 @@ footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--bor
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .foot-col a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s;}
 .foot-col a:hover{color:var(--teal);}
-.foot-bottom{padding-top:22px;border-top:1px solid rgba(12,58,64,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);}
+.foot-bottom{padding-top:22px;border-top:1px solid rgba(22,84,92,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);}
 .foot-bottom b{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px;}.foot-brand{grid-column:1/-1;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.foot-apps{margin-top:22px;}
+.foot-apps-lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;}
+.foot-apps-row{display:flex;gap:10px;flex-wrap:wrap;}
+.store-btn{display:inline-flex;align-items:center;gap:9px;background:var(--f);color:#fff;padding:9px 16px;border-radius:12px;text-decoration:none;transition:transform .18s,box-shadow .18s;}
+.store-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(22,84,92,.28);}
+.store-ic{width:22px;height:22px;flex-shrink:0;}
+.store-txt{display:flex;flex-direction:column;line-height:1.1;}
+.store-txt small{font-size:9px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.7);text-transform:uppercase;}
+.store-txt strong{font-size:14px;font-weight:700;color:#fff;}
 
 /* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
@@ -847,7 +856,7 @@ footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--bor
           <div class="hw-illo">
             <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
               <!-- Phone / app frame -->
-              <rect x="110" y="20" width="100" height="170" rx="14" fill="rgba(12,58,64,.8)" stroke="rgba(162,204,58,.3)" stroke-width="1.5"/>
+              <rect x="110" y="20" width="100" height="170" rx="14" fill="rgba(22,84,92,.8)" stroke="rgba(162,204,58,.3)" stroke-width="1.5"/>
               <rect x="116" y="34" width="88" height="142" rx="6" fill="rgba(162,204,58,.06)"/>
               <!-- Screen content -->
               <text x="160" y="54" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="700" fill="rgba(162,204,58,.8)">LIVE QUALITY</text>
@@ -927,7 +936,7 @@ footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--bor
               <!-- Kitchen counter -->
               <rect x="40" y="150" width="240" height="12" rx="3" fill="rgba(162,204,58,.15)" stroke="rgba(162,204,58,.2)" stroke-width="1"/>
               <!-- Dispenser body -->
-              <rect x="120" y="68" width="80" height="84" rx="10" fill="rgba(12,58,64,.9)" stroke="rgba(77,156,68,.5)" stroke-width="2" class="hw-anim-rise"/>
+              <rect x="120" y="68" width="80" height="84" rx="10" fill="rgba(22,84,92,.9)" stroke="rgba(77,156,68,.5)" stroke-width="2" class="hw-anim-rise"/>
               <!-- Screen -->
               <rect x="132" y="78" width="56" height="32" rx="5" fill="rgba(162,204,58,.15)" stroke="rgba(162,204,58,.3)" stroke-width="1"/>
               <text x="160" y="90" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="7" fill="rgba(162,204,58,.7)">TDS: 142</text>
@@ -1240,7 +1249,7 @@ footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--bor
       <div class="tc">
         <div class="tc-stars">★★★★★</div>
         <p class="tc-q">"ProWater transformed our society. We used to spend lakhs on water cans every year. Now every flat gets pure water on tap at a fraction of the cost. The zero-setup promise is real — installed in a week."</p>
-        <div class="tc-meta"><div class="tc-av" style="background:linear-gradient(135deg,#0C3A40,#1D5731)">R</div><div><div class="tc-name">Rajesh Kumar</div><div class="tc-role">RWA Secretary · Ashish JK, Bangalore</div></div><div class="verified">Verified ✓</div></div>
+        <div class="tc-meta"><div class="tc-av" style="background:linear-gradient(135deg,#16545C,#1D5731)">R</div><div><div class="tc-name">Rajesh Kumar</div><div class="tc-role">RWA Secretary · Ashish JK, Bangalore</div></div><div class="verified">Verified ✓</div></div>
       </div>
       <div class="tc">
         <div class="tc-stars">★★★★★</div>
@@ -1391,11 +1400,11 @@ footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--bor
         </div>
         <div class="ci-card">
           <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="ci-label">Our Office</div><div class="ci-value">#15/B, Sector 3, HSR Layout</div><div class="ci-sub">Bengaluru, Karnataka 560102</div></div>
+          <div><div class="ci-label">Our Office</div><div class="ci-value"><a href="https://maps.app.goo.gl/PWdDFdw1RUfGVfA46" target="_blank" rel="noopener">3rd Floor, Raj Mansion, 15b, 18th A Main Rd</a></div><div class="ci-sub">Sector 3, HSR Layout, Bengaluru, Karnataka 560102</div></div>
         </div>
         <div class="map-wrap">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6076842!2d77.6408!3d12.9116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1490ef2d9c33%3A0x1!2sSector%203%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102!5e0!3m2!1sen!2sin!4v1"
+            src="https://maps.google.com/maps?q=Raj%20Mansion%2C%2015b%2C%2018th%20A%20Main%20Rd%2C%20Sector%203%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102&output=embed"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ProWater Office Location">
           </iframe>
         </div>
@@ -1430,14 +1439,27 @@ footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--bor
         <div class="foot-contact">
           <a href="tel:9538739904"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>95387 39904</a>
           <a href="mailto:support@prowater.in"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>support@prowater.in</a>
-          <a href="https://maps.google.com/?q=HSR+Layout+Sector+3+Bengaluru" target="_blank"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>#15/B Sector 3, HSR Layout, Bengaluru 560102</a>
+          <a href="https://maps.app.goo.gl/PWdDFdw1RUfGVfA46" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3rd Floor, Raj Mansion, 15b, 18th A Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</a>
+        </div>
+        <div class="foot-apps">
+          <span class="foot-apps-lbl">Get the app</span>
+          <div class="foot-apps-row">
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.prowater.customer" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+              <svg class="store-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.3 13.8 12 3.6 21.7c-.4-.3-.6-.8-.6-1.4V3.7c0-.6.2-1.1.6-1.4z"/><path fill="#4285F4" d="M3.6 2.3c.3-.2.7-.3 1.1-.1l11.6 6.5-3 3-9.7-9.4z"/><path fill="#FBBC04" d="M16.3 8.7 20 10.8c.9.5.9 1.9 0 2.4l-3.7 2.1-3.2-3.3 3.2-3.3z"/><path fill="#EA4335" d="M3.6 21.7 13.3 12.3l3 3-11.6 6.5c-.4.2-.8.1-1.1-.1z"/></svg>
+              <span class="store-txt"><small>GET IT ON</small><strong>Google Play</strong></span>
+            </a>
+            <a class="store-btn" href="https://apps.apple.com/in/app/prowater/id6759737055" target="_blank" rel="noopener" aria-label="Download on the App Store">
+              <svg class="store-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.6c-.02-2.05 1.68-3.04 1.76-3.09-.96-1.4-2.45-1.6-2.98-1.62-1.27-.13-2.48.75-3.12.75-.64 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.38 2.05-1.44 2.5-.37 6.2 1.03 8.23.69 1 1.5 2.11 2.57 2.07 1.03-.04 1.42-.66 2.67-.66 1.24 0 1.6.66 2.69.64 1.11-.02 1.81-1.01 2.49-2.01.78-1.15 1.1-2.27 1.12-2.33-.02-.01-2.15-.82-2.17-3.27zM15.0 6.32c.57-.69.95-1.65.85-2.6-.82.03-1.81.54-2.39 1.23-.52.61-.98 1.59-.86 2.52.91.07 1.84-.46 2.4-1.15z"/></svg>
+              <span class="store-txt"><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="#how">How It Works</a></li><li><a href="#plans">Plans & Pricing</a></li><li><a href="#benefits">Benefits</a></li><li><a href="#faq">FAQ's</a></li><li><a href="#billing">Billing</a></li></ul></div>
       <div class="foot-col"><h4>For</h4><ul><li><a href="https://prowater.in/rwa.html" target="_blank">RWAs & Societies ↗</a></li><li><a href="#benefits">Residents</a></li><li><a href="#contact">Builders & Developers</a></li><li><a href="#contact">Commercial Spaces</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <p>© 2025 ProWater — A DrinkPrime Initiative. All rights reserved.</p>
+      <p>© 2026 ProWater. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1504,27 +1526,67 @@ function submitForm(){
   var apts=['MJR Clique Hydra','Ashish JK','Sai Poorna Premiere','CBR Akruti','SVS Ananda','Prabhavati'];
   var $=function(id){return document.getElementById(id);};
   if(!$('lq-ph')) return;
-  var i=0;
-  function tick(){
-    var apt=apts[i%apts.length]; i++;
-    var ph=(6.9+Math.random()*0.7).toFixed(1);    // 6.9–7.6 (safe)
-    var tds=Math.round(45+Math.random()*95);       // 45–140 ppm (RO range)
-    var pur=(98.6+Math.random()*1.3).toFixed(1);   // 98.6–99.9 %
-    var bac=(99.4+Math.random()*0.5).toFixed(1);   // 99.4–99.9 %
-    var els=[$('lq-ph'),$('lq-tds'),$('lq-pur'),$('lq-bac'),$('lq-apt')];
-    els.forEach(function(e){ if(e) e.style.opacity='0'; });
-    setTimeout(function(){
-      $('lq-ph').textContent=ph;
-      $('lq-tds').textContent=tds;
-      $('lq-pur').textContent=pur+'%';
-      $('lq-bac').textContent=bac+'%';
-      var bb=$('lq-bacbar'); if(bb) bb.style.width=bac+'%';
-      $('lq-apt').innerHTML=apt+' &middot; <strong>Normal</strong>';
-      els.forEach(function(e){ if(e) e.style.opacity=''; });
-    },300);
+
+  // Seeded pseudo-random generator (mulberry32) — deterministic, so every
+  // visitor sees identical values for the same time slot.
+  function seeded(seed){
+    return function(){
+      seed|=0; seed=seed+0x6D2B79F5|0;
+      var t=Math.imul(seed^seed>>>15,1|seed);
+      t=t+Math.imul(t^t>>>7,61|t)^t;
+      return ((t^t>>>14)>>>0)/4294967296;
+    };
   }
-  tick();
-  setInterval(tick, 3000);
+
+  // Build a fixed cycle of snapshots: one per 4-hour slot across 7 days.
+  // 7 days * 24h / 4h = 42 slots. After slot 41 it wraps back to slot 0,
+  // so the same readings rotate again every 7 days.
+  var SLOT_MS=4*60*60*1000;       // 4 hours
+  var SLOTS=7*24/4;               // 42 slots in a 7-day cycle
+  var snapshots=[];
+  for(var s=0;s<SLOTS;s++){
+    var rnd=seeded(s+1);          // fixed seed per slot => fixed values
+    snapshots.push({
+      ph:(6.9+rnd()*0.7).toFixed(1),    // 6.9–7.6 (safe)
+      tds:Math.round(45+rnd()*95),       // 45–140 ppm (RO range)
+      pur:(98.6+rnd()*1.3).toFixed(1),   // 98.6–99.9 %
+      bac:(99.4+rnd()*0.5).toFixed(1),   // 99.4–99.9 %
+      apt:apts[s%apts.length]
+    });
+  }
+
+  // Which slot are we in right now? Based on absolute time so it's the same
+  // for everyone, advancing once every 4 hours and repeating every 7 days.
+  function currentSlot(){
+    return Math.floor(Date.now()/SLOT_MS)%SLOTS;
+  }
+
+  function paint(d,animate){
+    var els=[$('lq-ph'),$('lq-tds'),$('lq-pur'),$('lq-bac'),$('lq-apt')];
+    var apply=function(){
+      $('lq-ph').textContent=d.ph;
+      $('lq-tds').textContent=d.tds;
+      $('lq-pur').textContent=d.pur+'%';
+      $('lq-bac').textContent=d.bac+'%';
+      var bb=$('lq-bacbar'); if(bb) bb.style.width=d.bac+'%';
+      $('lq-apt').innerHTML=d.apt+' &middot; <strong>Normal</strong>';
+    };
+    if(animate){
+      els.forEach(function(e){ if(e) e.style.opacity='0'; });
+      setTimeout(function(){ apply(); els.forEach(function(e){ if(e) e.style.opacity=''; }); },300);
+    } else {
+      apply();
+    }
+  }
+
+  var lastSlot=currentSlot();
+  paint(snapshots[lastSlot], false);   // show the correct value immediately
+
+  // Check periodically; only re-paint (with a fade) when the 4-hour slot rolls over.
+  setInterval(function(){
+    var slot=currentSlot();
+    if(slot!==lastSlot){ lastSlot=slot; paint(snapshots[slot], true); }
+  }, 60*1000); // check every minute
 })();
 
 /* Savings Calculator */
