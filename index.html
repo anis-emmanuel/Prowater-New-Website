@@ -266,6 +266,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 @keyframes wifiPulse{0%,100%{opacity:.5;}50%{opacity:1;}}
 .hw-count{animation:countUp .8s ease forwards;}
 
+/* Savings Calculator (light theme) */
+.calc-sec{background:var(--sky);padding:90px 5%;}
+.calc-inner{max-width:1000px;margin:0 auto;}
+.calc-hdr{margin-bottom:44px;}
+.calc-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(12,58,64,.08);}
+.calc-controls{padding:38px 34px;border-right:1px solid rgba(12,58,64,.08);}
+.calc-row{margin-bottom:28px;}
+.calc-row:last-child{margin-bottom:0;}
+.calc-label{display:block;font-size:14px;font-weight:600;color:var(--f);margin-bottom:14px;}
+.calc-stepper{display:flex;align-items:center;gap:0;width:fit-content;background:var(--sky);border-radius:50px;padding:5px;}
+.calc-step-btn{width:40px;height:40px;border-radius:50%;border:none;background:rgba(77,156,68,.15);color:var(--teal);font-size:22px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit;}
+.calc-step-btn:hover{background:var(--teal);color:#fff;}
+.calc-step-val{min-width:54px;text-align:center;font-size:24px;font-weight:800;color:var(--f);}
+.calc-opts{display:flex;flex-wrap:wrap;gap:8px;}
+.calc-opt{font-size:13px;font-weight:600;color:var(--slate);background:var(--off);border:1.5px solid var(--border);padding:10px 16px;border-radius:50px;cursor:pointer;transition:all .15s;font-family:inherit;}
+.calc-opt:hover{border-color:var(--teal);}
+.calc-opt.active{background:rgba(77,156,68,.1);border-color:var(--teal);color:var(--teal);}
+.calc-result{padding:38px 34px;display:flex;flex-direction:column;}
+.calc-result-top{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+.calc-current,.calc-pro{flex:1;text-align:center;padding:18px 12px;border-radius:16px;}
+.calc-current{background:var(--off);border:1px solid var(--border);}
+.calc-pro{background:rgba(77,156,68,.08);border:1px solid rgba(77,156,68,.3);}
+.calc-res-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px;}
+.calc-res-amt{font-size:30px;font-weight:800;letter-spacing:-1px;color:var(--f);line-height:1;transition:opacity .25s;}
+.calc-res-amt.strike{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(220,70,70,.55);}
+.calc-res-amt.accent{color:var(--teal);}
+.calc-res-sub{font-size:11px;color:var(--muted);margin-top:6px;}
+.calc-arrow{font-size:22px;color:var(--teal);flex-shrink:0;}
+.calc-savings{text-align:center;background:linear-gradient(135deg,rgba(77,156,68,.12),rgba(162,204,58,.14));border:1px solid rgba(77,156,68,.2);border-radius:16px;padding:22px;margin-bottom:14px;}
+.calc-save-big{font-size:38px;font-weight:800;color:var(--f);letter-spacing:-1.5px;line-height:1;transition:opacity .25s;}
+.calc-save-big #calc-save-amt{color:var(--teal);}
+.calc-save-unit{font-size:15px;font-weight:600;color:var(--slate);margin-left:4px;letter-spacing:0;}
+.calc-save-extra{font-size:13px;color:var(--slate);margin-top:10px;}
+.calc-save-extra strong{color:var(--teal);}
+.calc-eco{font-size:13px;color:var(--slate);text-align:center;margin-bottom:20px;line-height:1.6;}
+.calc-eco strong{color:var(--teal);}
+.calc-cta{justify-content:center;width:100%;margin-top:auto;}
+.calc-disclaimer{font-size:11px;color:var(--muted);text-align:center;margin-top:14px;}
+@media(max-width:768px){
+  .calc-sec{padding:64px 5%;}
+  .calc-card{grid-template-columns:1fr;}
+  .calc-controls{border-right:none;border-bottom:1px solid rgba(12,58,64,.08);padding:30px 22px;}
+  .calc-result{padding:30px 22px;}
+  .calc-save-big{font-size:32px;}
+}
+
 @media(max-width:768px){
   .hw-card{grid-template-columns:1fr;}
   .hw-illo{min-height:200px;}
@@ -418,23 +464,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
 /* ── FOOTER ── */
-footer{background:#040e08;padding:52px 5% 28px;}
+footer{background:var(--sky);padding:52px 5% 28px;border-top:1px solid var(--border);}
 .footer-in{max-width:1180px;margin:0 auto;}
-.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
 .foot-logo img{height:36px;width:36px;object-fit:contain;border-radius:8px;}
-.foot-brand-n{font-size:19px;font-weight:800;color:#fff;}
-.foot-brand-n span{color:var(--teal2);}
-.foot-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:230px;margin-bottom:20px;}
-.foot-contact a{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:8px;transition:color .2s;}
-.foot-contact a:hover{color:var(--teal2);}
+.foot-brand-n{font-size:19px;font-weight:800;color:var(--f);}
+.foot-brand-n span{color:var(--teal);}
+.foot-desc{font-size:13px;color:var(--slate);line-height:1.7;max-width:230px;margin-bottom:20px;}
+.foot-contact a{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.foot-contact a:hover{color:var(--teal);}
 .foot-contact svg{width:14px;height:14px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;flex-shrink:0;}
-.foot-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.foot-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.foot-col a{font-size:13px;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;}
-.foot-col a:hover{color:var(--teal2);}
-.foot-bottom{padding-top:22px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,.25);}
-.foot-bottom b{color:var(--teal2);}
+.foot-col a{font-size:13px;color:var(--slate);text-decoration:none;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{padding-top:22px;border-top:1px solid rgba(12,58,64,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);}
+.foot-bottom b{color:var(--teal);}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px;}.foot-brand{grid-column:1/-1;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
 
@@ -539,6 +585,7 @@ footer{background:#040e08;padding:52px 5% 28px;}
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#plans">Plans</a></li>
+    <li><a href="#calculator">Savings</a></li>
     <li><a href="#benefits">Benefits</a></li>
     <li><a href="#faq">FAQ's</a></li>
     <li><a href="#billing">Billing</a></li>
@@ -552,6 +599,7 @@ footer{background:#040e08;padding:52px 5% 28px;}
 <div class="mobmenu" id="mob">
   <a href="#home" onclick="closeNav()">Home</a>
   <a href="#plans" onclick="closeNav()">Plans</a>
+  <a href="#calculator" onclick="closeNav()">Savings</a>
   <a href="#benefits" onclick="closeNav()">Benefits</a>
   <a href="#faq" onclick="closeNav()">FAQ's</a>
   <a href="#billing" onclick="closeNav()">Billing</a>
@@ -1111,6 +1159,77 @@ footer{background:#040e08;padding:52px 5% 28px;}
   </div>
 </section>
 
+<!-- SAVINGS CALCULATOR -->
+<section class="calc-sec" id="calculator">
+  <div class="calc-inner rv">
+    <div class="calc-hdr">
+      <div class="chip" style="justify-content:center">Your Savings</div>
+      <h2 class="sh2" style="text-align:center">See what you'll save<br>with ProWater</h2>
+      <p class="slead" style="text-align:center;margin:8px auto 0;max-width:480px">Tell us how you get your drinking water today. We'll show you the difference — instantly.</p>
+    </div>
+
+    <div class="calc-card">
+      <div class="calc-controls">
+        <div class="calc-row">
+          <label class="calc-label">How many people in your home?</label>
+          <div class="calc-stepper">
+            <button class="calc-step-btn" id="calc-minus" aria-label="Fewer people">−</button>
+            <span class="calc-step-val" id="calc-people">4</span>
+            <button class="calc-step-btn" id="calc-plus" aria-label="More people">+</button>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">How do you get drinking water now?</label>
+          <div class="calc-opts" id="calc-source">
+            <button class="calc-opt active" data-src="jars">💧 20L Jars / Cans</button>
+            <button class="calc-opt" data-src="bottles">🧴 Bottled Water</button>
+            <button class="calc-opt" data-src="ro">⚙️ Own RO Purifier</button>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">Which ProWater plan?</label>
+          <div class="calc-opts" id="calc-plan">
+            <button class="calc-opt" data-plan="299">Starter ₹299</button>
+            <button class="calc-opt active" data-plan="399">Standard ₹399</button>
+            <button class="calc-opt" data-plan="499">Premium ₹499</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <div class="calc-result-top">
+          <div class="calc-current">
+            <div class="calc-res-lbl" id="calc-current-lbl">You spend now</div>
+            <div class="calc-res-amt strike" id="calc-current-amt">₹1,200</div>
+            <div class="calc-res-sub">per month</div>
+          </div>
+          <div class="calc-arrow">→</div>
+          <div class="calc-pro">
+            <div class="calc-res-lbl">With ProWater</div>
+            <div class="calc-res-amt accent" id="calc-pro-amt">₹399</div>
+            <div class="calc-res-sub">per month</div>
+          </div>
+        </div>
+
+        <div class="calc-savings">
+          <div class="calc-save-big">
+            <span id="calc-save-amt">₹9,612</span>
+            <span class="calc-save-unit">saved / year</span>
+          </div>
+          <div class="calc-save-extra" id="calc-save-extra">That's like getting <strong>8 months free</strong> 🎉</div>
+        </div>
+
+        <div class="calc-eco" id="calc-eco">🌱 Plus you'll eliminate <strong>~480 plastic jars</strong> from landfills every year.</div>
+
+        <a class="btn-main calc-cta" onclick="calcBook()">Lock in these savings →</a>
+        <div class="calc-disclaimer">Estimates based on typical household usage. Your actual savings may be higher.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="sec" style="background:var(--off)" id="reviews">
   <div class="testi-wrap">
@@ -1316,11 +1435,9 @@ footer{background:#040e08;padding:52px 5% 28px;}
       </div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="#how">How It Works</a></li><li><a href="#plans">Plans & Pricing</a></li><li><a href="#benefits">Benefits</a></li><li><a href="#faq">FAQ's</a></li><li><a href="#billing">Billing</a></li></ul></div>
       <div class="foot-col"><h4>For</h4><ul><li><a href="https://prowater.in/rwa.html" target="_blank">RWAs & Societies ↗</a></li><li><a href="#benefits">Residents</a></li><li><a href="#contact">Builders & Developers</a></li><li><a href="#contact">Commercial Spaces</a></li></ul></div>
-      <div class="foot-col"><h4>Company</h4><ul><li><a href="#">About DrinkPrime</a></li><li><a href="#">Press & Awards</a></li><li><a href="#">Investors</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <p>© 2025 ProWater — A DrinkPrime Initiative. All rights reserved.</p>
-      <span>Built on <b>10 years</b> of water tech expertise</span>
+      <p>© 2026 ProWater. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1408,6 +1525,94 @@ function submitForm(){
   }
   tick();
   setInterval(tick, 3000);
+})();
+
+/* Savings Calculator */
+(function(){
+  var people=4, source='jars', plan=399;
+  // per-person monthly cost estimates (₹) for current methods
+  var rates={jars:300, bottles:550, ro:380};
+  // jars eliminated per person per year (eco metric, jars source only baseline)
+  var jarsPerPersonYr=120;
+
+  var elPeople=document.getElementById('calc-people');
+  var elCurAmt=document.getElementById('calc-current-amt');
+  var elCurLbl=document.getElementById('calc-current-lbl');
+  var elProAmt=document.getElementById('calc-pro-amt');
+  var elSaveAmt=document.getElementById('calc-save-amt');
+  var elSaveExtra=document.getElementById('calc-save-extra');
+  var elEco=document.getElementById('calc-eco');
+
+  function fmt(n){ return '₹'+Math.round(n).toLocaleString('en-IN'); }
+
+  function fade(el,fn){
+    if(!el)return;
+    el.style.opacity='0';
+    setTimeout(function(){ fn(); el.style.opacity=''; },150);
+  }
+
+  function update(){
+    var current=people*rates[source];
+    var saveMonth=current-plan;
+    var saveYear=saveMonth*12;
+    var monthsFree=plan>0?Math.max(0,Math.round(saveMonth/plan)):0;
+
+    fade(elCurAmt,function(){ elCurAmt.textContent=fmt(current); });
+    fade(elProAmt,function(){ elProAmt.textContent=fmt(plan); });
+    fade(elSaveAmt,function(){ elSaveAmt.textContent=fmt(Math.max(0,saveYear)); });
+
+    if(saveMonth<=0){
+      elSaveExtra.innerHTML='You also gain <strong>lifetime free AMC</strong> & live quality tracking ✨';
+    } else if(monthsFree>=1){
+      elSaveExtra.innerHTML='That\u2019s like getting <strong>'+monthsFree+' month'+(monthsFree>1?'s':'')+' free</strong> \uD83C\uDF89';
+    } else {
+      elSaveExtra.innerHTML='Plus <strong>zero maintenance</strong> & live quality tracking \uD83C\uDF89';
+    }
+
+    if(source==='ro'){
+      elEco.innerHTML='\u2699\uFE0F No more filter changes, servicing, or electricity bills \u2014 <strong>all on us</strong>.';
+    } else {
+      var jars=people*jarsPerPersonYr;
+      elEco.innerHTML='\uD83C\uDF31 Plus you\u2019ll eliminate <strong>~'+jars.toLocaleString('en-IN')+' plastic jars</strong> from landfills every year.';
+    }
+  }
+
+  document.getElementById('calc-minus').addEventListener('click',function(){
+    if(people>1){ people--; elPeople.textContent=people; update(); }
+  });
+  document.getElementById('calc-plus').addEventListener('click',function(){
+    if(people<12){ people++; elPeople.textContent=people; update(); }
+  });
+  document.getElementById('calc-source').addEventListener('click',function(e){
+    var b=e.target.closest('.calc-opt'); if(!b)return;
+    this.querySelectorAll('.calc-opt').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active'); source=b.getAttribute('data-src');
+    elCurLbl.textContent = source==='ro' ? 'Your RO costs you' : 'You spend now';
+    update();
+  });
+  document.getElementById('calc-plan').addEventListener('click',function(e){
+    var b=e.target.closest('.calc-opt'); if(!b)return;
+    this.querySelectorAll('.calc-opt').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active'); plan=parseInt(b.getAttribute('data-plan'),10);
+    update();
+  });
+
+  update();
+
+  // Build a detailed WhatsApp message from the user's selections
+  var srcLabels={jars:'20L Jars / Cans', bottles:'Bottled Water', ro:'Own RO Purifier'};
+  var planLabels={'299':'Starter (\u20B9299/mo)', '399':'Standard (\u20B9399/mo)', '499':'Premium (\u20B9499/mo)'};
+  window.calcBook=function(){
+    var current=people*rates[source];
+    var saveYear=Math.max(0,(current-plan)*12);
+    var msg='Hi ProWater! I used the savings calculator and want to book a free site visit.\n\n'
+      +'My details:\n'
+      +'\u2022 People in home: '+people+'\n'
+      +'\u2022 Current water source: '+srcLabels[source]+'\n'
+      +'\u2022 Interested plan: '+planLabels[String(plan)]+'\n'
+      +'\u2022 Estimated yearly saving: '+fmt(saveYear);
+    wcLaunch(msg);
+  };
 })();
 
 /* Reveal */
