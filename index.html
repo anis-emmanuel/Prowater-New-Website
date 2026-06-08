@@ -1524,14 +1524,16 @@ function submitForm(){
   else start();
 })();
 
-/* Live Quality Monitor — cycling apartments with in-range values */
+/* Live Quality Monitor — society name cycles every second; each society's
+   values are fixed within the current 4-hour slot and shift to the next set
+   only when the 4-hour boundary passes (based on the system clock). */
 (function(){
   var apts=['MJR Clique Hydra','Ashish JK','Sai Poorna Premiere','CBR Akruti','SVS Ananda','Prabhavati'];
   var $=function(id){return document.getElementById(id);};
   if(!$('lq-ph')) return;
 
   // Seeded pseudo-random generator (mulberry32) — deterministic, so every
-  // visitor sees identical values for the same time slot.
+  // visitor sees identical values for the same society + time slot.
   function seeded(seed){
     return function(){
       seed|=0; seed=seed+0x6D2B79F5|0;
@@ -1541,55 +1543,56 @@ function submitForm(){
     };
   }
 
-  // Build a fixed cycle of snapshots: one per 4-hour slot across 7 days.
-  // 7 days * 24h / 4h = 42 slots. After slot 41 it wraps back to slot 0,
-  // so the same readings rotate again every 7 days.
-  var SLOT_MS=4*60*60*1000;       // 4 hours
-  var SLOTS=7*24/4;               // 42 slots in a 7-day cycle
-  var snapshots=[];
-  for(var s=0;s<SLOTS;s++){
-    var rnd=seeded(s+1);          // fixed seed per slot => fixed values
-    snapshots.push({
-      ph:(6.9+rnd()*0.7).toFixed(1),    // 6.9–7.6 (safe)
-      tds:Math.round(45+rnd()*95),       // 45–140 ppm (RO range)
-      pur:(98.6+rnd()*1.3).toFixed(1),   // 98.6–99.9 %
-      bac:(99.4+rnd()*0.5).toFixed(1),   // 99.4–99.9 %
-      apt:apts[s%apts.length]
+  var SLOT_MS=4*60*60*1000;   // values update every 4 hours
+
+  // Which 4-hour slot are we in (absolute clock => same for everyone).
+  function currentSlot(){ return Math.floor(Date.now()/SLOT_MS); }
+
+  // Build one reading per society for a given slot. Seed combines the society
+  // index and the slot, so each society has its own value that's stable within
+  // the slot and changes once the slot rolls over.
+  function readingsFor(slot){
+    return apts.map(function(name,idx){
+      var rnd=seeded((slot*1000)+(idx+1));
+      return {
+        ph:(6.9+rnd()*0.7).toFixed(1),    // 6.9–7.6 (safe)
+        tds:Math.round(45+rnd()*95),       // 45–140 ppm (RO range)
+        pur:(98.6+rnd()*1.3).toFixed(1),   // 98.6–99.9 %
+        bac:(99.4+rnd()*0.5).toFixed(1),   // 99.4–99.9 %
+        apt:name
+      };
     });
   }
 
-  // Which slot are we in right now? Based on absolute time so it's the same
-  // for everyone, advancing once every 4 hours and repeating every 7 days.
-  function currentSlot(){
-    return Math.floor(Date.now()/SLOT_MS)%SLOTS;
-  }
+  var slot=currentSlot();
+  var readings=readingsFor(slot);
+  var i=0;
 
-  function paint(d,animate){
+  function paint(d){
     var els=[$('lq-ph'),$('lq-tds'),$('lq-pur'),$('lq-bac'),$('lq-apt')];
-    var apply=function(){
+    els.forEach(function(e){ if(e) e.style.opacity='0'; });
+    setTimeout(function(){
       $('lq-ph').textContent=d.ph;
       $('lq-tds').textContent=d.tds;
       $('lq-pur').textContent=d.pur+'%';
       $('lq-bac').textContent=d.bac+'%';
       var bb=$('lq-bacbar'); if(bb) bb.style.width=d.bac+'%';
       $('lq-apt').innerHTML=d.apt+' &middot; <strong>Normal</strong>';
-    };
-    if(animate){
-      els.forEach(function(e){ if(e) e.style.opacity='0'; });
-      setTimeout(function(){ apply(); els.forEach(function(e){ if(e) e.style.opacity=''; }); },300);
-    } else {
-      apply();
-    }
+      els.forEach(function(e){ if(e) e.style.opacity=''; });
+    },150);
   }
 
-  var lastSlot=currentSlot();
-  paint(snapshots[lastSlot], false);   // show the correct value immediately
+  paint(readings[0]);
 
-  // Check periodically; only re-paint (with a fade) when the 4-hour slot rolls over.
+  // Every second: advance to the next society. If the 4-hour slot has rolled
+  // over, regenerate everyone's values first (so the same society now shows a
+  // new reading), then keep cycling names.
   setInterval(function(){
-    var slot=currentSlot();
-    if(slot!==lastSlot){ lastSlot=slot; paint(snapshots[slot], true); }
-  }, 60*1000); // check every minute
+    var nowSlot=currentSlot();
+    if(nowSlot!==slot){ slot=nowSlot; readings=readingsFor(slot); }
+    i=(i+1)%apts.length;
+    paint(readings[i]);
+  }, 1000);
 })();
 
 /* Savings Calculator */
