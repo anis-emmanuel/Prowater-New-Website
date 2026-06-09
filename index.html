@@ -51,12 +51,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .mobmenu a.mob-cta{margin-top:14px;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;padding:13px 20px;border-radius:50px;text-align:center;border:none;}
 
 /* ── HERO ── */
-.hero{min-height:100vh;padding-top:66px;background:var(--f);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero{min-height:auto;padding-top:66px;background:var(--f);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
 .orb{position:absolute;border-radius:50%;pointer-events:none;}
 .orb1{width:600px;height:600px;top:-200px;right:-100px;background:radial-gradient(circle,rgba(45,122,79,0.18) 0%,transparent 70%);animation:drift 12s ease-in-out infinite;}
 .orb2{width:400px;height:400px;bottom:-100px;left:10%;background:radial-gradient(circle,rgba(168,217,64,0.1) 0%,transparent 70%);animation:drift 12s ease-in-out infinite;animation-delay:-5s;}
 @keyframes drift{0%,100%{transform:translate(0,0);}33%{transform:translate(-20px,30px);}66%{transform:translate(20px,-20px);}}
-.hero-l{display:flex;flex-direction:column;justify-content:center;padding:80px 5% 80px 6%;position:relative;z-index:1;}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:56px 5% 56px 6%;position:relative;z-index:1;}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(45,122,79,0.12);border:1px solid rgba(45,122,79,0.3);border-radius:50px;padding:6px 16px;width:fit-content;margin-bottom:28px;}
 .pill-dot{width:7px;height:7px;background:var(--teal2);border-radius:50%;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
@@ -78,7 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .proof-txt strong{color:rgba(255,255,255,.85);}
 
 /* Hero right panel */
-.hero-r{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 5%;position:relative;z-index:1;}
+.hero-r{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:56px 5%;position:relative;z-index:1;}
 #hero3d{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity 1.2s ease;}
 #hero3d.ready{opacity:1;}
 .hero-r .live-panel,.hero-r .fbadge{position:relative;z-index:2;}
@@ -1946,7 +1946,23 @@ setTimeout(function(){var l=document.getElementById('wa-label');if(l){l.style.op
     pSpeed[i]=0.15+Math.random()*0.4;
   }
   pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3));
-  var pMat=new THREE.PointsMaterial({color:0x6cc4e8,size:0.06,transparent:true,opacity:0.6,sizeAttenuation:true});
+
+  // Build a round, soft bubble sprite so points aren't square
+  function makeBubbleTex(){
+    var c=document.createElement('canvas'); c.width=c.height=64;
+    var g=c.getContext('2d');
+    var rg=g.createRadialGradient(32,32,2,32,32,30);
+    rg.addColorStop(0,'rgba(220,245,255,0.9)');
+    rg.addColorStop(0.3,'rgba(120,200,235,0.55)');
+    rg.addColorStop(0.75,'rgba(80,170,215,0.22)');
+    rg.addColorStop(1,'rgba(80,170,215,0)');
+    g.fillStyle=rg; g.beginPath(); g.arc(32,32,30,0,Math.PI*2); g.fill();
+    // little highlight to read as a bubble
+    g.fillStyle='rgba(255,255,255,0.85)';
+    g.beginPath(); g.arc(24,22,5,0,Math.PI*2); g.fill();
+    var tex=new THREE.CanvasTexture(c); return tex;
+  }
+  var pMat=new THREE.PointsMaterial({map:makeBubbleTex(),color:0xffffff,size:0.16,transparent:true,opacity:0.7,depthWrite:false,sizeAttenuation:true,blending:THREE.AdditiveBlending});
   var particles=new THREE.Points(pGeo,pMat);
   scene.add(particles);
 
