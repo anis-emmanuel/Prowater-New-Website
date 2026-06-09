@@ -153,7 +153,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 @media(max-width:768px){.nums{grid-template-columns:1fr 1fr;gap:16px;}}
 @media(max-width:480px){.nums{grid-template-columns:1fr;}}
 
-
 /* ── COMPARISON TABLE ── */
 .cmp-sec{background:var(--f);padding:96px 5%;}
 .cmp-inner{max-width:1100px;margin:0 auto;}
@@ -505,7 +504,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
 .foot-logo img{height:36px;width:36px;object-fit:contain;border-radius:8px;}
 .foot-brand-n{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);}
 .foot-brand-n span{color:var(--teal);}
-.foot-desc{font-size:13px;color:var(--slate);line-height:1.7;max-width:260px;margin-bottom:22px;}
+.foot-desc{font-size:13px;color:var(--slate);line-height:1.6;max-width:260px;margin-bottom:18px;}
 .foot-contact{display:flex;flex-direction:column;gap:10px;}
 .foot-contact a{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--slate);text-decoration:none;line-height:1.5;transition:color .2s;}
 .foot-contact a:hover{color:var(--teal);}
@@ -546,7 +545,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   html{scroll-behavior:auto;}
   .rv,.rv.in,.rv.stagger>*,.rv.stagger.in>*{opacity:1!important;transform:none!important;transition:none!important;}
 }
-
 
 /* ── WHATSAPP CHAT ── */
 .wa-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s;}
@@ -1055,7 +1053,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   </div>
 </section>
 
-
 <!-- BENEFITS -->
 <section class="sec" style="background:var(--off)" id="benefits">
   <div class="sec-inner">
@@ -1088,7 +1085,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     </div>
   </div>
 </section>
-
 
 <!-- COMPARISON -->
 <section class="cmp-sec rv" id="compare">
@@ -1369,7 +1365,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           <li class="pf"><div class="pf-ck"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>Live TDS tracking via app</li>
           <li class="pf"><div class="pf-ck"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>Zero water wastage</li>
         </ul>
-        <button class="plan-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+        <button class="plan-btn" onclick="subscribe('p1')">Get Started</button>
       </div>
       <div class="plan">
         <div class="plan-nm">Standard</div>
@@ -1384,7 +1380,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           <li class="pf"><div class="pf-ck"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>Live TDS + app monitoring</li>
           <li class="pf"><div class="pf-ck"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>Mineral / Copper / Alkaline upgrade</li>
         </ul>
-        <button class="plan-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+        <button class="plan-btn" onclick="subscribe('p2')">Get Started</button>
       </div>
       <div class="plan star">
         <div class="plan-badge">Best Seller</div>
@@ -1399,7 +1395,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           <li class="pf"><div class="pf-ck"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>All Standard features included</li>
           <li class="pf"><div class="pf-ck"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>Lifetime free AMC included</li>
         </ul>
-        <button class="plan-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+        <button class="plan-btn" onclick="subscribe('p3')">Get Started</button>
       </div>
     </div>
     <p class="plans-note">Security deposit is 100% refundable · Upgrade mineral type anytime via app · Normal device ₹2,000 · Premium device ₹4,000 deposit</p>
@@ -1546,6 +1542,17 @@ const P={m:{p1:{pr:'₹299',pe:'/month · Use your own device',dep:'Pay ₹2,299
 function render(){const d=ann?P.a:P.m;[1,2,3].forEach(i=>{document.getElementById('pp'+i).textContent=d['p'+i].pr;document.getElementById('per'+i).textContent=d['p'+i].pe;document.getElementById('dep'+i).textContent=d['p'+i].dep;});document.getElementById('sv').style.opacity=ann?'1':'0';document.getElementById('knob').className='sw-k'+(ann?' r':'');document.getElementById('lbl-m').className='sw-l'+(ann?'':' on');document.getElementById('lbl-a').className='sw-l'+(ann?' on':'');}
 function flipBill(){ann=!ann;render();}
 function setBill(v){ann=v;render();}
+
+/* Subscription checkout links (Zoho) — keyed by plan + billing cycle */
+const SUB_BASE='https://billing.zohosecure.in/subscribe/d8bce766a60fc42b7c158f5bc4d29a462fdce49299f7150bdbde1ccf1c7a189d/';
+const SUB_LINKS={
+  m:{p1:SUB_BASE+'BASIC_1M_299',    p2:SUB_BASE+'STANDARD_1M_399',  p3:SUB_BASE+'PREMIUM_1M_499'},
+  a:{p1:SUB_BASE+'BASIC_12M_299',   p2:SUB_BASE+'STANDARD_12M_399', p3:SUB_BASE+'PREMIUM_12M_499'}
+};
+function subscribe(plan){
+  var url=(ann?SUB_LINKS.a:SUB_LINKS.m)[plan];
+  if(url) window.open(url,'_blank','noopener');
+}
 
 /* FAQ */
 function doFaq(btn){const a=btn.nextElementSibling,svg=btn.querySelector('svg');const open=a.style.maxHeight&&a.style.maxHeight!=='0px';document.querySelectorAll('.faq-a').forEach(x=>x.style.maxHeight='0px');document.querySelectorAll('.faq-q svg').forEach(s=>s.style.transform='');if(!open){a.style.maxHeight=a.scrollHeight+'px';svg.style.transform='rotate(45deg)';}}
