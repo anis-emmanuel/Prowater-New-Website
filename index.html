@@ -55,12 +55,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 
 /* ── HERO ── */
 .hero{min-height:auto;padding-top:66px;background:var(--f);display:flex;justify-content:center;position:relative;overflow:hidden;}
-.hero-inner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;width:100%;max-width:1200px;padding:0 5%;}
+.hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;width:100%;padding:0 5%;}
 .orb{position:absolute;border-radius:50%;pointer-events:none;}
 .orb1{width:600px;height:600px;top:-200px;right:-100px;background:radial-gradient(circle,rgba(45,122,79,0.18) 0%,transparent 70%);animation:drift 12s ease-in-out infinite;}
 .orb2{width:400px;height:400px;bottom:-100px;left:10%;background:radial-gradient(circle,rgba(168,217,64,0.1) 0%,transparent 70%);animation:drift 12s ease-in-out infinite;animation-delay:-5s;}
 @keyframes drift{0%,100%{transform:translate(0,0);}33%{transform:translate(-20px,30px);}66%{transform:translate(20px,-20px);}}
-.hero-l{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;padding:44px 0;position:relative;z-index:1;}
+.hero-l{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;padding:40px 0;position:relative;z-index:1;}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(45,122,79,0.12);border:1px solid rgba(45,122,79,0.3);border-radius:50px;padding:6px 16px;width:fit-content;margin-bottom:20px;}
 .pill-dot{width:7px;height:7px;background:var(--teal2);border-radius:50%;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
@@ -125,6 +125,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .fb-ic.y svg{stroke:var(--gold);}
 .fb-title{font-size:13px;font-weight:700;color:var(--f);}
 .fb-sub{font-size:11px;color:var(--muted);}
+
+/* Keyword bubbles — slow swirl in the hero center gap, one highlighted at a time */
+.hero-bubbles{display:none;}
+@media(min-width:1180px){
+  .hero-bubbles{display:block;position:absolute;top:0;bottom:0;left:0;right:0;z-index:0;pointer-events:none;overflow:visible;}
+  .hbub-orbit{position:absolute;top:46%;left:48%;width:0;height:0;}
+  .hbub{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:.01em;white-space:nowrap;
+    color:rgba(255,255,255,.42);background:rgba(255,255,255,.035);border:1px solid rgba(168,217,64,.14);backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(0,0,0,.14);
+    transform:translate(-50%,-50%);transition:color .6s ease,background .6s ease,border-color .6s ease,box-shadow .6s ease,opacity .6s ease;opacity:.55;}
+  .hbub .hbub-dot{width:7px;height:7px;border-radius:50%;background:rgba(168,217,64,.4);flex-shrink:0;transition:background .6s ease,box-shadow .6s ease;}
+  /* the currently featured bubble */
+  .hbub.is-active{color:#fff;background:rgba(45,122,79,.28);border-color:rgba(168,217,64,.55);box-shadow:0 10px 34px rgba(45,122,79,.4),0 0 0 1px rgba(168,217,64,.25);opacity:1;}
+  .hbub.is-active .hbub-dot{background:var(--teal-g);box-shadow:0 0 10px rgba(168,217,64,.9);}
+}
+@media(prefers-reduced-motion:reduce){
+  .hbub{transition:none;}
+}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:0;}.hero-l{padding:48px 0 28px;text-align:center;align-items:center;}.hero-r{padding:0 0 44px;align-items:center;}.fbadge{display:none;}}
 
 /* ── TICKER ── */
@@ -173,7 +190,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 @media(max-width:480px){.nums{grid-template-columns:1fr;}}
 
 /* ── 3 NO'S TRUST BAND ── */
-.nobar{background:var(--f);padding:44px 5%;overflow:hidden;}
+.nobar{background:var(--f);padding:8px 5% 44px;overflow:hidden;}
 .nobar-in{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .no-i{display:flex;align-items:center;gap:14px;justify-content:center;background:rgba(168,217,64,.06);border:1px solid rgba(168,217,64,.18);border-radius:16px;padding:18px 20px;transition:transform .3s ease,background .3s ease,border-color .3s ease;cursor:default;opacity:0;transform:translateY(16px);animation:noRise .6s ease forwards;}
 .no-i:nth-child(1){animation-delay:.05s;}
@@ -844,11 +861,20 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="hero-bubbles" aria-hidden="true">
+    <div class="hbub-orbit" id="hbubOrbit">
+      <span class="hbub"><span class="hbub-dot"></span>100% RO Purified</span>
+      <span class="hbub"><span class="hbub-dot"></span>Live TDS Tracking</span>
+      <span class="hbub"><span class="hbub-dot"></span>Zero Plastic Waste</span>
+      <span class="hbub"><span class="hbub-dot"></span>No Maintenance</span>
+      <span class="hbub"><span class="hbub-dot"></span>Piped to Your Tap</span>
+    </div>
+  </div>
   <div class="hero-inner">
   <div class="hero-l">
     <div class="hero-pill"><span class="pill-dot"></span><span>India's First Piped RO Subscription</span></div>
     <h1 class="hero-h1">Water you can<br><span class="ac">trust</span> — and <span class="ac">verify</span><span class="ac2">.</span></h1>
-    <p class="hero-desc">Centralised RO water piped straight to your kitchen with live quality you can check from your phone. No cans, no filters, no maintenance.</p>
+    <p class="hero-desc">Centralised RO water piped straight to your kitchen tap — with live quality you can check from your phone. No cans, no filters, no maintenance.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-main">Book Free Site Visit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="#plans" class="btn-sec">See Plans</a>
@@ -1522,7 +1548,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   <div class="sec-inner">
     <div class="faq-wrap">
       <div style="text-align:center;margin-bottom:44px"><div class="chip" style="justify-content:center">FAQ's</div><h2 class="sh2" style="text-align:center">Common questions,<br>straight answers</h2></div>
-      <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Does the society pay anything for installation?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>No — absolutely nothing. ProWater installs the entire system. The RO plant, piping, dispensers — all infrastructure is paid for by us. Your society pays zero, upfront or ever.</p></div></div>
+      <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Does the society pay anything for installation?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>No — absolutely nothing. ProWater (a DrinkPrime initiative) funds and installs the entire system. The RO plant, piping, dispensers — all infrastructure is paid for by us. Your society pays zero, upfront or ever.</p></div></div>
       <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Can only some residents subscribe, not the whole building?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>Yes. There is no society-wide mandate. Each resident subscribes individually to whichever plan suits them. Residents who don't subscribe are unaffected, and anyone can join or cancel at any time.</p></div></div>
       <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">What does "lifetime free AMC" actually mean?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>For as long as you're a subscriber, ProWater covers all maintenance — filter replacements, dispenser repairs, system servicing, and spare parts. Zero additional charges. A dedicated technician handles everything with a same-day response SLA.</p></div></div>
       <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Is the security deposit refundable?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>Yes, 100%. The deposit (₹2,000 for Standard or ₹4,000 for Premium) is fully refunded on cancellation when the dispenser is returned in good condition. No deductions, no delays.</p></div></div>
@@ -2129,6 +2155,63 @@ function submitForm(){
 /* Reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px -12% 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* Hero keyword bubbles — slow swirl, one highlighted at a time */
+(function(){
+  function init(){
+    var orbit=document.getElementById('hbubOrbit');
+    if(!orbit) return;
+    var bubs=Array.prototype.slice.call(orbit.querySelectorAll('.hbub'));
+    if(!bubs.length) return;
+    var n=bubs.length;
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var active=0;
+
+    function dims(){
+      var w=window.innerWidth;
+      // rx = gentle horizontal sway, ry = tall vertical travel (top-to-bottom column)
+      if(w>=1500) return {rx:46,ry:210};
+      if(w>=1400) return {rx:40,ry:190};
+      return {rx:34,ry:170};
+    }
+    // place each bubble on a tall, narrow ellipse so they swirl top-to-bottom
+    function place(rot){
+      var d=dims();
+      for(var i=0;i<n;i++){
+        var ang=rot + (i*2*Math.PI/n);
+        var x=Math.sin(ang)*d.rx;  /* small side-to-side sway */
+        var y=Math.cos(ang)*d.ry;  /* large vertical travel */
+        bubs[i].style.left=x+'px';
+        bubs[i].style.top=y+'px';
+      }
+    }
+
+    // highlight cycle — only one active at a time
+    function setActive(idx){
+      for(var i=0;i<n;i++) bubs[i].classList.toggle('is-active', i===idx);
+    }
+    setActive(0);
+    setInterval(function(){
+      active=(active+1)%n;
+      setActive(active);
+    }, 2200);
+
+    if(reduce){
+      place(-Math.PI/2); /* static arc, first bubble at top */
+      return;
+    }
+    var t0=null, speed=0.00018; /* radians per ms — slow, classy swirl */
+    function frame(t){
+      if(t0===null) t0=t;
+      place(-Math.PI/2 + (t-t0)*speed);
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    window.addEventListener('resize',function(){ /* radius recomputed each frame, nothing needed */ },{passive:true});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
 
 /* Scroll-to-top button — appears after 50% of the page is scrolled */
 window.scrollToTop=function(){
