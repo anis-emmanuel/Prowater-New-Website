@@ -129,7 +129,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 /* Keyword bubbles — slow swirl in the hero center gap, one highlighted at a time */
 .hero-bubbles{display:none;}
 @media(min-width:1180px){
-  .hero-bubbles{display:block;position:absolute;top:0;bottom:0;left:0;right:0;z-index:0;pointer-events:none;overflow:visible;}
+  .hero-bubbles{display:block;position:absolute;top:0;bottom:0;left:0;right:0;z-index:0;pointer-events:none;overflow:hidden;}
   .hbub-orbit{position:absolute;top:46%;left:48%;width:0;height:0;}
   .hbub{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:.01em;white-space:nowrap;
     color:rgba(255,255,255,.42);background:rgba(255,255,255,.035);border:1px solid rgba(168,217,64,.14);backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(0,0,0,.14);
@@ -2169,10 +2169,10 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
     function dims(){
       var w=window.innerWidth;
-      // rx = gentle horizontal sway, ry = tall vertical travel (top-to-bottom column)
-      if(w>=1500) return {rx:46,ry:210};
-      if(w>=1400) return {rx:40,ry:190};
-      return {rx:34,ry:170};
+      // rx = gentle horizontal sway, ry = vertical travel (kept within hero bounds)
+      if(w>=1500) return {rx:44,ry:150};
+      if(w>=1400) return {rx:38,ry:138};
+      return {rx:32,ry:126};
     }
     // place each bubble on a tall, narrow ellipse so they swirl top-to-bottom
     function place(rot){
