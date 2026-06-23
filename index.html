@@ -813,6 +813,47 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   .promo-price{font-size:40px;}
 }
 @media(prefers-reduced-motion:reduce){.promo-pur,.promo-glow,.promo-burst,.promo-float,.pf-dot,.promo-bub{animation:none;}}
+
+/* ── EXIT-INTENT LEAD POPUP ── */
+.lead-overlay{position:fixed;inset:0;background:rgba(8,28,18,.74);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.lead-overlay.show{opacity:1;pointer-events:auto;}
+.lead-modal{position:relative;width:100%;max-width:440px;max-height:90vh;overflow-y:auto;background:#fff;border-radius:22px;box-shadow:0 40px 100px rgba(13,40,24,.32);transform:translateY(30px) scale(.96);transition:transform .4s cubic-bezier(.2,.9,.3,1.2);}
+.lead-overlay.show .lead-modal{transform:translateY(0) scale(1);}
+.lead-head{position:relative;background:linear-gradient(160deg,var(--f2),var(--f));padding:24px 26px 22px;overflow:hidden;}
+.lead-head::after{content:'';position:absolute;top:-70px;right:-50px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(168,217,64,.18),transparent 65%);}
+.lead-x{position:absolute;top:18px;right:18px;z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.16);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lead-x:hover{background:rgba(255,255,255,.28);}
+.lead-wave{font-size:28px;line-height:1;margin-bottom:8px;position:relative;z-index:2;display:inline-block;animation:leadWave 1.6s ease-in-out infinite;transform-origin:70% 70%;}
+@keyframes leadWave{0%,60%,100%{transform:rotate(0);}10%{transform:rotate(14deg);}20%{transform:rotate(-8deg);}30%{transform:rotate(14deg);}40%{transform:rotate(-4deg);}50%{transform:rotate(10deg);}}
+.lead-h{font-family:'Playfair Display',serif;font-size:25px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.5px;margin-bottom:10px;position:relative;z-index:2;}
+.lead-pills{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2;}
+.lead-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);color:#fff;font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:30px;}
+.lead-pill svg{width:12px;height:12px;fill:none;stroke:var(--teal2);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+.lead-body{padding:22px 26px 24px;}
+.lead-row{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px;}
+.lead-field{display:flex;flex-direction:column;}
+.lead-field.full{grid-column:1/-1;}
+.lead-field label{font-size:13px;font-weight:700;color:var(--f);margin-bottom:6px;}
+.lead-field label .req{color:#c0392b;}
+.lead-field input,.lead-field textarea{font-family:'Poppins',sans-serif;font-size:14px;color:var(--f);background:#fff;border:1.5px solid rgba(45,122,79,.22);border-radius:12px;padding:11px 14px;transition:border-color .2s,box-shadow .2s;width:100%;}
+.lead-field input::placeholder,.lead-field textarea::placeholder{color:#9aa9a0;}
+.lead-field input:focus,.lead-field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(45,122,79,.12);}
+.lead-field textarea{resize:vertical;min-height:52px;}
+.lead-field input[aria-invalid="true"],.lead-field textarea[aria-invalid="true"]{border-color:#c0392b;background:rgba(192,57,43,.04);}
+.lead-phone{display:flex;gap:10px;}
+.lead-cc{display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--f);background:var(--sky);border:1.5px solid rgba(45,122,79,.22);border-radius:12px;padding:0 15px;flex-shrink:0;}
+.lead-phone input{flex:1;}
+.lead-err{font-size:12px;color:#c0392b;min-height:14px;margin-top:5px;}
+.lead-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-family:'Poppins',sans-serif;font-size:15px;font-weight:800;padding:13px;border:none;border-radius:50px;cursor:pointer;margin-top:4px;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 28px rgba(45,122,79,.28);}
+.lead-submit:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(45,122,79,.4);}
+.lead-safe{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;}
+@media(max-width:560px){
+  .lead-head{padding:26px 24px 24px;}
+  .lead-h{font-size:26px;}
+  .lead-body{padding:24px 24px 26px;}
+  .lead-row{grid-template-columns:1fr;gap:16px;}
+}
+@media(prefers-reduced-motion:reduce){.lead-wave{animation:none;}}
 </style>
 </head>
 <body>
@@ -828,7 +869,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     <li><a href="#plans">Plans</a></li>
     <li><a href="#calculator">Savings</a></li>
     <li><a href="#faq">FAQ's</a></li>
-    <li><a href="#billing">Billing</a></li>
     <li><a href="https://prowater.in/rwa.html" target="_blank" class="rwa">For RWAs ↗</a></li>
   </ul>
   <a href="#contact" class="nav-btn">Get Started →</a>
@@ -841,7 +881,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   <a href="#plans" onclick="closeNav()">Plans</a>
   <a href="#calculator" onclick="closeNav()">Savings</a>
   <a href="#faq" onclick="closeNav()">FAQ's</a>
-  <a href="#billing" onclick="closeNav()">Billing</a>
   <a href="https://prowater.in/rwa.html" target="_blank" class="mob-rwa" onclick="closeNav()">For RWAs ↗</a>
   <a href="#contact" class="mob-cta" onclick="closeNav()">Get Started →</a>
 </div>
@@ -856,7 +895,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     <p class="hero-desc">Ditch your RO purifiers and plastic water cans today. Monthly subscriptions lower than your AMC.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-main">Upgrade your drinking water <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a href="#plans" class="btn-sec">See Plans</a>
+      <a href="#contact" class="btn-sec">See Plans</a>
     </div>
     <p class="hero-anchor">Plans from <strong>₹299/month</strong> · No upfront cost · Cancel anytime</p>
     <div class="hero-proof">
@@ -1289,7 +1328,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
             <td>Upfront Investment</td>
             <td class="cmp-regular"><span class="ci-yes">✓</span><br><span class="ci-val">None</span></td>
             <td class="cmp-regular"><span class="ci-no">✗</span><br><span class="ci-val bad">₹8K–25K</span></td>
-            <td class="cmp-regular"><span class="ci-warn">~</span><br><span class="ci-val warn">None</span></td>
+            <td class="cmp-regular"><span class="ci-no">✗</span><br><span class="ci-val bad">None</span></td>
             <td class="cmp-star"><span class="ci-yes">✓</span><br><span class="ci-val good">No investment</span></td>
           </tr>
           <tr>
@@ -1308,15 +1347,15 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           </tr>
           <tr>
             <td>Technician/Delivery Visit</td>
-            <td class="cmp-regular"><span class="ci-yes">✓</span><br><span class="ci-val">Thrice in a week</span></td>
+            <td class="cmp-regular"><span class="ci-no">✗</span><br><span class="ci-val bad">Thrice in a week</span></td>
             <td class="cmp-regular"><span class="ci-no">✗</span><br><span class="ci-val bad">Once in 6 Months</span></td>
             <td class="cmp-regular"><span class="ci-warn">~</span><br><span class="ci-val warn">On request</span></td>
             <td class="cmp-star"><span class="ci-yes">✓</span><br><span class="ci-val good">Not needed</span></td>
           </tr>
           <tr>
             <td>Live Water Quality</td>
-            <td class="cmp-regular"><span class="ci-warn">~</span><br><span class="ci-val warn">No</span></td>
-            <td class="cmp-regular"><span class="ci-warn">~</span><br><span class="ci-val warn">No</span></td>
+            <td class="cmp-regular"><span class="ci-no">✗</span><br><span class="ci-val bad">No</span></td>
+            <td class="cmp-regular"><span class="ci-no">✗</span><br><span class="ci-val bad">No</span></td>
             <td class="cmp-regular"><span class="ci-yes">✓</span><br><span class="ci-val">Partial</span></td>
             <td class="cmp-star"><span class="ci-yes">✓</span><br><span class="ci-val good">Certified + live TDS</span></td>
           </tr>
@@ -1352,7 +1391,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           <label class="calc-label">How do you get drinking water now?</label>
           <div class="calc-opts" id="calc-source">
             <button class="calc-opt active" data-src="jars">💧 20L Jars / Cans</button>
-            <button class="calc-opt" data-src="bottles">🧴 Bottled Water</button>
             <button class="calc-opt" data-src="ro">⚙️ Own RO Purifier</button>
           </div>
         </div>
@@ -1490,41 +1528,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   </div>
 </section>
 
-<!-- SOCIETIES -->
-<section class="sec" style="background:var(--sky)" id="societies">
-  <div class="soc-wrap rv">
-    <div style="text-align:center;margin-bottom:40px">
-      <div class="chip" style="justify-content:center">Now Serving</div>
-      <h2 class="sh2" style="text-align:center">Live in <em>50+ societies</em><br>across Bangalore</h2>
-      <p class="slead" style="text-align:center;margin:8px auto 0;max-width:480px">From HSR to Whitefield — ProWater is already flowing into homes across the city. Your society could be next.</p>
-    </div>
-
-    <div class="soc-areas rv stagger">
-      <div class="soc-area">
-        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>HSR Layout</div>
-        <div class="soc-list"><span>Ashish JK</span><span>Sai Poorna Premiere</span><span>CBR Akruti</span></div>
-      </div>
-      <div class="soc-area">
-        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Sarjapur Road</div>
-        <div class="soc-list"><span>MJR Clique Hydra</span><span>SVS Ananda</span><span>Prabhavati</span></div>
-      </div>
-      <div class="soc-area">
-        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Whitefield</div>
-        <div class="soc-list"><span>Brigade Cosmopolis</span><span>Prestige Shantiniketan</span><span>+ more</span></div>
-      </div>
-      <div class="soc-area">
-        <div class="soc-area-hd"><span class="soc-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Electronic City</div>
-        <div class="soc-list"><span>Concorde Manhattans</span><span>Gopalan Enterprises</span><span>+ more</span></div>
-      </div>
-    </div>
-
-    <div class="soc-cta">
-      <p>Don't see your society? <strong>We're expanding fast.</strong></p>
-      <a href="#contact" class="btn-main">Bring ProWater to your society →</a>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="sec" style="background:var(--sky)" id="faq">
   <div class="sec-inner">
@@ -1541,18 +1544,6 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   </div>
 </section>
 
-<!-- BILLING -->
-<section class="sec" style="background:var(--off)" id="billing">
-  <div class="sec-inner">
-    <div style="text-align:center;margin-bottom:44px"><div class="chip" style="justify-content:center">Billing</div><h2 class="sh2" style="text-align:center">Transparent billing.<br>No surprises.</h2><p class="slead" style="text-align:center;margin:8px auto 0;max-width:460px">Direct, flat-rate billing with no RWA involvement, no shared invoices, and no hidden charges.</p></div>
-    <div class="billing-cards rv stagger">
-      <div class="bc"><div class="bc-ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><h3>Direct to Resident</h3><p>Each subscribing household is billed directly by ProWater. The RWA has zero involvement in collection or reconciliation.</p></div>
-      <div class="bc"><div class="bc-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h3>Monthly or Annual</h3><p>Pay month-to-month for full flexibility, or choose annual and save up to 10%. Switch between billing cycles anytime.</p></div>
-      <div class="bc"><div class="bc-ic"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h3>100% Refundable Deposit</h3><p>The security deposit is fully refunded on cancellation when the dispenser is returned in good condition.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="sec" style="background:var(--off)" id="contact">
   <div class="sec-inner">
@@ -1562,8 +1553,8 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     <div class="contact-grid">
       <!-- Form -->
       <div class="contact-form-wrap">
-        <div class="cf-title">Are you a part of an Association?</div>
-        <div class="cf-sub">For more info — fill in your details and click below. We'll reach out within 24 hours.</div>
+        <div class="cf-title">Book your free site visit</div>
+        <div class="cf-sub">Want pure RO water piped to your home? Fill in your details and our team will reach out within 24 hours.</div>
         <div class="cf-row">
           <div class="cf-field"><label for="f-name">Your Name <span class="cf-req" aria-hidden="true">*</span></label><input type="text" placeholder="e.g. Rajesh Sharma" id="f-name" required aria-required="true" autocomplete="name" aria-describedby="f-name-err"><span class="cf-err" id="f-name-err" role="alert"></span></div>
           <div class="cf-field"><label for="f-phone">Phone Number <span class="cf-req" aria-hidden="true">*</span></label><input type="tel" placeholder="9538739904" id="f-phone" required aria-required="true" autocomplete="tel" inputmode="numeric" aria-describedby="f-phone-err"><span class="cf-err" id="f-phone-err" role="alert"></span></div>
@@ -1646,7 +1637,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           </div>
         </div>
       </div>
-      <div class="foot-col"><h4>Product</h4><ul><li><a href="#how">How It Works</a></li><li><a href="#plans">Plans & Pricing</a></li><li><a href="#faq">FAQ's</a></li><li><a href="#billing">Billing</a></li></ul></div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="#how">How It Works</a></li><li><a href="#plans">Plans & Pricing</a></li><li><a href="#faq">FAQ's</a></li></ul></div>
       <div class="foot-col"><h4>Policies</h4><ul><li><a href="https://prowater.in/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li><li><a href="https://prowater.in/cancellation-refund-policy" target="_blank" rel="noopener">Cancellation &amp; Refund Policy</a></li><li><a href="https://prowater.in/terms-of-service" target="_blank" rel="noopener">Terms of Service</a></li></ul></div>
     </div>
     <div class="foot-bottom">
@@ -1685,9 +1676,59 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Live TDS &amp; pH monitoring in the app</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Lifetime free service &amp; filter changes</li>
         </ul>
-        <a href="#plans" class="promo-cta" onclick="hidePromo()">Claim this plan &rarr;</a>
+        <a href="#contact" class="promo-cta" onclick="hidePromo()">Claim this plan &rarr;</a>
         <div class="promo-fine">No deposit · Cancel anytime · Installed in days</div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXIT-INTENT LEAD POPUP -->
+<div class="lead-overlay" id="leadOverlay" onclick="if(event.target===this)closeLead()">
+  <div class="lead-modal" role="dialog" aria-modal="true" aria-label="Book a free site visit">
+    <div class="lead-head">
+      <button class="lead-x" onclick="closeLead()" aria-label="Close">&times;</button>
+      <span class="lead-wave" aria-hidden="true">&#9995;</span>
+      <h3 class="lead-h">Wait! Before you go&hellip;</h3>
+      <div class="lead-pills">
+        <span class="lead-pill"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Zero setup cost</span>
+        <span class="lead-pill"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Response in 24 hrs</span>
+        <span class="lead-pill"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>1K+ households served</span>
+      </div>
+    </div>
+    <div class="lead-body">
+      <div class="lead-row">
+        <div class="lead-field">
+          <label for="lead-name">Name <span class="req">*</span></label>
+          <input type="text" id="lead-name" placeholder="Your name" autocomplete="name" aria-required="true" aria-describedby="lead-name-err">
+          <span class="lead-err" id="lead-name-err" role="alert"></span>
+        </div>
+        <div class="lead-field">
+          <label for="lead-phone">Mobile Number <span class="req">*</span></label>
+          <div class="lead-phone">
+            <span class="lead-cc">+91</span>
+            <input type="tel" id="lead-phone" placeholder="10-digit number" autocomplete="tel" inputmode="numeric" maxlength="10" aria-required="true" aria-describedby="lead-phone-err">
+          </div>
+          <span class="lead-err" id="lead-phone-err" role="alert"></span>
+        </div>
+      </div>
+      <div class="lead-field full" style="margin-bottom:14px">
+        <label for="lead-soc">Society Name <span class="req">*</span></label>
+        <input type="text" id="lead-soc" placeholder="Your apartment / society name" autocomplete="organization" aria-required="true" aria-describedby="lead-soc-err">
+        <span class="lead-err" id="lead-soc-err" role="alert"></span>
+      </div>
+      <div class="lead-field full" style="margin-bottom:14px">
+        <label for="lead-addr">Address <span class="req">*</span></label>
+        <textarea id="lead-addr" rows="2" placeholder="Society address with city" autocomplete="street-address" aria-required="true" aria-describedby="lead-addr-err"></textarea>
+        <span class="lead-err" id="lead-addr-err" role="alert"></span>
+      </div>
+      <div class="lead-field full" style="margin-bottom:14px">
+        <label for="lead-pin">Pincode <span class="req">*</span></label>
+        <input type="text" id="lead-pin" placeholder="6-digit pincode" autocomplete="postal-code" inputmode="numeric" maxlength="6" aria-required="true" aria-describedby="lead-pin-err">
+        <span class="lead-err" id="lead-pin-err" role="alert"></span>
+      </div>
+      <button class="lead-submit" onclick="submitLead()">Book My Free Site Visit &#127968;</button>
+      <p class="lead-safe">&#128274; Your details are safe with us</p>
     </div>
   </div>
 </div>
@@ -1743,6 +1784,52 @@ function promoConfetti(){
   function arm(){setTimeout(fire,10000);}
   if(document.readyState==='complete')arm();else window.addEventListener('load',arm);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closePromo();});
+})();
+
+/* Exit-intent lead popup */
+function openLead(){var o=document.getElementById('leadOverlay');if(o){o.classList.add('show');var f=document.getElementById('lead-name');if(f)setTimeout(function(){f.focus();},420);}}
+function closeLead(){var o=document.getElementById('leadOverlay');if(o)o.classList.remove('show');}
+function leadShowErr(id,msg){var el=document.getElementById(id+'-err');var inp=document.getElementById(id);if(el)el.textContent=msg||'';if(inp)inp.setAttribute('aria-invalid',msg?'true':'false');}
+function submitLead(){
+  var name=document.getElementById('lead-name').value.trim();
+  var phone=document.getElementById('lead-phone').value.trim();
+  var soc=document.getElementById('lead-soc').value.trim();
+  var addr=document.getElementById('lead-addr').value.trim();
+  var pin=document.getElementById('lead-pin').value.trim();
+  var ok=true;
+  leadShowErr('lead-name', name?'':'Please enter your name'); if(!name)ok=false;
+  if(!/^[6-9]\d{9}$/.test(phone)){leadShowErr('lead-phone','Enter a valid 10-digit mobile number');ok=false;}else{leadShowErr('lead-phone','');}
+  leadShowErr('lead-soc', soc?'':'Please enter your society name'); if(!soc)ok=false;
+  leadShowErr('lead-addr', addr?'':'Please enter your society address'); if(!addr)ok=false;
+  if(!/^\d{6}$/.test(pin)){leadShowErr('lead-pin','Enter a valid 6-digit pincode');ok=false;}else{leadShowErr('lead-pin','');}
+  if(!ok)return;
+  var msg='Hi ProWater! I\u2019d like to book a FREE site visit.\n\n'
+    +'\u2022 Name: '+name+'\n'
+    +'\u2022 Mobile: +91 '+phone+'\n'
+    +'\u2022 Society: '+soc+'\n'
+    +'\u2022 Address: '+addr+'\n'
+    +'\u2022 Pincode: '+pin;
+  closeLead();
+  wcLaunch(msg);
+}
+(function(){
+  var shown=false;
+  try{shown=sessionStorage.getItem('pw_lead')==='1';}catch(e){}
+  function fire(){
+    if(shown)return;
+    var po=document.getElementById('promoOverlay');
+    if(po&&po.classList.contains('show'))return; // don't stack on the plan popup
+    shown=true;
+    try{sessionStorage.setItem('pw_lead','1');}catch(e){}
+    openLead();
+  }
+  // Desktop: trigger when the cursor leaves the top of the viewport (exit intent)
+  document.addEventListener('mouseout',function(e){
+    if(!e.relatedTarget&&!e.toElement&&e.clientY<=0)fire();
+  });
+  // Mobile / fallback: trigger after 35s if nothing else has shown it
+  setTimeout(fire,35000);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLead();});
 })();
 
 /* Billing */
@@ -2005,7 +2092,8 @@ function submitForm(){
     }
 
     if(source==='ro'){
-      elEco.innerHTML='\u2699\uFE0F No more filter changes, servicing, or electricity bills \u2014 <strong>all on us</strong>.';
+      var litresSaved=people*3650; // ~10L of RO reject water saved per person per day
+      elEco.innerHTML='\uD83D\uDCA7 Plus you\u2019ll save <strong>~'+litresSaved.toLocaleString('en-IN')+' litres</strong> of water a year that a home RO would waste as reject water.';
     } else {
       var jars=people*jarsPerPersonYr;
       elEco.innerHTML='\uD83C\uDF31 Plus you\u2019ll eliminate <strong>~'+jars.toLocaleString('en-IN')+' plastic jars</strong> from landfills every year.';
