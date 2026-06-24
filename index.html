@@ -817,41 +817,41 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
 /* ── EXIT-INTENT LEAD POPUP ── */
 .lead-overlay{position:fixed;inset:0;background:rgba(8,28,18,.74);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s ease;}
 .lead-overlay.show{opacity:1;pointer-events:auto;}
-.lead-modal{position:relative;width:100%;max-width:440px;max-height:90vh;overflow-y:auto;background:#fff;border-radius:22px;box-shadow:0 40px 100px rgba(13,40,24,.32);transform:translateY(30px) scale(.96);transition:transform .4s cubic-bezier(.2,.9,.3,1.2);}
+.lead-modal{position:relative;width:100%;max-width:420px;max-height:88vh;overflow-y:auto;background:#fff;border-radius:20px;box-shadow:0 40px 100px rgba(13,40,24,.32);transform:translateY(30px) scale(.96);transition:transform .4s cubic-bezier(.2,.9,.3,1.2);}
 .lead-overlay.show .lead-modal{transform:translateY(0) scale(1);}
-.lead-head{position:relative;background:linear-gradient(160deg,var(--f2),var(--f));padding:24px 26px 22px;overflow:hidden;}
+.lead-head{position:relative;background:linear-gradient(160deg,var(--f2),var(--f));padding:22px 24px 20px;overflow:hidden;}
 .lead-head::after{content:'';position:absolute;top:-70px;right:-50px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(168,217,64,.18),transparent 65%);}
 .lead-x{position:absolute;top:18px;right:18px;z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.16);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
 .lead-x:hover{background:rgba(255,255,255,.28);}
-.lead-wave{font-size:28px;line-height:1;margin-bottom:8px;position:relative;z-index:2;display:inline-block;animation:leadWave 1.6s ease-in-out infinite;transform-origin:70% 70%;}
+.lead-wave{font-size:26px;line-height:1;margin-bottom:8px;position:relative;z-index:2;display:inline-block;animation:leadWave 1.6s ease-in-out infinite;transform-origin:70% 70%;}
 @keyframes leadWave{0%,60%,100%{transform:rotate(0);}10%{transform:rotate(14deg);}20%{transform:rotate(-8deg);}30%{transform:rotate(14deg);}40%{transform:rotate(-4deg);}50%{transform:rotate(10deg);}}
-.lead-h{font-family:'Playfair Display',serif;font-size:25px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.5px;margin-bottom:10px;position:relative;z-index:2;}
-.lead-pills{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2;}
+.lead-h{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.5px;margin-bottom:10px;position:relative;z-index:2;}
+.lead-pills{display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:2;}
 .lead-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);color:#fff;font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:30px;}
-.lead-pill svg{width:12px;height:12px;fill:none;stroke:var(--teal2);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
-.lead-body{padding:22px 26px 24px;}
+.lead-pill svg{width:13px;height:13px;fill:none;stroke:var(--teal2);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+.lead-body{padding:20px 24px 22px;}
 .lead-row{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px;}
 .lead-field{display:flex;flex-direction:column;}
 .lead-field.full{grid-column:1/-1;}
-.lead-field label{font-size:13px;font-weight:700;color:var(--f);margin-bottom:6px;}
+.lead-field label{font-size:13px;font-weight:700;color:var(--f);margin-bottom:5px;}
 .lead-field label .req{color:#c0392b;}
-.lead-field input,.lead-field textarea{font-family:'Poppins',sans-serif;font-size:14px;color:var(--f);background:#fff;border:1.5px solid rgba(45,122,79,.22);border-radius:12px;padding:11px 14px;transition:border-color .2s,box-shadow .2s;width:100%;}
+.lead-field input,.lead-field textarea{font-family:'Poppins',sans-serif;font-size:14px;color:var(--f);background:#fff;border:1.5px solid rgba(45,122,79,.22);border-radius:12px;padding:10px 14px;transition:border-color .2s,box-shadow .2s;width:100%;}
 .lead-field input::placeholder,.lead-field textarea::placeholder{color:#9aa9a0;}
 .lead-field input:focus,.lead-field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(45,122,79,.12);}
-.lead-field textarea{resize:vertical;min-height:52px;}
+.lead-field textarea{resize:vertical;min-height:48px;}
 .lead-field input[aria-invalid="true"],.lead-field textarea[aria-invalid="true"]{border-color:#c0392b;background:rgba(192,57,43,.04);}
 .lead-phone{display:flex;gap:10px;}
-.lead-cc{display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--f);background:var(--sky);border:1.5px solid rgba(45,122,79,.22);border-radius:12px;padding:0 15px;flex-shrink:0;}
+.lead-cc{display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--f);background:var(--sky);border:1.5px solid rgba(45,122,79,.22);border-radius:12px;padding:0 14px;flex-shrink:0;}
 .lead-phone input{flex:1;}
 .lead-err{font-size:12px;color:#c0392b;min-height:14px;margin-top:5px;}
 .lead-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-family:'Poppins',sans-serif;font-size:15px;font-weight:800;padding:13px;border:none;border-radius:50px;cursor:pointer;margin-top:4px;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 28px rgba(45,122,79,.28);}
 .lead-submit:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(45,122,79,.4);}
 .lead-safe{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;}
 @media(max-width:560px){
-  .lead-head{padding:26px 24px 24px;}
-  .lead-h{font-size:26px;}
-  .lead-body{padding:24px 24px 26px;}
-  .lead-row{grid-template-columns:1fr;gap:16px;}
+  .lead-head{padding:20px 20px 18px;}
+  .lead-h{font-size:21px;}
+  .lead-body{padding:18px 20px 20px;}
+  .lead-row{grid-template-columns:1fr;gap:14px;}
 }
 @media(prefers-reduced-motion:reduce){.lead-wave{animation:none;}}
 </style>
@@ -894,7 +894,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     <h1 class="hero-h1">Purified water straight<br>to your <span class="ac">kitchen</span><span class="ac2">.</span></h1>
     <p class="hero-desc">Ditch your RO purifiers and plastic water cans today. Monthly subscriptions lower than your AMC.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-main">Upgrade your drinking water <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#contact" class="btn-main" onclick="event.preventDefault();openLead(true);">Upgrade your drinking water <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="#contact" class="btn-sec">See Plans</a>
     </div>
     <p class="hero-anchor">Plans from <strong>₹299/month</strong> · No upfront cost · Cancel anytime</p>
@@ -1209,7 +1209,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
       </div>
 
     </div><!-- hw-wrap -->
-    <div style="text-align:center;margin-top:40px"><a href="#contact" class="btn-main">Get Started Today →</a></div>
+    <div style="text-align:center;margin-top:40px"><a href="#contact" class="btn-main" onclick="event.preventDefault();openLead(true);">Get Started Today →</a></div>
   </div>
 </section>
 
@@ -1362,7 +1362,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
         </tbody>
       </table>
     </div>
-    <div style="text-align:center;margin-top:36px"><a href="#contact" class="btn-main">Switch to ProWater →</a></div>
+    <div style="text-align:center;margin-top:36px"><a href="#contact" class="btn-main" onclick="event.preventDefault();openLead(true);">Switch to ProWater →</a></div>
   </div>
 </section>
 
@@ -1470,7 +1470,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
         <p class="hl-note">RO + UV removes bacteria, viruses &amp; heavy metals — verified, not promised.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:36px"><a href="#contact" class="btn-main">See it live in your home →</a></div>
+
   </div>
 </section>
 
@@ -1479,7 +1479,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   <div class="testi-wrap">
     <div class="chip">What customers say</div>
     <h2 class="sh2" style="margin-bottom:8px">Trusted by societies<br><em>across Bangalore</em></h2>
-    <p class="slead" style="margin-bottom:40px">Real words from customers and residents who switched.</p>
+    <p class="slead" style="margin-bottom:40px">Real words from RWA managers and residents who switched.</p>
     <div class="testi-carousel rv">
       <button class="testi-arrow testi-prev" id="testiPrev" aria-label="Previous reviews">‹</button>
       <div class="testi-viewport">
@@ -1524,7 +1524,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
       <div class="ts"><div class="ts-num">5K+</div><div class="ts-lbl">Happy Households</div></div>
       <div class="ts"><div class="ts-num">98%</div><div class="ts-lbl">Would Recommend</div></div>
     </div>
-    <div style="text-align:center;margin-top:36px"><a href="#contact" class="btn-main">Join them today →</a></div>
+
   </div>
 </section>
 
@@ -1602,7 +1602,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     <h2 class="cta-h">Your society deserves<br><em>better water.</em></h2>
     <p class="cta-p">Join 1,000+ households across Bangalore who enjoy clean, certified RO water piped straight to their kitchen taps — every single day.</p>
     <div class="cta-btns">
-      <a href="#contact" class="btn-main">Book a Free Site Visit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#contact" class="btn-main" onclick="event.preventDefault();openLead(true);">Book a Free Site Visit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="https://prowater.in/rwa.html" target="_blank" class="btn-sec">For RWAs ↗</a>
     </div>
   </div>
@@ -1688,8 +1688,8 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   <div class="lead-modal" role="dialog" aria-modal="true" aria-label="Book a free site visit">
     <div class="lead-head">
       <button class="lead-x" onclick="closeLead()" aria-label="Close">&times;</button>
-      <span class="lead-wave" aria-hidden="true">&#9995;</span>
-      <h3 class="lead-h">Wait! Before you go&hellip;</h3>
+      <span class="lead-wave" id="leadWave" aria-hidden="true">&#9995;</span>
+      <h3 class="lead-h" id="leadHeading">Wait! Before you go&hellip;</h3>
       <div class="lead-pills">
         <span class="lead-pill"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Zero setup cost</span>
         <span class="lead-pill"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Response in 24 hrs</span>
@@ -1741,19 +1741,12 @@ function closeNav(){document.getElementById('mob').classList.remove('open');}
 
 /* Marketing popup */
 var promoReengaged=false;
-function openPromo(){var o=document.getElementById('promoOverlay');if(o){o.classList.add('show');setTimeout(promoConfetti,260);}}
+function openPromo(){var l=document.getElementById('leadOverlay');if(l&&l.classList.contains('show'))return;var o=document.getElementById('promoOverlay');if(o){o.classList.add('show');setTimeout(promoConfetti,260);}}
 /* Plain hide — used when the user accepts the offer (no re-engagement) */
 function hidePromo(){var o=document.getElementById('promoOverlay');if(o){o.classList.remove('show');}}
-/* Dismiss — used when the user closes/ignores it; re-opens once after 1 min */
+/* Dismiss — used when the user closes/ignores it (no re-open) */
 function closePromo(){
   hidePromo();
-  if(!promoReengaged){
-    promoReengaged=true;
-    setTimeout(function(){
-      var ov=document.getElementById('promoOverlay');
-      if(ov && !ov.classList.contains('show')) openPromo();
-    },60000);
-  }
 }
 function promoConfetti(){
   var modal=document.querySelector('.promo-modal');if(!modal)return;
@@ -1777,6 +1770,10 @@ function promoConfetti(){
   try{shown=sessionStorage.getItem('pw_promo')==='1';}catch(e){}
   if(shown)return;
   function fire(){
+    // Don't fire if the lead popup has already engaged the user, or is open
+    var le=document.getElementById('leadOverlay');
+    try{if(sessionStorage.getItem('pw_lead')==='1')return;}catch(e){}
+    if(le&&le.classList.contains('show'))return;
     openPromo();
     try{sessionStorage.setItem('pw_promo','1');}catch(e){}
   }
@@ -1787,7 +1784,7 @@ function promoConfetti(){
 })();
 
 /* Exit-intent lead popup */
-function openLead(){var o=document.getElementById('leadOverlay');if(o){o.classList.add('show');var f=document.getElementById('lead-name');if(f)setTimeout(function(){f.focus();},420);}}
+function openLead(fromCTA){var p=document.getElementById('promoOverlay');if(p&&p.classList.contains('show')){if(fromCTA){p.classList.remove('show');}else{return;}}var o=document.getElementById('leadOverlay');if(o){var h=document.getElementById('leadHeading'),w=document.getElementById('leadWave');if(h&&w){if(fromCTA){h.innerHTML='Book your free site visit';w.innerHTML='&#128640;';}else{h.innerHTML='Wait! Before you go&hellip;';w.innerHTML='&#9995;';}}o.classList.add('show');var f=document.getElementById('lead-name');if(f)setTimeout(function(){f.focus();},420);}}
 function closeLead(){var o=document.getElementById('leadOverlay');if(o)o.classList.remove('show');}
 function leadShowErr(id,msg){var el=document.getElementById(id+'-err');var inp=document.getElementById(id);if(el)el.textContent=msg||'';if(inp)inp.setAttribute('aria-invalid',msg?'true':'false');}
 function submitLead(){
@@ -1823,12 +1820,16 @@ function submitLead(){
     try{sessionStorage.setItem('pw_lead','1');}catch(e){}
     openLead();
   }
-  // Desktop: trigger when the cursor leaves the top of the viewport (exit intent)
-  document.addEventListener('mouseout',function(e){
-    if(!e.relatedTarget&&!e.toElement&&e.clientY<=0)fire();
-  });
-  // Mobile / fallback: trigger after 35s if nothing else has shown it
-  setTimeout(fire,35000);
+  // Trigger only when the user scrolls down to the footer
+  var foot=document.querySelector('footer');
+  if(foot&&'IntersectionObserver'in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){fire();io.disconnect();}
+      });
+    },{threshold:0.25});
+    io.observe(foot);
+  }
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLead();});
 })();
 
