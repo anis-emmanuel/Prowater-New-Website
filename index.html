@@ -746,12 +746,49 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
 .hl-card{position:relative;background:#fff;border:1px solid rgba(45,122,79,.14);border-radius:20px;padding:30px 26px 26px;box-shadow:0 14px 40px rgba(22,84,92,.06);transition:transform .25s,box-shadow .25s;}
 .hl-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(22,84,92,.12);}
 .hl-live{position:absolute;top:18px;right:18px;display:flex;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:.1em;color:#2d7a4f;background:rgba(45,122,79,.1);padding:4px 9px;border-radius:20px;}
+.hl-apt{position:absolute;top:18px;left:26px;display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#6b8c75;max-width:55%;}
+.hl-apt svg{width:11px;height:11px;flex-shrink:0;fill:none;stroke:#6b8c75;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hl-apt span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hl-card .hl-metric{margin-top:14px;}
 .hl-pulse{width:7px;height:7px;border-radius:50%;background:#2d7a4f;box-shadow:0 0 0 0 rgba(45,122,79,.6);animation:pfBlink 1.8s infinite;}
 .hl-metric{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#1a5e38;margin-bottom:8px;}
 .hl-read{font-family:'Playfair Display',serif;font-size:46px;font-weight:900;color:var(--f);line-height:1;letter-spacing:-1.5px;margin-bottom:16px;}
-.hl-read i{font-style:normal;font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:var(--muted);margin-left:5px;letter-spacing:0;}
+.hl-read i{font-style:normal;font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:var(--hl);opacity:.75;margin-left:5px;letter-spacing:0;transition:color .4s ease;}
 .hl-bar{height:6px;border-radius:6px;background:rgba(45,122,79,.12);overflow:hidden;margin-bottom:16px;}
-.hl-bar span{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#2d7a4f,#7cb342);}
+.hl-bar span{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#2d7a4f,#7cb342);transition:width .5s ease,background .4s ease;}
+
+/* metric label now a flex row with an icon */
+.hl-metric{display:flex;align-items:center;gap:8px;}
+.hl-ic{display:inline-flex;width:22px;height:22px;flex-shrink:0;}
+.hl-ic svg{width:22px;height:22px;}
+.hl-ic-fill{transition:fill .4s ease;}
+.hl-ic-stroke,.hl-ic-check{stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s ease;}
+
+/* pH test strip: 5 segments, the active one lights up by value */
+.hl-strip{display:inline-flex;gap:2px;padding:3px;border-radius:4px;background:#eef3ee;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05);flex-shrink:0;}
+.hl-strip i{width:5px;height:16px;border-radius:1.5px;background:#d9e2da;transition:background .4s ease,box-shadow .4s ease;}
+/* default tints per segment so it reads like a pH chart */
+.hl-strip i:nth-child(1){background:#f0c3b0;}
+.hl-strip i:nth-child(2){background:#f2dcb0;}
+.hl-strip i:nth-child(3){background:#cfe6b8;}
+.hl-strip i:nth-child(4){background:#a9d99a;}
+.hl-strip i:nth-child(5){background:#bcd2ee;}
+.hl-strip i.on{box-shadow:0 0 0 1.5px #fff,0 0 6px 1px currentColor;transform:scaleY(1.18);}
+
+/* ── State colours: red / amber / green ── */
+.hl-card[data-state="green"]{--hl:#2d7a4f;--hl2:#7cb342;}
+.hl-card[data-state="amber"]{--hl:#c98a16;--hl2:#e6b422;}
+.hl-card[data-state="red"]{--hl:#c0392b;--hl2:#e74c3c;}
+
+.hl-card .hl-metric{color:var(--hl);}
+.hl-card .hl-read{color:var(--hl);transition:color .4s ease;}
+.hl-card .hl-bar span{background:linear-gradient(90deg,var(--hl),var(--hl2));}
+.hl-card .hl-ic-fill{fill:var(--hl);}
+.hl-card .hl-ic-stroke{stroke:#fff;}
+.hl-card .hl-ic-check{stroke:#fff;}
+.hl-card .hl-strip i.on{color:var(--hl);}
+.hl-card[data-state="amber"] .hl-note,
+.hl-card[data-state="red"] .hl-note{color:var(--hl);}
 .hl-note{font-size:13.5px;color:#4a6354;line-height:1.6;}
 @media(max-width:760px){.hl-grid{grid-template-columns:1fr;gap:16px;}}
 
@@ -1448,26 +1485,29 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
       <p class="slead" style="text-align:center;margin:10px auto 0;max-width:520px">Every glass is measured in real time. Check it live in the ProWater app — no guesswork.</p>
     </div>
     <div class="hl-grid rv stagger">
-      <div class="hl-card">
+      <div class="hl-card" id="hl-card-tds" data-state="green">
         <div class="hl-live"><span class="hl-pulse"></span>LIVE</div>
-        <div class="hl-metric">TDS</div>
+        <div class="hl-apt"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span id="hl-apt-tds">Prestige Lakeside</span></div>
+        <div class="hl-metric"><span class="hl-ic hl-ic-tds" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="hl-ic-fill" d="M12 2.5c4 5 6.5 8 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 10.5 8 7.5 12 2.5z"/><path class="hl-ic-stroke" d="M9.2 13.2a2.8 2.8 0 0 0 2.8 2.8" fill="none"/></svg></span>TDS</div>
         <div class="hl-read"><span id="hl-tds">142</span><i>ppm</i></div>
-        <div class="hl-bar"><span style="width:72%"></span></div>
-        <p class="hl-note">Total dissolved solids. Lower means cleaner — we keep it in the safe, great-tasting range.</p>
+        <div class="hl-bar"><span id="hl-bar-tds" style="width:72%"></span></div>
+        <p class="hl-note" id="hl-note-tds">Total dissolved solids. Lower means cleaner — we keep it in the safe, great-tasting range.</p>
       </div>
-      <div class="hl-card">
+      <div class="hl-card" id="hl-card-ph" data-state="green">
         <div class="hl-live"><span class="hl-pulse"></span>LIVE</div>
-        <div class="hl-metric">pH</div>
+        <div class="hl-apt"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span id="hl-apt-ph">Prestige Lakeside</span></div>
+        <div class="hl-metric"><span class="hl-strip" id="hl-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>pH</div>
         <div class="hl-read"><span id="hl-ph">7.4</span></div>
-        <div class="hl-bar"><span style="width:62%"></span></div>
-        <p class="hl-note">Balanced pH is gentle on your body. Ours stays close to neutral — never too acidic.</p>
+        <div class="hl-bar"><span id="hl-bar-ph" style="width:62%"></span></div>
+        <p class="hl-note" id="hl-note-ph">Balanced pH is gentle on your body. Ours stays close to neutral — never too acidic.</p>
       </div>
-      <div class="hl-card">
+      <div class="hl-card" id="hl-card-pur" data-state="green">
         <div class="hl-live"><span class="hl-pulse"></span>LIVE</div>
-        <div class="hl-metric">Purity</div>
+        <div class="hl-apt"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span id="hl-apt-pur">Prestige Lakeside</span></div>
+        <div class="hl-metric"><span class="hl-ic hl-ic-pur" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="hl-ic-fill" d="M12 2.5l7.5 3v5.5c0 4.7-3.2 8.5-7.5 10-4.3-1.5-7.5-5.3-7.5-10V5.5z"/><path class="hl-ic-check" d="M8.5 12.2l2.4 2.4 4.6-4.8" fill="none"/></svg></span>Purity</div>
         <div class="hl-read"><span id="hl-pur">99</span><i>%</i></div>
-        <div class="hl-bar"><span style="width:99%"></span></div>
-        <p class="hl-note">RO + UV removes bacteria, viruses &amp; heavy metals — verified, not promised.</p>
+        <div class="hl-bar"><span id="hl-bar-pur" style="width:99%"></span></div>
+        <p class="hl-note" id="hl-note-pur">RO + UV removes bacteria, viruses &amp; heavy metals — verified, not promised.</p>
       </div>
     </div>
 
@@ -2034,8 +2074,68 @@ function submitForm(){
       var ht=$('hl-tds'); if(ht) ht.textContent=d.tds;
       var hp=$('hl-ph'); if(hp) hp.textContent=d.ph;
       var hpr=$('hl-pur'); if(hpr) hpr.textContent=Math.round(parseFloat(d.pur));
+      var at=$('hl-apt-tds'); if(at) at.textContent=d.apt;
+      var ap=$('hl-apt-ph'); if(ap) ap.textContent=d.apt;
+      var au=$('hl-apt-pur'); if(au) au.textContent=d.apt;
+      paintHealth(d);
       els.forEach(function(e){ if(e) e.style.opacity=''; });
     },150);
+  }
+
+  // Map each metric value to a red/amber/green state + bar width, and light
+  // the matching pH-strip segment.
+  var COPY={
+    tds:{
+      green:'Total dissolved solids are low — clean, great-tasting water straight from your tap.',
+      amber:'TDS is creeping up — taste can start to suffer. ProWater\u2019s RO membrane pulls it back into the ideal range automatically.',
+      red:'High TDS means hardness and off-taste. ProWater\u2019s multi-stage RO strips it out so every glass stays clean and light.'
+    },
+    ph:{
+      green:'Balanced pH, gentle on your body — ProWater holds it close to neutral, never too acidic.',
+      amber:'pH is drifting from neutral. ProWater\u2019s mineral balancing nudges it back so the water never tastes flat or sharp.',
+      red:'Off-balance pH can taste sour or bitter. ProWater re-mineralises and corrects pH to a safe, neutral level.'
+    },
+    pur:{
+      green:'RO + UV removes bacteria, viruses & heavy metals — purity verified live, not just promised.',
+      amber:'Purity dipped slightly. ProWater\u2019s UV stage runs continuously to push it back above 99% — no action needed from you.',
+      red:'Purity below target signals contaminants. ProWater\u2019s RO + UV system kicks in to restore safe, drinkable water instantly.'
+    }
+  };
+  function paintHealth(d){
+    var setState=function(id,state){ var c=$(id); if(c) c.setAttribute('data-state',state); };
+    var setBar=function(id,pct){ var b=$(id); if(b) b.style.width=Math.max(4,Math.min(100,pct))+'%'; };
+    var setNote=function(id,html){ var n=$(id); if(n) n.innerHTML=html; };
+
+    // TDS: lower = better (RO range ~45–140 ppm)
+    var tds=d.tds;
+    var tState = tds<=80 ? 'green' : (tds<=120 ? 'amber' : 'red');
+    setState('hl-card-tds', tState);
+    setBar('hl-bar-tds', 100-((tds-45)/(140-45))*100); // fuller bar = lower TDS
+    setNote('hl-note-tds', COPY.tds[tState]);
+
+    // Purity: higher = better
+    var pur=parseFloat(d.pur);
+    var pState = pur>=99.3 ? 'green' : (pur>=98.9 ? 'amber' : 'red');
+    setState('hl-card-pur', pState);
+    setBar('hl-bar-pur', pur);
+    setNote('hl-note-pur', COPY.pur[pState]);
+
+    // pH: closeness to neutral. 6.9–7.6 here, all safe.
+    var ph=parseFloat(d.ph);
+    var dev=Math.abs(ph-7.2);
+    var phState = dev<=0.25 ? 'green' : (dev<=0.45 ? 'amber' : 'red');
+    setState('hl-card-ph', phState);
+    setBar('hl-bar-ph', 100-(dev/0.5)*60); // closer to neutral = fuller
+    setNote('hl-note-ph', COPY.ph[phState]);
+
+    // pH strip: light the segment matching the value across 6.9–7.6
+    var strip=$('hl-strip');
+    if(strip){
+      var seg=Math.round(((ph-6.9)/(7.6-6.9))*4); // 0..4
+      seg=Math.max(0,Math.min(4,seg));
+      var bars=strip.querySelectorAll('i');
+      for(var k=0;k<bars.length;k++){ bars[k].classList.toggle('on', k===seg); }
+    }
   }
 
   paint(readings[0]);
