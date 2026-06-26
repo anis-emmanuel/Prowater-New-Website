@@ -2147,27 +2147,28 @@ function submitForm(){
     var setBar=function(id,pct){ var b=$(id); if(b) b.style.width=Math.max(4,Math.min(100,pct))+'%'; };
     var setNote=function(id,html){ var n=$(id); if(n) n.innerHTML=html; };
 
+    // Cards always read green for brand consistency — the values, society name
+    // and bar widths still update live from the same feed as the hero panel;
+    // only the colour state is pinned to green.
+
     // TDS: lower = better (RO range ~45–140 ppm)
     var tds=d.tds;
-    var tState = tds<=80 ? 'green' : (tds<=120 ? 'amber' : 'red');
-    setState('hl-card-tds', tState);
+    setState('hl-card-tds', 'green');
     setBar('hl-bar-tds', 100-((tds-45)/(140-45))*100); // fuller bar = lower TDS
-    setNote('hl-note-tds', COPY.tds[tState]);
+    setNote('hl-note-tds', COPY.tds.green);
 
     // Purity: higher = better
     var pur=parseFloat(d.pur);
-    var pState = pur>=99.3 ? 'green' : (pur>=98.9 ? 'amber' : 'red');
-    setState('hl-card-pur', pState);
+    setState('hl-card-pur', 'green');
     setBar('hl-bar-pur', pur);
-    setNote('hl-note-pur', COPY.pur[pState]);
+    setNote('hl-note-pur', COPY.pur.green);
 
     // pH: closeness to neutral. 6.9–7.6 here, all safe.
     var ph=parseFloat(d.ph);
     var dev=Math.abs(ph-7.2);
-    var phState = dev<=0.25 ? 'green' : (dev<=0.45 ? 'amber' : 'red');
-    setState('hl-card-ph', phState);
+    setState('hl-card-ph', 'green');
     setBar('hl-bar-ph', 100-(dev/0.5)*60); // closer to neutral = fuller
-    setNote('hl-note-ph', COPY.ph[phState]);
+    setNote('hl-note-ph', COPY.ph.green);
 
     // pH strip: light the segment matching the value across 6.9–7.6
     var strip=$('hl-strip');
