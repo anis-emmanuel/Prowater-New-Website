@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | ProWater</title>
+<meta name="description" content="Privacy Policy for ProWater — piped RO water on subscription in Bangalore.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prowater.in/privacy-policy.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --f:#0d2818;--f2:#1a4d2e;
+  --teal:#2d7a4f;--teal2:#a8d940;--teal-g:#a8d940;
+  --sky:#e8f5ed;--lime:#a8d940;--gold:#f5c518;
+  --white:#fff;--off:#fafdf7;--slate:#2d4a35;--muted:#52735d;
+  --border:rgba(45,122,79,0.16);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px;}
+:focus:not(:focus-visible){outline:none;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--off);color:var(--f);overflow-x:hidden;}
+
+/* ── NAV (matches index.html) ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(45,122,79,0.12);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:8px;}
+.nav-brand{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);letter-spacing:-0.3px;}
+.nav-brand span{color:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--slate);text-decoration:none;padding:7px 13px;border-radius:8px;transition:all .18s;}
+.nav-links a:hover{background:var(--sky);color:var(--teal);}
+.nav-btn{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;font-size:13.5px;padding:9px 20px;border-radius:50px;text-decoration:none;transition:transform .18s,box-shadow .18s;}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,122,79,0.35);}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+.ham span{display:block;width:22px;height:2px;background:var(--f);border-radius:2px;transition:all .3s;}
+@media(max-width:860px){.nav-links{display:none;}.ham{display:flex;}}
+.mobmenu{display:none;position:fixed;top:66px;left:0;right:0;z-index:998;background:#fff;padding:16px 5% 28px;border-bottom:1px solid var(--border);flex-direction:column;gap:2px;}
+.mobmenu.open{display:flex;}
+.mobmenu a{padding:13px 4px;font-size:15px;font-weight:500;color:var(--slate);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.05);}
+.mobmenu a.mob-cta{margin-top:14px;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;padding:13px 20px;border-radius:50px;text-align:center;border:none;}
+
+/* ── POLICY HEADER ── */
+.policy-hero{background:var(--f);padding:112px 5% 56px;position:relative;overflow:hidden;}
+.policy-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-220px;right:-120px;background:radial-gradient(circle,rgba(168,217,64,0.12) 0%,transparent 70%);pointer-events:none;}
+.policy-hero-in{max-width:880px;margin:0 auto;position:relative;z-index:1;}
+.policy-bc{font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:18px;}
+.policy-bc a{color:var(--teal2);text-decoration:none;font-weight:600;}
+.policy-bc a:hover{text-decoration:underline;}
+.policy-chip{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal2);margin-bottom:14px;}
+.policy-chip::before{content:'';width:14px;height:2.5px;background:linear-gradient(90deg,var(--teal),var(--lime));border-radius:2px;display:block;}
+.policy-h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);font-weight:900;line-height:1.08;letter-spacing:-1px;color:#fff;margin-bottom:14px;}
+.policy-pub{font-size:13.5px;color:rgba(255,255,255,.55);}
+.policy-pub strong{color:rgba(255,255,255,.85);font-weight:600;}
+
+/* policy cross-nav pills */
+.policy-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.policy-tabs a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 16px;border-radius:50px;border:1px solid rgba(168,217,64,.25);background:rgba(168,217,64,.06);transition:all .2s;}
+.policy-tabs a:hover{color:#fff;border-color:rgba(168,217,64,.5);background:rgba(168,217,64,.12);}
+.policy-tabs a.active{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);border-color:transparent;}
+
+/* ── POLICY BODY ── */
+.policy-body{max-width:880px;margin:0 auto;padding:52px 5% 80px;}
+.policy-body .intro{margin-bottom:8px;}
+.policy-body h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:700;color:var(--f);letter-spacing:-.4px;margin:38px 0 14px;padding-top:8px;}
+.policy-body h2:first-child{margin-top:0;}
+.policy-body p{font-size:15px;line-height:1.8;color:var(--slate);margin-bottom:16px;}
+.policy-body p.muted-note{font-style:italic;color:var(--muted);font-size:14px;}
+.policy-body strong{color:var(--f);font-weight:600;}
+.policy-body a{color:var(--teal);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(45,122,79,.3);transition:color .2s,border-color .2s;}
+.policy-body a:hover{color:var(--f2);border-color:var(--teal);}
+.policy-body ul{list-style:none;margin:0 0 18px;padding:0;}
+.policy-body ul li{position:relative;font-size:15px;line-height:1.75;color:var(--slate);padding:0 0 11px 26px;}
+.policy-body ul li::before{content:'';position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-g));}
+
+/* legal callout box */
+.legal-note{background:var(--sky);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px;margin:20px 0;font-size:13px;line-height:1.7;font-weight:600;color:var(--f2);letter-spacing:.01em;}
+
+/* contact box */
+.contact-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:20px 0;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 28px rgba(45,122,79,.06);}
+.cb-row{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;}
+.cb-k{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);min-width:90px;}
+.cb-v{font-size:15px;font-weight:600;color:var(--f);}
+.cb-v a{color:var(--teal);text-decoration:none;border:none;}
+
+/* back-to-home strip */
+.policy-back{max-width:880px;margin:0 auto 0;padding:0 5%;}
+.policy-back a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--teal);text-decoration:none;}
+.policy-back a:hover{color:var(--f2);}
+
+/* ── FOOTER (matches index.html) ── */
+footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--border);}
+.footer-in{max-width:1180px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:44px;align-items:start;}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.foot-logo img{height:36px;width:36px;object-fit:contain;border-radius:8px;}
+.foot-brand-n{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);}
+.foot-brand-n span{color:var(--teal);}
+.foot-desc{font-size:13px;color:var(--slate);line-height:1.6;max-width:260px;margin-bottom:18px;}
+.foot-contact{display:flex;flex-direction:column;gap:10px;}
+.foot-contact a{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--slate);text-decoration:none;line-height:1.5;transition:color .2s;}
+.foot-contact a:hover{color:var(--teal);}
+.foot-contact svg{width:15px;height:15px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;flex-shrink:0;margin-top:2px;}
+.foot-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:18px;line-height:1.4;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.foot-col a{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{padding-top:24px;border-top:1px solid rgba(22,84,92,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px 28px;}.foot-brand{grid-column:1/-1;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.foot-bottom{justify-content:center;text-align:center;}}
+
+/* scroll-to-top */
+.scrolltop{position:fixed;bottom:28px;right:28px;z-index:1000;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(45,122,79,.4);opacity:0;visibility:hidden;transform:translateY(14px) scale(.9);transition:opacity .3s ease,transform .3s cubic-bezier(.34,1.4,.64,1),visibility .3s,box-shadow .2s;}
+.scrolltop.show{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
+.scrolltop:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 12px 28px rgba(45,122,79,.5);}
+.scrolltop svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:540px){.scrolltop{bottom:18px;right:18px;width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.scrolltop{transition:opacity .2s,visibility .2s;transform:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://play-lh.googleusercontent.com/b50YdSvf0KbXes4wVlajtFXD-21vEiHAO0ZmmDURL9uJNGYpbLht8KUNpeJxMPjzCksZLYjN-A3DuOWWvV7suUs=w240-h480-rw" alt="ProWater Logo" onerror="this.style.display='none'">
+    <span class="nav-brand">Pro<span>Water</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#plans">Plans</a></li>
+    <li><a href="index.html#calculator">Savings</a></li>
+    <li><a href="index.html#faq">FAQ's</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-btn">Get Started →</a>
+  <button class="ham" id="ham" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobmenu" id="mob">
+  <a href="index.html#home" onclick="closeNav()">Home</a>
+  <a href="index.html#plans" onclick="closeNav()">Plans</a>
+  <a href="index.html#calculator" onclick="closeNav()">Savings</a>
+  <a href="index.html#faq" onclick="closeNav()">FAQ's</a>
+  <a href="index.html#contact" class="mob-cta" onclick="closeNav()">Get Started →</a>
+</div>
+
+<header class="policy-hero">
+  <div class="policy-hero-in">
+    <div class="policy-bc"><a href="index.html">Home</a> &rsaquo; Privacy Policy</div>
+    <div class="policy-chip">Legal</div>
+    <h1 class="policy-h1">Privacy Policy</h1>
+    <div class="policy-pub">Published on: <strong>27 February 2026</strong></div>
+    <nav class="policy-tabs" aria-label="Policies"><a href="privacy-policy.html" class="active">Privacy Policy</a><a href="cancellation-refund-policy.html">Cancellation and Refund Policy</a><a href="terms-of-service.html">Terms of Service</a></nav>
+  </div>
+</header>
+
+<main class="policy-body">
+  <div class="intro"><p>Waterwala Labs Private Limited (ProWater), having its registered office at #15/B, 3rd Sector HSR Layout Bengaluru – 560102, Karnataka, India ("Company" or "we" or "us" or "our"), is the owner of the website domain at <a href="https://prowater.in/">https://prowater.in/</a> (referred as "Platform"); and any service availed by Users (hereinafter referred to as "you", "your" or "User") through the Platform is conditioned upon your acceptance of the terms and conditions contained in <a href="terms-of-service.html">Terms of Service</a> as available on Platform and this privacy policy ("Privacy Policy").</p>
+<div class="legal-note">THIS PRIVACY POLICY HAS BEEN DRAFTED AND PUBLISHED IN ACCORDANCE WITH THE INFORMATION TECHNOLOGY ACT 2000; THE INFORMATION TECHNOLOGY (AMENDMENT) ACT 2008; AND THE INFORMATION TECHNOLOGY (REASONABLE SECURITY PRACTICES AND PROCEDURES AND SENSITIVE PERSONAL DATA OR INFORMATION) RULES 2011. THIS PRIVACY POLICY CONSTITUTES A LEGAL AGREEMENT BETWEEN YOU, AS A USER OF THE PLATFORM AND US, AS THE OWNER OF THE PLATFORM. YOU MUST BE A NATURAL PERSON WHO IS AT LEAST 18 YEARS OF AGE.</div></div>
+  <h2>1. Introduction and Applicability of the Privacy Policy</h2>
+<p>We are strongly committed to respecting your online privacy and recognize the need for appropriate protection and management of any personal information collected and/or collated by us.</p>
+<p>The purpose of this Privacy Policy is to ensure that there is an intact charter to collect, use and protect any personal and/or sensitive data collected by us. This Policy defines our procedure for collection, usage, processing, disclosure and protection of any information obtained by us through the Platform.</p>
+<p>Any reference made to Privacy Policy in this document shall mean and refer to the latest version of the Privacy Policy. We provide this notice before collecting your data, as required by DPDPA. It includes categories of data, purposes, your rights, and how to contact us.</p>
+<h2>2. Disclaimer</h2>
+<p>Please be advised that any Information (as defined herein below) procured by us, shall be:</p>
+<ul><li>Processed fairly and lawfully for rendering the Services (as defined in <a href="terms-of-service.html">Terms of Service</a>);</li><li>Obtained only for specified and lawful purposes, and not be used in any manner which is against the law or policy in force in India ("Applicable Law");</li><li>Adequate, relevant and not excessive in relation to the purpose for which it is required;</li><li>Able to be reviewed by the User, from time to time and updated—if need arises; and</li><li>Not kept longer than for the time which it is required or the purpose for which it is required or as required by the applicable law.</li><li>Protected against unauthorized access, alteration, disclosure, or destruction, using appropriate technical and organizational measures. Used only by authorized personnel on a need-to-know basis in order to provide, improve, or maintain the Services;</li></ul>
+<p class="muted-note">Subject to compliance with any rights of the User under applicable data protection laws, including the right to access, correct, or request deletion of their personal information.</p>
+<div class="legal-note">WE SHALL NOT BE LIABLE FOR ANY LOSS OR DAMAGE SUSTAINED BY REASON OF ANY DISCLOSURE (INADVERTENT OR OTHERWISE) OF ANY DATA, IF THE SAME IS EITHER (A) REQUIRED FOR SHARING YOUR INFORMATION FOR LEGITIMATE PURPOSES; OR (B) WAS AFFECTED THROUGH NO FAULT, ACT, OR OMISSION OF THE COMPANY. BY USING THE SERVICES, YOU EXPLICITLY ACCEPT, WITHOUT LIMITATION OR QUALIFICATION, THE COLLECTION, USE AND TRANSFER OF THE DATA IN THE MANNER DESCRIBED HEREIN.</div>
+<div class="legal-note">PLEASE READ THIS PRIVACY POLICY CAREFULLY AS IT AFFECTS YOUR RIGHTS AND LIABILITIES UNDER LAW.</div>
+<h2>3. Your Consent</h2>
+<p>Please note that by providing the Information (as enumerated upon herein below), you provide your consent and authorize us to collect, use or disclose such Information for the business and research purposes and as stated in this Privacy Policy, the <a href="terms-of-service.html">Terms of Service</a> and as permitted or required by applicable law. Moreover, you understand and hereby consent that this Information may be transferred to any third-party user for the purpose of providing Services through the Platform or to any third-party providers for rendering Services (as defined in the <a href="terms-of-service.html">Terms of Service</a>), any jointly developed or marketed services, payment processing, order fulfilment, customer services, data analysis, information technology services and such other services which enable us to provide Services through the Platform. You agree to periodically review this Privacy Policy to remain informed about how your Information is used, shared, and protected.</p>
+<p>This Privacy Policy shall be enforceable against you in the same manner as any other written agreement. By visiting or accessing the Platform and voluntarily providing us with Information (including Personal Data), you are consenting to our use of the Information, in accordance with this Privacy Policy. If you do not agree with this Privacy Policy, you may refuse or withdraw your consent any time or alternatively choose to not provide us with any Personal Information. Withdrawal of consent does not affect the legality of any processing performed prior to such withdrawal. Under such circumstance, we may be unable to render Services.</p>
+<p class="muted-note">Such an intimation to withdraw your consent can be sent to <a href="mailto:support@prowater.in">support@prowater.in</a></p>
+<h2>4. Types of Information Collected by Us</h2>
+<p>"Personal Data" means and includes any Information that relates to a natural person through which an individual is identified, such as the name, contact details, email address, gender, age, organisation name, organisation email id, demographic information such as address and pin code, any photo identity or any other information relevant to product choice and preferences provided by a User, including but not limited to information gathered through availing Services.</p>
+<p>"Sensitive Personal Data" means and includes information relating to; (i) government ID cards; (ii) financial information such as bank account or credit card or debit card or other payment instrument details; and (iii) any detail relating to the above-mentioned points as provided to us for using the Platform. (iv) authentication data (such as OTPs, PINs, or passwords), to the extent collected for providing services.</p>
+<p>"Technical Information" means and includes any Information gathered through various technologies that may employ cookies, web beacons, or similar technologies to automatically record certain information from your device through which you use the Platform. This technical information may include your Internet Protocol (IP) address, device or browser type, Internet service provider (ISP), referring or exit pages, clickstream data, operating system, hardware model, operating system version, unique device identifiers, and mobile network. This data includes usage information and user statistics.</p>
+<p>"Locational Information" shall mean and include the information obtained through GPS, whether collected via mobile device, Wi-Fi, or network triangulation or other means, such as the geographical location of the User.</p>
+<p>"Information through use of our service" means and includes information which is shared with us to avail our Services.</p>
+<p>"Non-Personal Information" means and includes any information that does not reveal your specific identity, such as, browser information, information collected through Cookies (as defined below), pixel tags and other technologies, demographic information, etc. As is true with most websites, our Company gathers some information automatically when you visit the Platform. When you use the Platform, we may collect certain information about your computer or mobile to facilitate, evaluate and verify your use of the Platform. For example, we may store environmental variables, such as browser type, operating system, speed of the central processing unit (CPU), referring or exit web pages, click patterns and the internet protocol (IP) address of your computer. This information is generally collected in aggregate form, without identifying any user individually.</p>
+<p class="muted-note">(The Sensitive Data, Technical Information, Locational Information and Non-Personal Information are collectively referred to as "Information").</p>
+<h2>5. Purpose of Collection and Usage of this Information</h2>
+<p>The data collected by us shall be used for availing our Services and utilised for other functions including but not limited to:</p>
+<ul><li>To render Services (as defined in the <a href="terms-of-service.html">Terms of Service</a>); and maintaining the Platform;</li><li>To evaluate the quality and competence of our personnel;</li><li>To resolve any complaints you may have and ensure that you receive the highest quality of Services;</li><li>Notifying you about changes to our Platform;</li><li>Allowing you to participate in interactive features of our Platform when you choose to do so;</li><li>Providing analysis or valuable information so that we can improve the Platform;</li><li>Monitoring the usage of the Platform;</li><li>Detecting, preventing and addressing technical issues;</li><li>Analyse usage patterns;</li><li>Improve user experience;</li><li>Notify you about new products and features.</li></ul>
+<p><strong>Business or Research Purposes:</strong> The Information saved, except Sensitive Personal Information, is used for business or research purposes, including improving and customizing the Platform for ease of use and the products and services offered by us. We may archive this information to use it for future communications for providing updates and/or surveys.</p>
+<p><strong>Aggregating Information / Anonymized data:</strong> We may aggregate Information and analyse it in a manner to further accentuate the level of services that we offer to our customers. This Information includes average number of Users of the Platform, the average clicks of the services, the features used, the response rate, etc. and other such statistics regarding groups or individuals. In doing so, we shall not be making disclosures of any Sensitive Personal Information as defined above. We process data only for these specified purposes (purpose limitation under DPDPA). If we need to use it for a new purpose, we'll seek fresh consent.</p>
+<h2>6. Disclosure and Sharing of Information</h2>
+<p>We do not rent, sell or disclose or share any Information that we collect from you, with third parties, save and except in order to provide you with the Services. Any such disclosure, if made, shall be in accordance to this Privacy Policy and as per the procedure prescribed by law and in compliance with our legal obligations. We may share your Information in circumstances and for the purposes as specified hereunder:</p>
+<p>We shall share the information to the third-party service providers/vendors, to provide you with the Services. When compelled by law: We may disclose any Information provided by you on the Platform as may be deemed to be necessary or appropriate:</p>
+<ul><li>Under applicable law, including laws outside your country of residence, to comply with legal process;</li><li>To respond to requests from public and government authorities including public and government authorities outside your country of residence;</li><li>To protect our operations or those of any of our affiliates;</li><li>To protect our rights, privacy, safety or property, and/or that of our affiliates, you or others;</li><li>To allow us to pursue available remedies or limit the damages that we may sustain; or</li><li>To protect against legal liability;</li><li>To protect the personal safety of Users of the Platform;</li><li>To prevent or investigate possible wrongdoing in connection with the Platform.</li></ul>
+<p><strong>Merger or Acquisition:</strong> We may share Information upon merger or acquisition of Company with another company. We shall transmit and transfer the Information upon acquisition or merger of Company with another company.</p>
+<p><strong>With our service providers:</strong> We may share Information with other service providers on a need-to-know basis, subject to obligations of confidentiality for provision of Services. We hereby clarify that Company works with institutions, vendors, partners, advertisers, and other service providers, including (but not limited) to those who provide products or services such as contact Information verification, website hosting, data analysis, providing infrastructure, information technology services, auditing services and other similar services, in different industries and categories of business by virtue of lawful contracts instituted between such third parties and Company to improve our product and services. Accordingly, we may share your Information with such service provider in order to provide you with Services.</p>
+<p><strong>Employees/Agents of Company:</strong> We follow a strict confidentiality policy with regard to disclosure of confidential information to our employees or other personnel who require access to perform their duties or deliver the Service. There may be situations, where we may disclose the confidential information only to those of our employees and other personnel on a need-to-know basis. Any breach of confidential information by the employees, personnel within the Company is dealt with stringently by us.</p>
+<p>Except for the Information disclosed pursuant to sub-clause (a), (b), (c), (d) and (e) of Clause 6.1 above, Company may share Information only if you authorize us to do so.</p>
+<h2>7. Transfer of Information</h2>
+<p>Your information may be transferred to, and maintained on, computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those from your jurisdiction.</p>
+<p>If you are located outside India and choose to provide information to us, please note that we may transfer the data to India to process the Information.</p>
+<p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+<p>We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your data will take place to an organization or a country unless there are adequate controls in place including the security of your data.</p>
+<h2>8. Your Rights</h2>
+<p>You can always choose not to provide the requested information to us, it may however result in you not availing certain features of, or the entire, of our Services. You retain several rights in relation to your Personal Information as provided under applicable law. These may include the rights to:</p>
+<ul><li>Access, confirm, and review Sensitive Information you may have provided;</li><li>Correct Sensitive Information that may be inaccurate or irrelevant;</li><li>Deletion and erasure of your Sensitive Information from the publicly available pages of the Platform (right to be forgotten);</li><li>Receive Sensitive Information we hold about you in a portable format;</li><li>Object to or restrict any form of processing you may not be comfortable with;</li><li>Nominate another person to exercise your rights in case of death or incapacity.</li></ul>
+<p>In order to exercise these rights, please contact us on the email address provided in Clause 3 above. If you want to withdraw your consent or raise any objection to the use of your information for receiving any direct marketing information to which you previously opted-in, you can do so by contacting our customer support at the above-mentioned addresses. If you withdraw/object your consent, our use of your information before you withdrew/objected shall still be lawful. We will respond to rights requests within 30 days, as per DPDPA, unless exceptions apply (e.g., legal obligations). No fees for standard requests.</p>
+<h2>9. Children's Policy</h2>
+<p>Our Services are not meant for use by children and we knowingly do not collect Information of/from children. If it comes to our notice that we have collected Information from/of children, we shall take steps to remove such Information from our servers. If you believe that we might have any Information that may have been collected from a child or has been provided by a child, please write to us at the email id provided in Clause 3.</p>
+<h2>10. Control the Collection or Use of the Information</h2>
+<p>If you have any reservations, constraints or apprehensions regarding the access to, collection, storage, or any other use of the Information which you have provided to us, you may withdraw your consent in the manner as set out in Clause 3 above.</p>
+<h2>11. Retention of Information</h2>
+<p>All Information provided by you, save and except upon withdrawal or termination, shall be retained in locations outside the direct control of Company (for instance, on servers or databases co-located with hosting providers). We will delete Information based on a request received from you within a reasonable period and latest within 90 (ninety) days of receiving a deletion request. However, we may retain such portion of Information and for such periods as may be required under Applicable Law. Notwithstanding anything contained herein, Company may retain data after account deletion for reasons including but not limited to the following purposes: if there is an unresolved issue relating to your account, or an unresolved claim or dispute; if we are required to by applicable law; and/or in aggregated and/or anonymized form; or Company may also retain certain information if necessary for its legitimate business interests, such as fraud prevention and enhancing Users' safety and security.</p>
+<h2>12. Cookies and Other Tracking Technologies</h2>
+<p>Our Platform may utilize "cookies" and other Technical Information. "Cookies" are a small text file consisting of alphanumeric numbers used to collect the Information about Platform activity. The Technical Information helps us analyse web traffic and helps you by customizing the Platform to your preferences. Cookies in no way give us access to your computer or mobile device. In relation to Cookies, you can deny access to the installation of the Cookies by modifying the settings on your web browser, however, this may prevent you from taking full advantage of the Platform.</p>
+<p>Our use of Cookies and Technical Information allows us to improve the Platform and your experience of the Platform and Services. We may also analyse Technical Information that does not contain Sensitive Personal Information for trends and statistics.</p>
+<h2>13. Third Party Services</h2>
+<p>We may use your Information to send you promotional Information about third parties which we think you may find interesting, if you tell us that you wish this to happen. We shall not be responsible for any disclosure of Information due to unauthorized third-party access or other acts of third parties or acts or omissions beyond our reasonable control and you agree that you will not hold us responsible for any breach of security unless such breach has been caused as a direct result of our negligence or wilful default. We use support services of third-party platforms and/or companies to direct you to payment gateways when you opt to pay for our Services. Your financial information is collected, stored and retained by such third-party platforms. We and such third-party platforms undertake measures designed to provide a security level that is appropriate to the risks of processing your personal information. However, you are requested to check and consent to the "Privacy Policy" of such third-party platforms in order to accept how such third-party platforms handle your information.</p>
+<p>We do not control the security practices of third-party platforms and are not responsible for any breach or misuse of information by such third parties. You have the option to opt out of promotional communications from third parties at any time by following the unsubscribe instructions provided in such communications.</p>
+<h2>14. Data Security</h2>
+<p>You agree and accept that your Information may be stored in third-party cloud service infrastructure providers. While all reasonable attempts have been taken from our end to ensure the safe and secure storage of your data, we shall not be liable for any data breach on the part of the third-party cloud service infrastructure provider that was beyond our control. In addition to the security measures put in place by the third-party cloud service infrastructure provider for safe and secure storage of your Information, we use certain physical, managerial, technical or operational safeguards as per industry standards and established best practices to protect the Information we collect. We use reasonable security practices and procedures and use secure servers as mandated under applicable laws for the protection of your Information. We review our Information collection, storage, and processing practices, including physical security measures to guard against unauthorized access to systems. However, as effective as these measures are, no security system is impenetrable. We cannot guarantee the security of our database, nor can we guarantee that the Information you supply will not be intercepted while being transmitted to us over the internet. You accept the inherent security implications of data transmission over the internet and the internet cannot always be guaranteed as completely secure. Therefore, your use of the Platform will be at your own risk. If you have any concerns, please feel free to contact us at the details given in Clause 3 above.</p>
+<h2>15. Changes and Updates to Policy</h2>
+<p>We may modify or revise the Privacy Policy from time to time and shall accordingly notify you of any changes to the Privacy Policy by posting the revised Privacy Policy on the Platform with an updated date of revision. We shall endeavour to review, revise, update, modify, amend or correct the Privacy Policy on a regular and routine basis, especially whenever a significant update is made to the technology employed by us. You must periodically review the Privacy Policy for the latest information on our privacy practices. In the event you continue to use the Platform and our services after any update in the Privacy Policy, your use of the Platform shall be subject to such updated privacy policy. Your continued usage of Services after any amendment would deem to mean that you accept and understand the revised Privacy Policy. Further, we retain the right at any time to deny or suspend access to all, or any part of, the service to anyone who we reasonably believe has violated any provision of this Privacy Policy.</p>
+<h2>16. Discrepancies and Grievances with Company</h2>
+<p>In case of any discrepancy or grievance with respect to all or any Information shared with Company, please feel free to contact our Grievance Officer:</p>
+<div class="contact-box"><div class="cb-row"><span class="cb-k">Attention</span><span class="cb-v">Arun Kumar</span></div><div class="cb-row"><span class="cb-k">Email ID</span><span class="cb-v"><a href="mailto:support@prowater.in">support@prowater.in</a></span></div><div class="cb-row"><span class="cb-k">Address</span><span class="cb-v">#15/B, 19th Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</span></div></div>
+<p>We assure you that we shall ensure implementation of the Privacy Policy and shall make the Privacy Policy available to individuals and put our best efforts to redress the grievances of the User expeditiously within <strong>thirty (30) days</strong> from the date of receipt of the grievance.</p>
+<p>Please feel free to reach out to us by e-mail at <a href="mailto:support@prowater.in">support@prowater.in</a> in case of any concerns, grievances, or questions relating to our privacy or data related practices.</p>
+<h2>17. Miscellaneous</h2>
+<div class="legal-note">THE INVALIDITY OR UNENFORCEABILITY OF ANY PART OF THIS PRIVACY POLICY SHALL NOT PREJUDICE OR AFFECT THE VALIDITY OR ENFORCEABILITY OF THE REMAINDER OF THIS PRIVACY POLICY. THIS PRIVACY POLICY DOES NOT APPLY TO ANY INFORMATION OTHER THAN THE INFORMATION COLLECTED BY US THROUGH THE PLATFORM. THIS PRIVACY POLICY SHALL BE INAPPLICABLE TO ANY UNSOLICITED INFORMATION YOU PROVIDE US THROUGH THE PLATFORM OR THROUGH ANY OTHER MEANS. ALL UNSOLICITED INFORMATION SHALL BE DEEMED TO BE NON-CONFIDENTIAL AND WE SHALL BE FREE TO USE AND/OR DISCLOSE SUCH UNSOLICITED INFORMATION WITHOUT ANY LIMITATIONS. THE RIGHTS AND REMEDIES AVAILABLE UNDER THIS POLICY MAY BE EXERCISED AS OFTEN AS NECESSARY AND ARE CUMULATIVE AND NOT EXCLUSIVE OF RIGHTS OR REMEDIES PROVIDED BY LAW. RIGHTS UNDER THIS POLICY MAY BE WAIVED ONLY IN WRITING. DELAY IN EXERCISING OR NON-EXERCISE OF ANY SUCH RIGHT OR REMEDY DOES NOT CONSTITUTE A WAIVER OF THAT RIGHT OR REMEDY, OR ANY OTHER RIGHT OR REMEDY.</div>
+<h2>18. Governing Laws and Jurisdiction</h2>
+<p>This Privacy Policy together with our <a href="terms-of-service.html">Terms of Service</a> and any other policies referred to herein, our Services and the use of it is governed by the laws of India and the courts in Bengaluru, India shall have exclusive jurisdiction over any disputes arising out of, relating to, or in connection with our Platform or the Services.</p>
+<h2>19. Your Acceptance of the Privacy Policy</h2>
+<div class="legal-note">BY USING OR VISITING THIS PLATFORM, YOU SIGNIFY YOUR AGREEMENT OF THIS PRIVACY POLICY. IF YOU DO NOT AGREE TO ANY OF THESE TERMS, PLEASE DO NOT USE THIS PLATFORM OR SERVICES. YOUR CONTINUED USE OF THE PLATFORM FOLLOWING ANY UPDATES, MODIFICATIONS, OR CHANGES TO THIS PRIVACY POLICY (WHICH MAY BE MADE FROM TIME TO TIME) WILL BE DEEMED AS YOUR ACCEPTANCE OF SUCH REVISED TERMS. WE ENCOURAGE YOU TO VIEW THIS PRIVACY POLICY PERIODICALLY TO ENSURE THAT YOU REMAIN INFORMED OF HOW WE COLLECT, USE, AND PROTECT YOUR INFORMATION.</div>
+</main>
+
+<div class="policy-back">
+  <a href="index.html">&larr; Back to ProWater home</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <img src="https://play-lh.googleusercontent.com/b50YdSvf0KbXes4wVlajtFXD-21vEiHAO0ZmmDURL9uJNGYpbLht8KUNpeJxMPjzCksZLYjN-A3DuOWWvV7suUs=w240-h480-rw" alt="ProWater" onerror="this.style.display='none'">
+          <span class="foot-brand-n">Pro<span>Water</span></span>
+        </div>
+        <p class="foot-desc">India's 1st piped RO water on subscription.</p>
+        <div class="foot-contact">
+          <a href="tel:9538739904"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>95387 39904</a>
+          <a href="mailto:support@prowater.in"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>support@prowater.in</a>
+          <a href="https://maps.app.goo.gl/PWdDFdw1RUfGVfA46" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3rd Floor, Raj Mansion, 15b, 18th A Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#plans">Plans &amp; Pricing</a></li><li><a href="index.html#faq">FAQ's</a></li></ul></div>
+      <div class="foot-col"><h4>Policies</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="cancellation-refund-policy.html">Cancellation &amp; Refund Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 ProWater. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scrolltop" id="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+function toggleNav(){document.getElementById('mob').classList.toggle('open');document.getElementById('ham').classList.toggle('active');}
+function closeNav(){document.getElementById('mob').classList.remove('open');document.getElementById('ham').classList.remove('active');}
+var st=document.getElementById('scrolltop');
+window.addEventListener('scroll',function(){if(window.scrollY>400){st.classList.add('show');}else{st.classList.remove('show');}});
+</script>
+</body>
+</html>

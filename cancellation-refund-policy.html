@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cancellation and Refund Policy | ProWater</title>
+<meta name="description" content="Cancellation and Refund Policy for ProWater — piped RO water on subscription in Bangalore.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prowater.in/cancellation-refund-policy.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --f:#0d2818;--f2:#1a4d2e;
+  --teal:#2d7a4f;--teal2:#a8d940;--teal-g:#a8d940;
+  --sky:#e8f5ed;--lime:#a8d940;--gold:#f5c518;
+  --white:#fff;--off:#fafdf7;--slate:#2d4a35;--muted:#52735d;
+  --border:rgba(45,122,79,0.16);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px;}
+:focus:not(:focus-visible){outline:none;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--off);color:var(--f);overflow-x:hidden;}
+
+/* ── NAV (matches index.html) ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(45,122,79,0.12);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:8px;}
+.nav-brand{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);letter-spacing:-0.3px;}
+.nav-brand span{color:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--slate);text-decoration:none;padding:7px 13px;border-radius:8px;transition:all .18s;}
+.nav-links a:hover{background:var(--sky);color:var(--teal);}
+.nav-btn{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;font-size:13.5px;padding:9px 20px;border-radius:50px;text-decoration:none;transition:transform .18s,box-shadow .18s;}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,122,79,0.35);}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+.ham span{display:block;width:22px;height:2px;background:var(--f);border-radius:2px;transition:all .3s;}
+@media(max-width:860px){.nav-links{display:none;}.ham{display:flex;}}
+.mobmenu{display:none;position:fixed;top:66px;left:0;right:0;z-index:998;background:#fff;padding:16px 5% 28px;border-bottom:1px solid var(--border);flex-direction:column;gap:2px;}
+.mobmenu.open{display:flex;}
+.mobmenu a{padding:13px 4px;font-size:15px;font-weight:500;color:var(--slate);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.05);}
+.mobmenu a.mob-cta{margin-top:14px;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;padding:13px 20px;border-radius:50px;text-align:center;border:none;}
+
+/* ── POLICY HEADER ── */
+.policy-hero{background:var(--f);padding:112px 5% 56px;position:relative;overflow:hidden;}
+.policy-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-220px;right:-120px;background:radial-gradient(circle,rgba(168,217,64,0.12) 0%,transparent 70%);pointer-events:none;}
+.policy-hero-in{max-width:880px;margin:0 auto;position:relative;z-index:1;}
+.policy-bc{font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:18px;}
+.policy-bc a{color:var(--teal2);text-decoration:none;font-weight:600;}
+.policy-bc a:hover{text-decoration:underline;}
+.policy-chip{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal2);margin-bottom:14px;}
+.policy-chip::before{content:'';width:14px;height:2.5px;background:linear-gradient(90deg,var(--teal),var(--lime));border-radius:2px;display:block;}
+.policy-h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);font-weight:900;line-height:1.08;letter-spacing:-1px;color:#fff;margin-bottom:14px;}
+.policy-pub{font-size:13.5px;color:rgba(255,255,255,.55);}
+.policy-pub strong{color:rgba(255,255,255,.85);font-weight:600;}
+
+/* policy cross-nav pills */
+.policy-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.policy-tabs a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 16px;border-radius:50px;border:1px solid rgba(168,217,64,.25);background:rgba(168,217,64,.06);transition:all .2s;}
+.policy-tabs a:hover{color:#fff;border-color:rgba(168,217,64,.5);background:rgba(168,217,64,.12);}
+.policy-tabs a.active{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);border-color:transparent;}
+
+/* ── POLICY BODY ── */
+.policy-body{max-width:880px;margin:0 auto;padding:52px 5% 80px;}
+.policy-body .intro{margin-bottom:8px;}
+.policy-body h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:700;color:var(--f);letter-spacing:-.4px;margin:38px 0 14px;padding-top:8px;}
+.policy-body h2:first-child{margin-top:0;}
+.policy-body p{font-size:15px;line-height:1.8;color:var(--slate);margin-bottom:16px;}
+.policy-body p.muted-note{font-style:italic;color:var(--muted);font-size:14px;}
+.policy-body strong{color:var(--f);font-weight:600;}
+.policy-body a{color:var(--teal);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(45,122,79,.3);transition:color .2s,border-color .2s;}
+.policy-body a:hover{color:var(--f2);border-color:var(--teal);}
+.policy-body ul{list-style:none;margin:0 0 18px;padding:0;}
+.policy-body ul li{position:relative;font-size:15px;line-height:1.75;color:var(--slate);padding:0 0 11px 26px;}
+.policy-body ul li::before{content:'';position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-g));}
+
+/* legal callout box */
+.legal-note{background:var(--sky);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px;margin:20px 0;font-size:13px;line-height:1.7;font-weight:600;color:var(--f2);letter-spacing:.01em;}
+
+/* contact box */
+.contact-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:20px 0;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 28px rgba(45,122,79,.06);}
+.cb-row{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;}
+.cb-k{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);min-width:90px;}
+.cb-v{font-size:15px;font-weight:600;color:var(--f);}
+.cb-v a{color:var(--teal);text-decoration:none;border:none;}
+
+/* back-to-home strip */
+.policy-back{max-width:880px;margin:0 auto 0;padding:0 5%;}
+.policy-back a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--teal);text-decoration:none;}
+.policy-back a:hover{color:var(--f2);}
+
+/* ── FOOTER (matches index.html) ── */
+footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--border);}
+.footer-in{max-width:1180px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:44px;align-items:start;}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.foot-logo img{height:36px;width:36px;object-fit:contain;border-radius:8px;}
+.foot-brand-n{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);}
+.foot-brand-n span{color:var(--teal);}
+.foot-desc{font-size:13px;color:var(--slate);line-height:1.6;max-width:260px;margin-bottom:18px;}
+.foot-contact{display:flex;flex-direction:column;gap:10px;}
+.foot-contact a{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--slate);text-decoration:none;line-height:1.5;transition:color .2s;}
+.foot-contact a:hover{color:var(--teal);}
+.foot-contact svg{width:15px;height:15px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;flex-shrink:0;margin-top:2px;}
+.foot-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:18px;line-height:1.4;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.foot-col a{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{padding-top:24px;border-top:1px solid rgba(22,84,92,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px 28px;}.foot-brand{grid-column:1/-1;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.foot-bottom{justify-content:center;text-align:center;}}
+
+/* scroll-to-top */
+.scrolltop{position:fixed;bottom:28px;right:28px;z-index:1000;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(45,122,79,.4);opacity:0;visibility:hidden;transform:translateY(14px) scale(.9);transition:opacity .3s ease,transform .3s cubic-bezier(.34,1.4,.64,1),visibility .3s,box-shadow .2s;}
+.scrolltop.show{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
+.scrolltop:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 12px 28px rgba(45,122,79,.5);}
+.scrolltop svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:540px){.scrolltop{bottom:18px;right:18px;width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.scrolltop{transition:opacity .2s,visibility .2s;transform:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://play-lh.googleusercontent.com/b50YdSvf0KbXes4wVlajtFXD-21vEiHAO0ZmmDURL9uJNGYpbLht8KUNpeJxMPjzCksZLYjN-A3DuOWWvV7suUs=w240-h480-rw" alt="ProWater Logo" onerror="this.style.display='none'">
+    <span class="nav-brand">Pro<span>Water</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#plans">Plans</a></li>
+    <li><a href="index.html#calculator">Savings</a></li>
+    <li><a href="index.html#faq">FAQ's</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-btn">Get Started →</a>
+  <button class="ham" id="ham" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobmenu" id="mob">
+  <a href="index.html#home" onclick="closeNav()">Home</a>
+  <a href="index.html#plans" onclick="closeNav()">Plans</a>
+  <a href="index.html#calculator" onclick="closeNav()">Savings</a>
+  <a href="index.html#faq" onclick="closeNav()">FAQ's</a>
+  <a href="index.html#contact" class="mob-cta" onclick="closeNav()">Get Started →</a>
+</div>
+
+<header class="policy-hero">
+  <div class="policy-hero-in">
+    <div class="policy-bc"><a href="index.html">Home</a> &rsaquo; Cancellation and Refund Policy</div>
+    <div class="policy-chip">Legal</div>
+    <h1 class="policy-h1">Cancellation and Refund Policy</h1>
+    <div class="policy-pub">Published on: <strong>27 February 2026</strong></div>
+    <nav class="policy-tabs" aria-label="Policies"><a href="privacy-policy.html">Privacy Policy</a><a href="cancellation-refund-policy.html" class="active">Cancellation and Refund Policy</a><a href="terms-of-service.html">Terms of Service</a></nav>
+  </div>
+</header>
+
+<main class="policy-body">
+  <div class="intro"><p>A Subscription can be cancelled at any time as set out below. The following terms and conditions govern all the transactions with respect to the paid Services availed via our Platform and the Products:</p></div>
+  <h2>1. Subscription Auto-Renewal</h2>
+<p>If you purchase a subscription plan ("Subscription Plan"), you acknowledge and agree that your subscription will automatically renew and ProWater will charge you on a recurring basis until you cancel your subscription and such cancellation shall become effective, only by the next billing cycle.</p>
+<h2>2. Requesting a Cancellation</h2>
+<p>For requesting a cancellation, you must contact ProWater customer care or address an email to <a href="mailto:support@prowater.in">support@prowater.in</a>.</p>
+<h2>3. Cancellation Terms and Conditions</h2>
+<p>Upon ProWater receiving an email / ProWater Application or an intimation with a request for cancellation of subscription to any Subscription Plan, subject to the below terms and conditions Pro Water shall duly deactivate the auto-renewal feature:</p>
+<ul><li>You will remit a specified sum as an interest free refundable security deposit prior to the commencement of the subscription ("Security Deposit"), which shall be refunded at the end of subscription period, subject to you:</li><li>clearing all your outstanding dues to ProWater;</li><li>returning the Subscription Device, along with any other related devices, parts or documents, in an "as-is" condition, subject to normal wear and tear; and</li><li>complying with all other terms and conditions set forth in the terms and conditions accepted by you on the Platform.</li><li>ProWater shall not be liable to refund any remaining subscription fees for Customers who have purchased monthly plans. Only the Security Deposit shall be refunded in accordance with the terms specified above in clause 3(a).</li><li>If your recharge validity expires and no subsequent recharge is made within 7 days from the expiry date, and you request cancellation after the said 7-day period, the subscription fee for the ongoing month will be deducted from the refundable Security Deposit.</li><li>If you have subscribed to an Annually discounted Subscription Plan and you raise a cancellation request before the completion of the subscription tenure, the refund shall be calculated based on the original base plan price and the number of months the subscription has been utilized, excluding any discounts applied. The refund will be subject to the conditions outlined above.</li><li>Any outstanding dues, including but not limited to unpaid subscription charges and amount required to repair damage to the device, shall be deducted from any refund amount payable to you.</li></ul>
+<h2>4. Access After Cancellation</h2>
+<p>Following any cancellation request, you will continue to have access to the service through the end of your current Billing Cycle.</p>
+<h2>5. Re-subscription</h2>
+<p>Post cancellation of your subscription, if you wish to re-subscribe to the Subscription, you may do so.</p>
+<h2>6. Account Deletion</h2>
+<p>Please note that if you delete your account on the Platform, you will lose access to the remaining balance and services left in your Subscription Plan. During the deletion process, you are asked to explicitly agree to forfeit the remaining time and services in your current paid subscription and acknowledge that you would not be refunded for this unused time.</p>
+<h2>7. Cancellation Requirements</h2>
+<p>To register a cancellation in accordance with these terms and conditions, Subscription Device ID and a valid registered phone number is required.</p>
+<h2>8. Cancellation Process and Device Return</h2>
+<p>Upon receiving a cancellation request in accordance with the terms and conditions set forth in this Cancellation and Refund Policy, the team at ProWater will reach out to you to understand and address the issue. If the issue remains unresolved, ProWater will confirm the scheduled date for the return of the Subscription Device.</p>
+<p>If the pickup of the Subscription Device is successfully completed within <strong>five (5) days</strong>, subject to the Customer's availability and cooperation, a refund will be processed in <strong>7 days</strong> post collection of the Subscription Device, in accordance with the terms of this Cancellation and Refund Policy, subject to the Sale Device passing ProWater assessment. However, if the device pickup fails within this time frame, the case will be transferred for the recovery of the device and efforts will be put in by ProWater towards recovery.</p>
+<h2>9. Device Inspection and Refund Processing</h2>
+<p>Once the Subscription Device is retrieved by ProWater's logistics partner and received at the warehouse, it will be inspected for any damages or missing components. Following this inspection, your purifier ID will be deactivated, and a refund will be processed on the Platform, in accordance with the eligibility criteria outlined in the terms and conditions of this Policy, the <a href="terms-of-service.html">Terms of Service</a>, and the User Manual provided to you. Upon initiation of the refund, a completed refund confirmation link will be sent to the contact details registered with your account.</p>
+<h2>10. Liability for Delays</h2>
+<p>ProWater shall not be held liable for any delays in the initiation or processing of refunds, or in the retrieval of the Subscription Device, arising from festival seasons, unforeseen circumstances, technical issues, or limited staffing at ProWater.</p>
+<h2>11. Changes to this Policy</h2>
+<p>We reserve the right to make changes to these terms and conditions of the Cancellation and Refund Policy at any time. We may modify these terms or add any additional terms that apply to the service to, for example, reflect changes to the law or changes to our services. You should review the terms regularly. Your continued use of the services post an amendment shall be construed as a deemed acceptance of the amended terms and conditions. These terms are to be read in line with the <a href="terms-of-service.html">Terms of Service</a>. All defined terms have the same meaning as stated in the <a href="terms-of-service.html">Terms of Service</a>.</p>
+<h2>Need Help?</h2>
+<p>For any cancellation or refund related queries, please reach out to us:</p>
+<div class="contact-box"><div class="cb-row"><span class="cb-k">Email</span><span class="cb-v"><a href="mailto:support@prowater.in">support@prowater.in</a></span></div><div class="cb-row"><span class="cb-k">Address</span><span class="cb-v">#15/B, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</span></div></div>
+</main>
+
+<div class="policy-back">
+  <a href="index.html">&larr; Back to ProWater home</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <img src="https://play-lh.googleusercontent.com/b50YdSvf0KbXes4wVlajtFXD-21vEiHAO0ZmmDURL9uJNGYpbLht8KUNpeJxMPjzCksZLYjN-A3DuOWWvV7suUs=w240-h480-rw" alt="ProWater" onerror="this.style.display='none'">
+          <span class="foot-brand-n">Pro<span>Water</span></span>
+        </div>
+        <p class="foot-desc">India's 1st piped RO water on subscription.</p>
+        <div class="foot-contact">
+          <a href="tel:9538739904"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>95387 39904</a>
+          <a href="mailto:support@prowater.in"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>support@prowater.in</a>
+          <a href="https://maps.app.goo.gl/PWdDFdw1RUfGVfA46" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3rd Floor, Raj Mansion, 15b, 18th A Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#plans">Plans &amp; Pricing</a></li><li><a href="index.html#faq">FAQ's</a></li></ul></div>
+      <div class="foot-col"><h4>Policies</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="cancellation-refund-policy.html">Cancellation &amp; Refund Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 ProWater. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scrolltop" id="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+function toggleNav(){document.getElementById('mob').classList.toggle('open');document.getElementById('ham').classList.toggle('active');}
+function closeNav(){document.getElementById('mob').classList.remove('open');document.getElementById('ham').classList.remove('active');}
+var st=document.getElementById('scrolltop');
+window.addEventListener('scroll',function(){if(window.scrollY>400){st.classList.add('show');}else{st.classList.remove('show');}});
+</script>
+</body>
+</html>

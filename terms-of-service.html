@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | ProWater</title>
+<meta name="description" content="Terms of Service for ProWater — piped RO water on subscription in Bangalore.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://prowater.in/terms-of-service.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --f:#0d2818;--f2:#1a4d2e;
+  --teal:#2d7a4f;--teal2:#a8d940;--teal-g:#a8d940;
+  --sky:#e8f5ed;--lime:#a8d940;--gold:#f5c518;
+  --white:#fff;--off:#fafdf7;--slate:#2d4a35;--muted:#52735d;
+  --border:rgba(45,122,79,0.16);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px;}
+:focus:not(:focus-visible){outline:none;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--off);color:var(--f);overflow-x:hidden;}
+
+/* ── NAV (matches index.html) ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(45,122,79,0.12);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:8px;}
+.nav-brand{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);letter-spacing:-0.3px;}
+.nav-brand span{color:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--slate);text-decoration:none;padding:7px 13px;border-radius:8px;transition:all .18s;}
+.nav-links a:hover{background:var(--sky);color:var(--teal);}
+.nav-btn{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;font-size:13.5px;padding:9px 20px;border-radius:50px;text-decoration:none;transition:transform .18s,box-shadow .18s;}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,122,79,0.35);}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+.ham span{display:block;width:22px;height:2px;background:var(--f);border-radius:2px;transition:all .3s;}
+@media(max-width:860px){.nav-links{display:none;}.ham{display:flex;}}
+.mobmenu{display:none;position:fixed;top:66px;left:0;right:0;z-index:998;background:#fff;padding:16px 5% 28px;border-bottom:1px solid var(--border);flex-direction:column;gap:2px;}
+.mobmenu.open{display:flex;}
+.mobmenu a{padding:13px 4px;font-size:15px;font-weight:500;color:var(--slate);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.05);}
+.mobmenu a.mob-cta{margin-top:14px;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;padding:13px 20px;border-radius:50px;text-align:center;border:none;}
+
+/* ── POLICY HEADER ── */
+.policy-hero{background:var(--f);padding:112px 5% 56px;position:relative;overflow:hidden;}
+.policy-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-220px;right:-120px;background:radial-gradient(circle,rgba(168,217,64,0.12) 0%,transparent 70%);pointer-events:none;}
+.policy-hero-in{max-width:880px;margin:0 auto;position:relative;z-index:1;}
+.policy-bc{font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:18px;}
+.policy-bc a{color:var(--teal2);text-decoration:none;font-weight:600;}
+.policy-bc a:hover{text-decoration:underline;}
+.policy-chip{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal2);margin-bottom:14px;}
+.policy-chip::before{content:'';width:14px;height:2.5px;background:linear-gradient(90deg,var(--teal),var(--lime));border-radius:2px;display:block;}
+.policy-h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);font-weight:900;line-height:1.08;letter-spacing:-1px;color:#fff;margin-bottom:14px;}
+.policy-pub{font-size:13.5px;color:rgba(255,255,255,.55);}
+.policy-pub strong{color:rgba(255,255,255,.85);font-weight:600;}
+
+/* policy cross-nav pills */
+.policy-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.policy-tabs a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 16px;border-radius:50px;border:1px solid rgba(168,217,64,.25);background:rgba(168,217,64,.06);transition:all .2s;}
+.policy-tabs a:hover{color:#fff;border-color:rgba(168,217,64,.5);background:rgba(168,217,64,.12);}
+.policy-tabs a.active{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);border-color:transparent;}
+
+/* ── POLICY BODY ── */
+.policy-body{max-width:880px;margin:0 auto;padding:52px 5% 80px;}
+.policy-body .intro{margin-bottom:8px;}
+.policy-body h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:700;color:var(--f);letter-spacing:-.4px;margin:38px 0 14px;padding-top:8px;}
+.policy-body h2:first-child{margin-top:0;}
+.policy-body p{font-size:15px;line-height:1.8;color:var(--slate);margin-bottom:16px;}
+.policy-body p.muted-note{font-style:italic;color:var(--muted);font-size:14px;}
+.policy-body strong{color:var(--f);font-weight:600;}
+.policy-body a{color:var(--teal);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(45,122,79,.3);transition:color .2s,border-color .2s;}
+.policy-body a:hover{color:var(--f2);border-color:var(--teal);}
+.policy-body ul{list-style:none;margin:0 0 18px;padding:0;}
+.policy-body ul li{position:relative;font-size:15px;line-height:1.75;color:var(--slate);padding:0 0 11px 26px;}
+.policy-body ul li::before{content:'';position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-g));}
+
+/* legal callout box */
+.legal-note{background:var(--sky);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px;margin:20px 0;font-size:13px;line-height:1.7;font-weight:600;color:var(--f2);letter-spacing:.01em;}
+
+/* contact box */
+.contact-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin:20px 0;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 28px rgba(45,122,79,.06);}
+.cb-row{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;}
+.cb-k{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);min-width:90px;}
+.cb-v{font-size:15px;font-weight:600;color:var(--f);}
+.cb-v a{color:var(--teal);text-decoration:none;border:none;}
+
+/* back-to-home strip */
+.policy-back{max-width:880px;margin:0 auto 0;padding:0 5%;}
+.policy-back a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--teal);text-decoration:none;}
+.policy-back a:hover{color:var(--f2);}
+
+/* ── FOOTER (matches index.html) ── */
+footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--border);}
+.footer-in{max-width:1180px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:44px;align-items:start;}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.foot-logo img{height:36px;width:36px;object-fit:contain;border-radius:8px;}
+.foot-brand-n{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--f);}
+.foot-brand-n span{color:var(--teal);}
+.foot-desc{font-size:13px;color:var(--slate);line-height:1.6;max-width:260px;margin-bottom:18px;}
+.foot-contact{display:flex;flex-direction:column;gap:10px;}
+.foot-contact a{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--slate);text-decoration:none;line-height:1.5;transition:color .2s;}
+.foot-contact a:hover{color:var(--teal);}
+.foot-contact svg{width:15px;height:15px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;flex-shrink:0;margin-top:2px;}
+.foot-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:18px;line-height:1.4;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.foot-col a{font-size:13.5px;color:var(--slate);text-decoration:none;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{padding-top:24px;border-top:1px solid rgba(22,84,92,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px 28px;}.foot-brand{grid-column:1/-1;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.foot-bottom{justify-content:center;text-align:center;}}
+
+/* scroll-to-top */
+.scrolltop{position:fixed;bottom:28px;right:28px;z-index:1000;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(45,122,79,.4);opacity:0;visibility:hidden;transform:translateY(14px) scale(.9);transition:opacity .3s ease,transform .3s cubic-bezier(.34,1.4,.64,1),visibility .3s,box-shadow .2s;}
+.scrolltop.show{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
+.scrolltop:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 12px 28px rgba(45,122,79,.5);}
+.scrolltop svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:540px){.scrolltop{bottom:18px;right:18px;width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.scrolltop{transition:opacity .2s,visibility .2s;transform:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://play-lh.googleusercontent.com/b50YdSvf0KbXes4wVlajtFXD-21vEiHAO0ZmmDURL9uJNGYpbLht8KUNpeJxMPjzCksZLYjN-A3DuOWWvV7suUs=w240-h480-rw" alt="ProWater Logo" onerror="this.style.display='none'">
+    <span class="nav-brand">Pro<span>Water</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#plans">Plans</a></li>
+    <li><a href="index.html#calculator">Savings</a></li>
+    <li><a href="index.html#faq">FAQ's</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-btn">Get Started →</a>
+  <button class="ham" id="ham" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobmenu" id="mob">
+  <a href="index.html#home" onclick="closeNav()">Home</a>
+  <a href="index.html#plans" onclick="closeNav()">Plans</a>
+  <a href="index.html#calculator" onclick="closeNav()">Savings</a>
+  <a href="index.html#faq" onclick="closeNav()">FAQ's</a>
+  <a href="index.html#contact" class="mob-cta" onclick="closeNav()">Get Started →</a>
+</div>
+
+<header class="policy-hero">
+  <div class="policy-hero-in">
+    <div class="policy-bc"><a href="index.html">Home</a> &rsaquo; Terms of Service</div>
+    <div class="policy-chip">Legal</div>
+    <h1 class="policy-h1">Terms of Service</h1>
+    <div class="policy-pub">Published on: <strong>27 February 2026</strong></div>
+    <nav class="policy-tabs" aria-label="Policies"><a href="privacy-policy.html">Privacy Policy</a><a href="cancellation-refund-policy.html">Cancellation and Refund Policy</a><a href="terms-of-service.html" class="active">Terms of Service</a></nav>
+  </div>
+</header>
+
+<main class="policy-body">
+  <div class="intro"><div class="legal-note">This document is an electronic record in terms of the Indian Contract Act 1872; the Information Technology Act 2000, the rules made thereunder; and the amended provisions pertaining to the electronic records in various other statutes as amended by the Information Technology Act, 2000.</div>
+<div class="legal-note">This electronic record is generated by a computer system and does not require any physical or digital signatures.</div></div>
+  <h2>Introduction</h2>
+<p>Waterwala Labs Private Limited, having its registered office at #15/B, 19th Main, 3rd Sector HSR Layout Bengaluru – 560102, Karnataka, India (hereinafter referred to as "ProWater", "Company", "we", "us" or "our"), is the owner of the website domain at <a href="https://prowater.in/">https://prowater.in/</a> and the Platform (as defined below).</p>
+<p>ProWater requests you ("User") ("You") to carefully go through these terms &amp; conditions ("Terms of Service" or "Agreement" or "TOS" or "Terms") prior to accessing the Platform or availing Services (as hereafter defined) using the Platform. If the User continues to browse and/or use the Platform to avail Services, User irrevocably and unconditionally is agreeing to comply with, abide by and be bound by all these obligations as stipulated in this TOS, which together read with our privacy policy available at the Platform (<a href="privacy-policy.html">"Privacy Policy"</a>), refund and cancellation policy available at the Platform (<a href="cancellation-refund-policy.html">"Cancellation and Refund Policy"</a>) terms specific to different models of Services and any other applicable policies referred to herein or made available on the Platform (collectively referred as "Terms and Conditions"). The Terms and Conditions shall govern the Company's relationship with the User in relation to the usage of the Platform. These Terms and Conditions supersede all previous oral, written terms and conditions (if any) communicated to User and shall act as a binding agreement between Company and the User.</p>
+<p>If the User does not wish to agree to or adhere by or comply with or be bound by any of these terms, the User shall not use or access the Platform. The materials on the Platform, including but not limited to information, logos, brands, marks, headings, labels, names, signatures, numerals, shapes, designs, graphics, text, images, audio, video, software, or any combinations thereof, and material available in the installation kit provided by the Company on subscription of Water Purifier(s) including but not limited to user manuals (collectively referred to as "Material"), are intellectual properties either owned or used under license by the Company and are protected by applicable copyright, trademark, and intellectual property laws. All rights to the Material are reserved, and unauthorized use or reproduction is strictly prohibited. Users are advised to respect these protections and to seek written authorisation from the Company before using any Materials from this Platform.</p>
+<h2>Definitions</h2>
+<p>"Applicable Laws" shall mean any statute, law, regulation, ordinance, rule, judgment, order, decree, bye-law, government approval, directive, guideline, notification, requirement or other governmental restriction or any decision or determination by, or any interpretation, policy, or administration of any of the foregoing, by any government authority having jurisdiction over the matter in question, whether in effect as on the date of this T&amp;C or thereafter.</p>
+<p>"Business Days" refers to Monday through Friday, excluding public holidays in a particular state.</p>
+<p>"Subscriber Account / Customer Account / User Account" shall mean account created by the Customer using the Platform to avail the Services provided by ProWater.</p>
+<p>"Subscriber Data / Customer Data / User Data" refers to any information collected from a customer during the subscription term or their interaction with ProWater including Personal Information, Sensitive Personal Information, billing information, order history, website activity, and customer service interaction, and/or oral, video, audio content submitted to Pro Water directly or through its Platform.</p>
+<p>"Subscriber Materials / Customer Materials / User Materials" shall refer to the various materials submitted/provided to Pro Water in the form of audio/video/written content/KYC Documents for verification.</p>
+<p>"ProWater Materials" means and includes all written and oral instructions provided by ProWater to Residents, Customer or User either via the Website or in physical form.</p>
+<p>"Force Majeure Event" refers to an unexpected occurrence beyond a party's control, including events such as natural disasters, wars, pandemics, or government actions, that makes fulfilling contractual duties difficult or impossible.</p>
+<p>"Intellectual Property Rights / IPR" means any and all intellectual property rights in perpetuity and worldwide arising under statutory law, common law or by contract and whether or not perfected, including without limitation, all: (i) patents, patent applications and patent rights; (ii) rights associated with works of authorship including copyrights whether registered or unregistered, copyright applications, copyright registrations; (iii) trademarks and service marks; (iv) any rights analogous to those set forth in this clause and any other proprietary rights relating to intellectual property; and (v) any renewals, reissues and extension of the foregoing now existing, hereafter filed, used or acquired, and whether registered or unregistered.</p>
+<p>"Personal Information" refers to any information that relates to an identifiable individual. This can include details such as a person's name, contact information, identification numbers, financial data, health records, or any other information that can be used to identify or contact an individual.</p>
+<p>"Platform" includes ProWater website (available at <a href="https://prowater.in/">https://prowater.in/</a>) including variations of the same and mobile applications available on the Google Play Store and App Store.</p>
+<p>"Sensitive Personal Information" refers to a category of Personal Information that is considered more sensitive in nature and requires additional protection due to its potential for harm or misuse. This can include information such as an individual's race or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, financial data, biometric data for the purpose of uniquely identifying a person.</p>
+<p>"Premises" The address designated by the Customer for the installation of the Water Purifier(s) or connection from Centralised RO.</p>
+<p>"Customer ID" the unique identification code issued to the Customer by the Company, enabling access to the Customer's Account and utilization of the Service at the designated Address.</p>
+<p>"Subscription Fees" means the rental amount paid by User for the Water Purifier(s) installed at the Scheduled Premises or connection from Centralized RO for the duration of the Subscription Term.</p>
+<p>"Subscription Term" shall refer to the period for which the Subscriber agrees to rent the Water Purifier(s) from the Company and to pay the Subscription Fees in lieu thereof.</p>
+<p>"Maintenance" includes routine maintenance of Water Purifier(s) including changing of filters and assessing the working of the Water Purifier(s), repairs, resolving malfunction and/or any other issue that may arise in the Water Purifier(s) and as may be determined by the Company to have arisen in the normal course of working of the Water Purifier(s).</p>
+<p>"Water Purifier(s)" shall refer to the water purifying units owned by the Company and offered/provided to Customer for the Subscription Term.</p>
+<h2>Entire Agreement</h2>
+<p>These terms and conditions shall form the Subscription Agreement between ProWater and Customers hereto with respect to its subject matter. It supersedes all prior agreements, understandings, and communications whether written or oral between the Parties hereto with respect to the subject matter hereof.</p>
+<h2>Subscription Terms and Conditions</h2>
+<p>ProWater also offers a marketplace feature that allows Users to rent the Water Purifier(s) on a subscription basis ("Subscription Model").</p>
+<p>The Customer understands that under the Subscription Model, Pro Water continues to be the owner of the Water Purifier(s). The Customer shall have a temporary possession of the Water Purifier(s) for the term selected by the Customer.</p>
+<p>Notwithstanding anything contained herein, the Customer understands that he shall rent the Product under the Subscription Model from ProWater for the period selected by the Customer as per ProWater plans.</p>
+<p>The Customer understands that the subscription request for the Product may be placed through the process available on the Platform wherein the following steps are to be taken by the Customer or its representatives:</p>
+<ul><li>The Customer may login to his account on the Platform;</li><li>Upon login, the Customer may choose a Water Purifier of his liking;</li><li>The Customer will then be redirected to the webpage wherein he will have the option to:</li><li>Insert the preferred billing and delivery address or choose the appropriate billing or delivery address from pre-filled addresses;</li><li>Insert the contact information (phone number and email address);</li><li>Select the term of subscription;</li><li>Select the preferred delivery slot (if applicable);</li><li>Select the preferred payment method (we accept debit card, credit card, net banking, UPI and online payment through payment gateway like Razorpay/Easebuzz).</li><li>The Customer shall then reconfirm the price and place the order.</li></ul>
+<p>In the event that the Water Purifier, or any related equipment is not returned, is returned damaged, or non-payment of any outstanding dues by the Customer, the costs associated with such non-return, repair of the damage or settlement of the outstanding amounts shall be deducted from the Security Deposit.</p>
+<p>The Customer will be able to review the order details and make any necessary corrections before confirming the subscription.</p>
+<p>The Customer shall pay a specified sum as Security Deposit which shall be refundable by ProWater to the Customer, subject to the return and condition of the Product and its parts, components, etc., and payment of outstanding dues by the Customer at the end of the subscription period.</p>
+<p>The Customer by subscribing to the Product is permitting/allowing the agents of ProWater to connect with him/it via emails, calls, text messages, social media app and/or push application notifications to confirm details provided (if any) and/or to confirm slot preferences.</p>
+<p>Customer agrees and affirms that it shall not get any Maintenance or repair services done from any third party. In case the same is done, the Company shall be entitled to seek the market price of the water purifier from Subscriber and Subscriber shall be liable to pay the same.</p>
+<h2>Eligibility</h2>
+<p>By using Platform, User affirms that he/she is at least 18 years of age and is fully able and competent to enter the terms, conditions, obligations, affirmations, representations, warranties set forth in the Terms and Conditions, and to abide by and comply with the terms stated therein. Registration of User in the Platform is available only to persons who can form legally binding contracts under Indian Contract Act, 1872. Persons who are "incompetent to contract" within the meaning of the Indian Contract Act, 1872 including minors, un-discharged insolvents, or person with unsound mind etc. are not eligible to use the Platform.</p>
+<p>By accessing the Platform or by accessing any of the Services, it is deemed that the User has read and understood and accepted these Terms. If the User intends to use the Platform and/or Services on behalf of an organization, User agrees to these Terms on behalf of that organization and the User represents that he/she has the authority to do so.</p>
+<p>User's or its authorized representative's access of the Platform or by accessing any of the Services, signifies that the User or the User's representative is deemed that the User has read and understood and accepted these Terms. If User will be using the Services on behalf of an organization, User agrees to these Terms on behalf of that organization and User represents that User has the authority to do so.</p>
+<h2>Delivery of Water Purifier(s)</h2>
+<p>The Company shall deliver and install the Water Purifier(s) to the Scheduled Premises within the slot selected by Subscriber (to avail Company's Service).</p>
+<p>A Subscriber representative shall be present at the Scheduled Premises at the agreed date and time. The Subscriber shall inspect and verify the number of Water Purifier(s) received at the time of delivery and shall accept the same after he has satisfied himself of the condition of the Water Purifier(s). The Subscriber Representative shall sign an acknowledgement form acknowledging the receipt of the exact number of Water Purifier(s) received at the agreed upon location and time.</p>
+<p>In the event of any discrepancies, such as receiving wrong number of Water Purifiers, damage to the Water Purifier(s), or any other issue related to the condition or functionality of the Water Purifier(s), the Subscriber shall notify the Company immediately upon discovery of such discrepancy.</p>
+<p>Once the Subscriber representative accepts the Water Purifier(s), the Water Purifier(s) shall not be returned under any circumstances prior to the expiration of the Subscription Term or the Termination of this Agreement.</p>
+<p>In case the Subscriber representative is not present at the Scheduled Premises, the Company shall not deliver the Water Purifier(s). The re-delivery shall be scheduled at the earliest mutually convenient time, contingent upon availability of both Parties.</p>
+<p>Subscriber shall ensure due permissions and approvals are given to the Company for installation of the said Water Purifier(s).</p>
+<p>The cost for manual labour required to lift the Water Purifier(s) to the premises shall be borne by the Company.</p>
+<h2>User Account Registration</h2>
+<p>Subject to the eligibility criteria outlined under this clause of these Terms, Users may create an account by providing the necessary details to place an order for the Product on the Platform ("Account").</p>
+<p>By creating an Account, the User acknowledges that he/she shall provide true and accurate information while creating the Account. The information collected while creating the Account will be governed by our <a href="privacy-policy.html">Privacy Policy</a>. User is responsible for maintaining the confidentiality of their login credentials and are fully responsible for all activities that occur under their Account.</p>
+<p>User can create an Account by using their email ID/phone number. Post entering the requisite details (email ID/phone number) in the Platform, one-time verification shall be conducted by the Company. Post such verification the Account shall be created.</p>
+<h2>Platform License</h2>
+<p>Subject to Users compliance with the TOS, Company grants the Users a limited, non-exclusive, non-transferable license: (i) to view, download and print any content of Platform solely for Users personal and non-commercial purposes; and (ii) to access, modify, edit, and download any content, to which User is permitted access solely for User's use.</p>
+<p>The User has no right to sublicense the license rights granted herein.</p>
+<p>This license rights granted to User herein shall not constitute a transfer of title or ownership, and under this license the User shall not:</p>
+<ul><li>Modify or copy the Materials;</li><li>Use the Materials for any commercial purpose, or for any public display (commercial or non-commercial);</li><li>Attempt to decompile or reverse engineer any software, source code, underlying ideas, algorithms, or any part of it on the Website;</li><li>Remove any copyright or other proprietary notations from the Material;</li><li>Transfer the Materials to another person or "mirror" the Materials on any other server; or</li><li>Use, copy, adapt, modify, prepare derivative works based upon, distribute, license, sell, transfer, publicly display, publicly perform, transmit, stream, broadcast or otherwise exploit the Platform and Services, except as expressly permitted in the Terms.</li></ul>
+<p>No licenses or rights are granted to User by implication or otherwise under any intellectual property rights owned or controlled by Company or its licensors, except for the licenses and rights expressly granted in the Terms. The Platform and the Intellectual Property rights vested therein is owned by Company.</p>
+<p>This license shall automatically terminate if User violates any of the above restrictions or may be terminated at the sole discretion of the Company at any time. Upon termination of this license, the User must destroy any downloaded Materials in Users possession whether in electronic or printed format.</p>
+<h2>Restriction of Use</h2>
+<p>Customer covenants that it will use the Water Purifier(s) only for non-commercial purposes unless otherwise agreed between the Parties in writing. Customer covenants that it will not rent, sub-let, sublease, or sell the Water Purifier(s).</p>
+<h2>Billings and Payments</h2>
+<p>For any subsequent payments under the Subscription Model, the Customer shall make the payment through the ProWater website or app using the available payment methods, including but not limited to credit/debit cards, net banking, UPI, or any other online payment options provided by the ProWater website or app.</p>
+<p>ProWater, at its sole discretion, reserves the right to modify the payment options, payment terms, or the payment schedule upon providing reasonable notice to the Customer. Any such changes shall be communicated through the ProWater website or app or other available communication channels.</p>
+<p>In the event the Customer defaults on any payment obligations, the Company reserves the right, at its sole discretion, to terminate the agreement with the Customer and/or reclaim the Product. The Company may also pursue any and all available legal remedies. Notwithstanding such termination or reclamation, the Customer shall remain fully liable for any outstanding amounts, including but not limited to unpaid balances, accrued fees, and interest, and the Company may take appropriate legal action to recover such amounts.</p>
+<h2>Contacting Users</h2>
+<p>User agrees that we may contact Users through telephone, email, SMS, or any other means of communication for the purpose of: (i) Obtaining feedback in relation to Platform or our Services; (ii) Any events or initiatives that User may be interested in as part of the community of users; and (iii) Resolving any complaints, information, or queries by other Users.</p>
+<p>User agrees to provide fullest co-operation further to such communication by Company.</p>
+<p>By submitting suggestions or other feedback regarding our Services/Platform, User agrees that we can use and share such feedback for any purpose without any compensation to User and we are under no obligation to keep such feedback confidential.</p>
+<h2>Account Ownership and Editing Rights</h2>
+<p>We ensure easy access to the Users by providing an option to update User Account information. We reserve the right to moderate the changes or updates requested by the User and we shall take an independent decision whether to publish or reject the requests submitted for the respective changes or updates in User Account. User hereby represents and warrants that User is fully entitled, under applicable law, to provide information as part of User Account or otherwise while using our Services, and that no such information breaches any third-party rights, including intellectual property rights and applicable data protection laws. Upon becoming aware of a breach of the foregoing representation, we may modify or delete parts of User Account information at our sole discretion with or without notice to User.</p>
+<h2>Maintenance or Repair</h2>
+<p>Customer shall always endeavour to maintain the Water Purifier(s) in their best condition and shall not cause damage to the Water Purifier(s).</p>
+<p>In case of any issue the Water Purifier(s) does not function satisfactorily due to no fault of Customer, the Water Purifier(s) will be replaced or repaired by Company at no cost to Customer.</p>
+<p>The Maintenance or repair of the Water Purifier(s) shall be done by the Company during the entire course of this Agreement. All normal wear and tear of the Water Purifier(s) shall be repaired by the Company at their own cost.</p>
+<p>In case of any malfunction, Subscriber shall notify the Company via the Platform and/or via email. Upon being notified, Subscriber understands that the Company may carry out an inspection of the Water Purifier(s) to assess the damage and the nature of repair/tools required. Post the inspection, the Company shall rectify the malfunction.</p>
+<p>Subscriber agrees and affirms that it shall not get any Maintenance or repair services done from any third party. In case the same is done, the Company shall be entitled to seek the market price of the water purifier from Subscriber and Subscriber shall be liable to pay the same.</p>
+<p>In case of the Water Purifier(s) malfunctioning/failing to operate due to mishandling or has been subjected to misuse, misapplication, negligence, alteration, accident or operation contrary to the instructions of the Company, incompatibility with accessories not installed by the Company, or that have been repaired with component parts other than those manufactured or obtained from the Company, any charges that accrue in repairing or replacing the Water Purifier(s) including but not limited to labour, material, parts and any other items will be borne by Subscriber only.</p>
+<p>In case of Water Purifier(s) malfunctioning/failing to operate due to damage done by fire, rodents, pets, power surges, any replacement or repair charges that accrue including but not limited to labour, material, parts, and any other items shall be borne by Subscriber only.</p>
+<h2>Company and User Materials</h2>
+<p>While rendering Services, Company directly or through its representatives, may provide Users with certain materials relevant to the Services or the Platform, which may be in the form of audio, video, written and oral content ("Company Materials"). Company Materials shall be the exclusive property of the Company. User hereby agrees and acknowledges that he/she shall ensure that the Company Materials are not shared with any third party, without Company's written consent and any breach of such nature shall cause financial and irreparable injury to Company.</p>
+<p>Company hereby provides User with a revocable, non-exclusive, non-transferable, non-sublicensable, limited license to use the Company Materials solely for its personal purpose and not for any commercial use.</p>
+<p>While availing Services, User may submit various materials to Company in the form of audio/video/written content including but not limited to personal information of the User. User hereby provides Company with an exclusive, transferable, perpetual, and irrevocable license to use the User Materials for its use. User hereby agrees and acknowledges that User Materials shall not infringe any intellectual property rights of third party and shall be responsible for any claims arising out of infringement.</p>
+<p>Additionally, all User Materials provided will be used by the Company for analytics to understand the User and the market, and hereby the Company reserves its right to revise and enhance the Platform and the Services provided the User.</p>
+<h2>User Covenants and Obligations</h2>
+<ul><li>The Customer shall ensure timely payment of Subscription Fees for a continued and uninterrupted service.</li><li>The Customer and its representatives/personnel by purchasing the Water Purifier consent to being contacted by the personnel agents of the Company for installation services.</li><li>The Customer is solely responsible for ensuring that the installation site in the Scheduled Premises meets the Water Purifier's requirement.</li><li>The Customer shall ensure that for Water Purifier installation it has the requisite tap connection, nearby switchboard, and WIFI.</li><li>The Customer agrees and acknowledges that all Intellectual Property Right in the Water Purifier and ProWater Materials, including all written and oral instructions provided by ProWater to the Customer shall solely belong to the Company.</li><li>The Customer agrees and acknowledges that it has been granted by the Company a limited, non-exclusive license, non-sublicensable license to use the Intellectual Property for personal and non-commercial purposes only.</li><li>Customer shall not remove or obscure any patent, copyright, trademark, or other intellectual property notices that may appear on any part of the Water Purifier(s) or related documentation.</li><li>Customer shall not use the Water Purifier(s) in any manner which is detrimental to Company or which may bring disrepute to Company's Business.</li><li>Customer shall not make any unauthorized use of Company's trademarks or Water Purifier(s).</li><li>Customer shall not create any charge, mortgage or any other encumbrance or any other third-party rights over the Water Purifier(s).</li><li>Customer shall in no way dispose of the Water Purifier(s) of the Company.</li></ul>
+<h2>Damage and Loss Policy</h2>
+<p>Customer covenants that in case of any permanent damage of the Water Purifier making the product unusable, or in case of loss or theft of the Water Purifier(s) or any component of the Water Purifier(s), regardless of cause or fault, Customer will make good the amount at its fair market value as determined by the Company.</p>
+<p>Customer undertakes that it is responsible for the safe keeping of the Water Purifier(s) installed at the Scheduled Premises and shall immediately inform the Company of any damage or theft, actual or threatened.</p>
+<p>Customer also undertakes to bear the costs including but not limited to:</p>
+<ul><li>Loss of, or damage or third-party repair to the Water Purifier(s), loss of use, diminution of the Water Purifier(s)'s value caused by damage to it or repair to it.</li><li>Costs to enforce such charges including administrative fees for processing the claim and legal expenses.</li><li>Charges for late return of the Water Purifier(s) will be applicable in accordance with the terms and conditions of this agreement or as per the policy of the Company.</li><li>All fines, penalties, court costs and other expenses relating to the Water Purifier(s) assessed against Subscriber or the Water Purifier(s) during the Subscription Term.</li><li>All expenses Company incurs due to Subscriber's failure to return the Water Purifier(s) including costs in locating and recovering the Water Purifier(s).</li><li>All costs incurred to collect unpaid monies due; The payment for any permanent damage/loss will be paid immediately and this Agreement shall terminate on the payment of the same.</li></ul>
+<h2>Modification</h2>
+<p>We reserve the right, at any time and in our sole discretion, to change, modify, or amend the Platform (in whole, or in part) or any of its Services (in whole, or in part), in compliance with the applicable legal and regulatory framework. User agrees that we will not be liable to User for any change, modification or amendment of the Platform or its Services, or any part thereof.</p>
+<h2>Support</h2>
+<p>In case the User requires any assistance or support, User may access support resources or contact our support team at <a href="mailto:support@prowater.in">support@prowater.in</a>.</p>
+<p>The Company shall revert to every complaint within 48 hours of receipt of the complaint. Further, the Company shall take best possible efforts to redress the complaint within 30 days of receipt of the complaint. Any suggestions by the Company regarding use of the Services shall not be construed as a warranty.</p>
+<p>The User agrees and acknowledges that the Company shall address and attempt to resolve the complaint received in accordance with the standard policies and procedures adopted by the Company, the User's disapproval/discontent with the outcome/mode of redressal shall not be deemed to mean non-redressal of the complaint by the Company. Any suggestions by Company regarding use of the Service shall not be construed as a warranty.</p>
+<h2>Termination</h2>
+<p><strong>Termination/Suspension of Services:</strong> We have the right to temporarily suspend access to the whole or any part of the Services including the access to Platform for any reason whatsoever (including but not limited to technical/operational reasons) and shall be under no liability to User in such an event. Further, we may, but shall not be obliged to, give the User notice of any interruption of access to the Service. We may temporarily suspend access to the whole or any part of the Services for pre-scheduled maintenance. The intent to temporarily suspend access for pre-scheduled maintenance shall be communicated to User 24 hours in advance via email to the email id provided by User upon creation of User Account. If User chooses to access the Platform or avail Services during such pre-scheduled maintenance, we cannot guarantee the availability of the Services and/or functionality of the Platform.</p>
+<p><strong>Termination/Suspension of Accounts:</strong> We may terminate Users usage of the Platform at any time for any reason, including breach of the Terms and Conditions. We have the right (but not the obligation) to refuse to grant access to Platform. Except for the rights and license granted in these terms, we reserve all other rights and grant no other rights or licenses, implied or otherwise. Once suspended, indefinitely suspended, or terminated, the User may not continue to use the Platform under the same account, a different account or re-register under a new account. On termination of User Account due to the reasons mentioned herein, such User shall no longer have access to data, messages, and other material on the Platform. All provisions of the Terms, which by their nature should survive termination, shall survive termination, including, without limitation, warranty disclaimers, indemnity, and limitations of liability.</p>
+<p><strong>Cancellation by Customer:</strong> Customer wishes to terminate this Agreement prior to the completion of Subscription Term, Either Party shall give a minimum of 30 (thirty) days advance notice in writing to Other Party. In such cases Customer shall be liable to pay the Subscription Fees to the Company for the remainder of the Subscription Term.</p>
+<h2>Indemnification</h2>
+<p>User shall defend, indemnify, and hold harmless the Company, its affiliates/subsidiaries/joint venture partners and each of its, and its affiliates'/subsidiaries/joint venture partners' employees, contractors, directors, suppliers and representatives from all liabilities, losses, claims, and expenses, including reasonable attorneys' fees, that arise from or relate to (i) Users use or misuse of, or access to, the Services and Platform; or (ii) Users violation of the Terms and Conditions; or any applicable law, contract, policy, regulation or other obligation. We reserve the right to assume the exclusive defense and control of any matter otherwise subject to indemnification by User, in which event User will assist and cooperate with us in connection therewith.</p>
+<h2>Limitation of Liability</h2>
+<div class="legal-note">TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT SHALL COMPANY (INCLUDING ITS DIRECTORS, EMPLOYEES, AGENTS, SPONSORS, PARTNERS, SUPPLIERS, CONTENT PROVIDERS, LICENSORS OR RESELLERS) BE LIABLE UNDER CONTRACT, TORT, STRICT LIABILITY, NEGLIGENCE OR ANY OTHER LEGAL OR EQUITABLE THEORY WITH RESPECT TO THE SERVICES (I) FOR ANY LOST PROFITS, DATA LOSS, LOSS OF GOODWILL OR OPPORTUNITY, OR SPECIAL, INDIRECT, INCIDENTAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES OF ANY KIND WHATSOEVER, (II) FOR YOUR RELIANCE ON THE SERVICES (III) FOR ANY DAMAGES (IV) FOR ANY MATTER BEYOND ITS OR THEIR REASONABLE CONTROL, EVEN IF COMPANY HAS BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE AFOREMENTIONED DAMAGES.</div>
+<div class="legal-note">YOU FURTHER AGREE AND CONFIRM THAT COMPANY SHALL NOT BE RESPONSIBLE, IN ANY MANNER WHATSOEVER, FOR ANY DELAY/UNAVAILABILITY OF SERVICES OR FAILURE TO MEET ITS OBLIGATIONS INCLUDING BUT NOT LIMITED TO INSTALLATION, REPAIR, MAINTENANCE OR POST SUBSCRIPTION SERVICES UNDER THE USER MANUAL OR TERMS AND CONDITIONS PROVIDED HEREIN, WHICH MAY BE CAUSED, DIRECTLY OR INDIRECTLY, DUE TO: (I) YOUR FAILURE TO COOPERATE; (II) YOUR UNAVAILABILITY AND/OR UNRESPONSIVENESS; (III) YOUR FAILURE TO PROVIDE ACCURATE AND COMPLETE INFORMATION; (IV) YOUR FAILURE TO ADHERE TO SAFETY PRECAUTIONS AND OTHER OBLIGATIONS PRESCRIBED BY THE COMPANY UNDER THE TERMS AND USER MANUAL PROVIDED BY THE COMPANY (V) YOUR FAILURE TO PROVIDE OR FACILITATE THE SUBMISSION OF USER MATERIALS IN TIMELY MANNER; (VI) YOUR FAILURE TO PROTECT LOGIN CREDENTIALS OF USER ACCOUNT (VII) YOUR FAILURE TO PROVIDE VALID PROOF OF SUBSCRIPTION/PURCHASE, AS THE CASE MAY BE OF PRODUCT AS PRESCRIBED BY THE COMPANY (VIII) ANY EVENT BEYOND COMPANY'S REASONABLE CONTROL.</div>
+<h2>Communication Policy</h2>
+<p>Company may use the information submitted by User to respond to any queries raised by the User pursuant to or in connection with Users use and access to the Platform. Additionally, Company may also use this information to send User communications via e-mails, WhatsApp messages, phone calls and SMS for administrative and marketing purposes, through its own servers and systems, or through third party service providers. User can unsubscribe/opt-out from the said communications at any time.</p>
+<h2>Governing Law</h2>
+<p>This Agreement shall be governed by and construed in accordance with the laws of India without regard to the conflict of law provisions thereof. All claims, differences and disputes arising under or in connection with or in relation hereto the Platform or Services, the Terms or any transactions entered on or through the Platform or Services shall be subject to the exclusive jurisdiction of the courts at Bengaluru, Karnataka, India, and User hereby accedes to and accepts the jurisdiction of such courts.</p>
+<h2>Miscellaneous</h2>
+<ul><li>The Terms and Conditions are the entire agreement and understanding between User and Company with respect to the Services and usage of Platform.</li><li>If any provision of the Terms and Conditions are found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that the Terms and Conditions will otherwise remain in full force and effect and enforceable.</li><li>The failure of either party to exercise in any respect any right provided for herein shall not be deemed a waiver of any further rights hereunder.</li><li>The Terms and Conditions are personal to User, and are not assignable or transferable by User except with Company's prior written consent. Company may assign, transfer or delegate any of its rights and obligations hereunder without any consent.</li><li>No agency, partnership, joint venture, or employment relationship is created as a result of the Terms and Conditions and neither party has any authority of any kind to bind the other in any respect.</li><li>In the event of a Force Majeure event, the Company shall not be held liable for any downtime, failure, or delay in the provision of Services.</li><li>The User agrees to fully cooperate with the Company in adhering to all applicable laws and regulations relevant to the User, the Company, the Platform, and the Services provided.</li><li>All notices under the Terms and Conditions will be in writing and will be deemed to have been duly given when received, if personally delivered or sent by certified or registered mail, return receipt requested; when receipt is electronically confirmed, if transmitted by facsimile or e-mail; or two days after it is sent, if sent for next day delivery by recognized overnight delivery service.</li></ul>
+<h2>Accuracy of Materials</h2>
+<p>The Materials on the Platform may contain technical, typographical, or photographic errors. Company does not warrant the accuracy, completeness or currentness of any of the Materials. Company reserves the right to make changes to the Materials on the Platform at any time without notice.</p>
+<h2>Updation of Terms and Conditions</h2>
+<p>Users use of the Platform or Services is subject to the Terms and Conditions, which may be updated, amended, modified, or revised by us ("Updated Terms and Conditions") from time to time with/without notice to User. To ensure that Users are aware of any additions, revisions, amendments, or modifications that we may have made to these Terms and Conditions, it is important for the User to refer to the Terms and Conditions from time to time. The Updated Terms and Conditions shall be effective immediately as and when updated/amended/modified/revised and shall supersede all the previous oral, written Terms and Conditions (if any) communicated to the User and shall act as a binding agreement between the Company and the User. We shall not be under an obligation to notify the User of any Updated Terms and Conditions. User shall be solely responsible for reviewing the Terms and Conditions from time to time for any modifications, revisions, or amendments. If the User continues to use the Platform and/or Services after the Updated Terms and Conditions have been published, it shall be deemed that the User has read and understood and accepted the Updated Terms and Conditions. Any reference to Terms of Service, TOS, Agreement made herein shall refer to the latest version of the Terms of Service.</p>
+<h2>Grievance Redressal Mechanism</h2>
+<p>Any discrepancies or grievances with regards to content and or comment or breach of the Terms and Conditions shall be taken up with the designated Grievance Officer as mentioned below via in writing or through email signed with the electronic signature to:</p>
+<div class="contact-box"><div class="cb-row"><span class="cb-k">Attention</span><span class="cb-v">Arun Kumar</span></div><div class="cb-row"><span class="cb-k">Email ID</span><span class="cb-v"><a href="mailto:support@prowater.in">support@prowater.in</a></span></div><div class="cb-row"><span class="cb-k">Address</span><span class="cb-v">#15/B, 19th Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</span></div></div>
+<h2>Contact</h2>
+<p>If User has any questions regarding the Services or usage of the Platform, please contact Company customer support at <a href="mailto:support@prowater.in">support@prowater.in</a>. Please note that for the purpose of validation, User shall be required to provide information (including but not limited to contact number or registered mobile number, etc.) for the purpose of validation and taking Users service request.</p>
+</main>
+
+<div class="policy-back">
+  <a href="index.html">&larr; Back to ProWater home</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <img src="https://play-lh.googleusercontent.com/b50YdSvf0KbXes4wVlajtFXD-21vEiHAO0ZmmDURL9uJNGYpbLht8KUNpeJxMPjzCksZLYjN-A3DuOWWvV7suUs=w240-h480-rw" alt="ProWater" onerror="this.style.display='none'">
+          <span class="foot-brand-n">Pro<span>Water</span></span>
+        </div>
+        <p class="foot-desc">India's 1st piped RO water on subscription.</p>
+        <div class="foot-contact">
+          <a href="tel:9538739904"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>95387 39904</a>
+          <a href="mailto:support@prowater.in"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>support@prowater.in</a>
+          <a href="https://maps.app.goo.gl/PWdDFdw1RUfGVfA46" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3rd Floor, Raj Mansion, 15b, 18th A Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102</a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#plans">Plans &amp; Pricing</a></li><li><a href="index.html#faq">FAQ's</a></li></ul></div>
+      <div class="foot-col"><h4>Policies</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="cancellation-refund-policy.html">Cancellation &amp; Refund Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 ProWater. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scrolltop" id="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+function toggleNav(){document.getElementById('mob').classList.toggle('open');document.getElementById('ham').classList.toggle('active');}
+function closeNav(){document.getElementById('mob').classList.remove('open');document.getElementById('ham').classList.remove('active');}
+var st=document.getElementById('scrolltop');
+window.addEventListener('scroll',function(){if(window.scrollY>400){st.classList.add('show');}else{st.classList.remove('show');}});
+</script>
+</body>
+</html>
