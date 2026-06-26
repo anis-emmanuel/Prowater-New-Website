@@ -100,14 +100,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .lp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
 .lps{background:rgba(255,255,255,.06);border-radius:12px;padding:14px 10px;text-align:center;}
 .lps-v{font-size:22px;font-weight:800;color:var(--teal2);letter-spacing:-.5px;transition:opacity .3s ease;}
-#lq-apt,#lq-bac{transition:opacity .3s ease;}
+#lq-apt{transition:opacity .3s ease;}
 .lps-l{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px;text-transform:uppercase;letter-spacing:.05em;}
-.lp-bars{display:flex;flex-direction:column;gap:11px;margin-bottom:22px;}
+.lp-bars{display:flex;flex-direction:column;gap:15px;margin-bottom:22px;}
 .lb-row{display:flex;align-items:center;gap:10px;}
 .lb-name{font-size:12px;color:rgba(255,255,255,.55);width:110px;flex-shrink:0;}
 .lb-track{flex:1;height:5px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;}
 .lb-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--teal-g));}
 .lb-val{font-size:11px;font-weight:700;color:var(--teal2);width:34px;text-align:right;}
+/* live measurement scales (pH / hardness / TDS) */
+.scale-row{display:flex;flex-direction:column;align-items:stretch;gap:6px;}
+.scale-row .lb-head{display:flex;align-items:center;justify-content:space-between;}
+.scale-row .lb-name{width:auto;}
+.scale-row .lb-val{width:auto;}
+.ph-scale,.sc-scale{position:relative;height:7px;border-radius:4px;overflow:visible;}
+.ph-grad{position:absolute;inset:0;border-radius:4px;background:linear-gradient(90deg,#e74c3c 0%,#f39c12 22%,#f5d020 38%,#7ec850 50%,#2d7a4f 62%,#2a9d8f 80%,#5b6bd6 100%);opacity:.9;}
+.sc-track{position:absolute;inset:0;border-radius:4px;}
+.sc-hard{background:linear-gradient(90deg,#2d7a4f 0%,#7ec850 45%,#f5d020 70%,#e08c2f 100%);opacity:.9;}
+.sc-tds{background:linear-gradient(90deg,#e08c2f 0%,#7ec850 12%,#2d7a4f 30%,#7ec850 55%,#f5d020 78%,#e08c2f 100%);opacity:.85;}
+.sc-zone{position:absolute;top:-2px;bottom:-2px;left:10%;width:20%;border:1px solid rgba(168,217,64,.7);border-radius:4px;background:rgba(168,217,64,.08);pointer-events:none;}
+.ph-marker,.sc-marker{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:#fff;border:2.5px solid var(--teal2);transform:translate(-50%,-50%);box-shadow:0 0 0 3px rgba(13,40,24,.55),0 2px 6px rgba(0,0,0,.4);transition:left .6s cubic-bezier(.22,1,.36,1);}
+.scale-ends{display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.04em;}
+.scale-ends .sc-ideal-lbl{color:var(--teal2);font-weight:600;}
 .lp-chips{display:flex;flex-direction:column;gap:9px;}
 .lp-chip{display:flex;align-items:center;gap:10px;padding:11px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;}
 .lp-chip-ic{width:28px;height:28px;border-radius:8px;background:rgba(45,122,79,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -250,7 +264,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
   .cmp-table-wrap{margin:0 -5%;padding:0 5%;position:relative;}
   .cmp-sec{padding:72px 5%;}
   .cmp-table{min-width:560px;}
-  .cmp-table thead tr th:first-child{width:120px;font-size:11px;}
+  .cmp-table thead tr th:first-child{width:96px;font-size:11px;}
   .cmp-table tbody tr td{padding:11px 6px;font-size:12px;}
   .cmp-table tbody tr td:first-child{font-size:11.5px;}
   .cmp-col-name{font-size:11.5px;}
@@ -259,6 +273,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
   .cmp-hint{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;font-weight:600;color:var(--teal2);margin-bottom:12px;opacity:.85;}
   .cmp-hint svg{width:14px;height:14px;animation:cmpSwipe 1.4s ease-in-out infinite;}
   .cmp-table-wrap::after{content:'';position:absolute;top:0;right:0;width:36px;height:100%;background:linear-gradient(90deg,transparent,var(--f));pointer-events:none;}
+  /* Pin the label column so it never overlaps the data cards while scrolling */
+  .cmp-table thead tr th:first-child,
+  .cmp-table tbody tr td:first-child{position:sticky;left:0;z-index:3;background:var(--f);box-shadow:6px 0 8px -4px rgba(0,0,0,.55);}
+  .cmp-table tbody tr td:first-child{padding-right:10px;}
 }
 
 /* chip override for dark sections */
@@ -377,6 +395,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 /* The hero number */
 .calc-savings{text-align:left;background:none;border:none;border-radius:0;padding:0;margin-bottom:0;border-left:1px solid var(--border);padding-left:36px;}
 .calc-save-big{font-size:44px;font-weight:800;color:var(--f);letter-spacing:-2px;line-height:1;transition:opacity .25s;}
+.calc-save-big.is-text #calc-save-amt{font-size:30px;letter-spacing:-1px;line-height:1.1;display:inline-block;}
 .calc-save-big #calc-save-amt{color:var(--teal);}
 .calc-save-unit{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-left:0;margin-top:8px;letter-spacing:.02em;}
 .calc-save-extra{font-size:13px;color:var(--slate);margin-top:12px;}
@@ -955,12 +974,24 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
       <div class="lp-stats">
         <div class="lps"><div class="lps-v" id="lq-ph">7.4</div><div class="lps-l">pH</div></div>
         <div class="lps"><div class="lps-v" id="lq-tds">142</div><div class="lps-l">TDS ppm</div></div>
-        <div class="lps"><div class="lps-v" id="lq-pur">99%</div><div class="lps-l">Purity</div></div>
+        <div class="lps"><div class="lps-v" id="lq-hardval">42</div><div class="lps-l">Hardness mg/L</div></div>
       </div>
       <div class="lp-bars">
-        <div class="lb-row"><span class="lb-name">Bacterial Safety</span><div class="lb-track"><div class="lb-fill" id="lq-bacbar" style="width:99%"></div></div><span class="lb-val" id="lq-bac">99.9%</span></div>
-        <div class="lb-row"><span class="lb-name">Hardness</span><div class="lb-track"><div class="lb-fill" id="lq-hardbar" style="width:92%"></div></div><span class="lb-val" id="lq-hard">Low</span></div>
-        <div class="lb-row"><span class="lb-name">Taste Score</span><div class="lb-track"><div class="lb-fill" id="lq-tastebar" style="width:88%"></div></div><span class="lb-val" id="lq-taste">High</span></div>
+        <div class="lb-row scale-row">
+          <div class="lb-head"><span class="lb-name">pH Level</span><span class="lb-val" id="lq-ph2">7.4</span></div>
+          <div class="ph-scale"><div class="ph-grad"></div><div class="ph-marker" id="lq-phmark" style="left:53%"></div></div>
+          <div class="scale-ends"><span>Acidic</span><span>Neutral</span><span>Alkaline</span></div>
+        </div>
+        <div class="lb-row scale-row">
+          <div class="lb-head"><span class="lb-name">Hardness</span><span class="lb-val" id="lq-hard">Soft</span></div>
+          <div class="sc-scale"><div class="sc-track sc-hard"></div><div class="sc-marker" id="lq-hardmark" style="left:18%"></div></div>
+          <div class="scale-ends"><span>Soft</span><span>Moderate</span><span>Hard</span></div>
+        </div>
+        <div class="lb-row scale-row">
+          <div class="lb-head"><span class="lb-name">TDS</span><span class="lb-val" id="lq-tds2">142 ppm</span></div>
+          <div class="sc-scale"><div class="sc-track sc-tds"></div><div class="sc-zone"></div><div class="sc-marker" id="lq-tdsmark" style="left:28%"></div></div>
+          <div class="scale-ends"><span>0</span><span class="sc-ideal-lbl">Ideal 50–150</span><span>500+</span></div>
+        </div>
       </div>
       <div class="lp-chips">
         <div class="lp-chip"><div class="lp-chip-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span id="lq-apt">Ashish JK · <strong>Normal</strong></span></div>
@@ -1039,7 +1070,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     </div>
     <div class="num-i">
       <div class="num-ic"><svg viewBox="0 0 24 24"><path d="M12 2c-5 3-8 7.5-8 11a8 8 0 0 0 16 0c0-3.5-3-8-8-11z"/></svg></div>
-      <div class="num-v">1Cr<span>+</span></div>
+      <div class="num-v">1L<span>+</span></div>
       <div class="num-t">Litres Saved</div>
       <div class="num-s">Recovered from wastage annually</div>
     </div>
@@ -1678,7 +1709,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
         </div>
       </div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="#how">How It Works</a></li><li><a href="#plans">Plans & Pricing</a></li><li><a href="#faq">FAQ's</a></li></ul></div>
-      <div class="foot-col"><h4>Policies</h4><ul><li><a href="https://prowater.in/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li><li><a href="https://prowater.in/cancellation-refund-policy" target="_blank" rel="noopener">Cancellation &amp; Refund Policy</a></li><li><a href="https://prowater.in/terms-of-service" target="_blank" rel="noopener">Terms of Service</a></li></ul></div>
+      <div class="foot-col"><h4>Policies</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="cancellation-refund-policy.html">Cancellation &amp; Refund Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       <p>© 2026 ProWater. All rights reserved.</p>
@@ -1706,7 +1737,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
       </div>
       <div class="promo-text-side">
         <div class="promo-tag">Most Popular · Premium Plan</div>
-        <h3 class="promo-h">Pure water on tap.<br><em>Zero upfront cost.</em></h3>
+        <h3 class="promo-h">Pure water on subscription.<br><em>Zero upfront cost.</em></h3>
         <div class="promo-startfrom">Starting from</div>
         <div class="promo-price-row">
           <div class="promo-price"><span class="pp-cur">&#8377;</span>449<span class="pp-per">/month</span></div>
@@ -2028,18 +2059,18 @@ function submitForm(){
   // the slot and changes once the slot rolls over.
   // Hardness & Taste are mostly good but occasionally less-than-perfect, so the
   // panel reads as a real sensor feed rather than suspiciously flawless.
-  var hardLevels=[
-    {label:'Low',    bar:92},
-    {label:'Low',    bar:88},
-    {label:'Medium', bar:64},
-    {label:'Medium', bar:58}
-  ];
-  var tasteLevels=[
-    {label:'High', bar:90},
-    {label:'High', bar:86},
-    {label:'Good', bar:74},
-    {label:'Good', bar:68}
-  ];
+  // Hardness measured in mg/L (as CaCO3). Soft <60, Moderate 60–120, Hard >120.
+  // RO output is consistently soft, with occasional moderate readings.
+  function hardnessInfo(mgl){
+    var label = mgl<60 ? 'Soft' : (mgl<120 ? 'Moderate' : 'Hard');
+    // map 0–250 mg/L onto 0–100% of the scale (clamped)
+    var pos = Math.max(3, Math.min(97, (mgl/250)*100));
+    return {label:label, value:mgl, pos:pos};
+  }
+  // TDS marker position: map 0–500 ppm onto the scale (clamped).
+  function tdsPos(tds){ return Math.max(3, Math.min(97, (tds/500)*100)); }
+  // pH marker position: map pH 0–14 onto the scale.
+  function phPos(ph){ return Math.max(3, Math.min(97, (parseFloat(ph)/14)*100)); }
   function readingsFor(slot){
     return apts.map(function(name,idx){
       var rnd=seeded((slot*1000)+(idx+1));
@@ -2047,9 +2078,9 @@ function submitForm(){
       var tds=Math.round(45+rnd()*95);        // 45–140 ppm (RO range)
       var pur=(98.6+rnd()*1.3).toFixed(1);    // 98.6–99.9 %
       var bac=(99.4+rnd()*0.5).toFixed(1);    // 99.4–99.9 %
-      var hard=hardLevels[Math.floor(rnd()*hardLevels.length)];
-      var taste=tasteLevels[Math.floor(rnd()*tasteLevels.length)];
-      return {ph:ph,tds:tds,pur:pur,bac:bac,hard:hard,taste:taste,apt:name};
+      var hardMgl=Math.round(28+rnd()*70);    // 28–98 mg/L (soft → low-moderate)
+      var hard=hardnessInfo(hardMgl);
+      return {ph:ph,tds:tds,pur:pur,bac:bac,hard:hard,apt:name};
     });
   }
 
@@ -2058,18 +2089,21 @@ function submitForm(){
   var i=0;
 
   function paint(d){
-    var els=[$('lq-ph'),$('lq-tds'),$('lq-pur'),$('lq-bac'),$('lq-apt'),$('lq-hard'),$('lq-taste')];
+    var els=[$('lq-ph'),$('lq-tds'),$('lq-hardval'),$('lq-apt'),$('lq-hard'),$('lq-ph2'),$('lq-tds2')];
     els.forEach(function(e){ if(e) e.style.opacity='0'; });
     setTimeout(function(){
       $('lq-ph').textContent=d.ph;
       $('lq-tds').textContent=d.tds;
-      $('lq-pur').textContent=d.pur+'%';
-      $('lq-bac').textContent=d.bac+'%';
-      var bb=$('lq-bacbar'); if(bb) bb.style.width=d.bac+'%';
-      var hv=$('lq-hard'); if(hv) hv.textContent=d.hard.label;
-      var hb=$('lq-hardbar'); if(hb) hb.style.width=d.hard.bar+'%';
-      var tv=$('lq-taste'); if(tv) tv.textContent=d.taste.label;
-      var tb=$('lq-tastebar'); if(tb) tb.style.width=d.taste.bar+'%';
+      var hvt=$('lq-hardval'); if(hvt) hvt.textContent=d.hard.value;
+      // pH scale row
+      var ph2=$('lq-ph2'); if(ph2) ph2.textContent=d.ph;
+      var phm=$('lq-phmark'); if(phm) phm.style.left=phPos(d.ph)+'%';
+      // Hardness scale row
+      var hv=$('lq-hard'); if(hv) hv.textContent=d.hard.label+' · '+d.hard.value+' mg/L';
+      var hm=$('lq-hardmark'); if(hm) hm.style.left=d.hard.pos+'%';
+      // TDS scale row
+      var tv=$('lq-tds2'); if(tv) tv.textContent=d.tds+' ppm';
+      var tm=$('lq-tdsmark'); if(tm) tm.style.left=tdsPos(d.tds)+'%';
       $('lq-apt').innerHTML=d.apt+' &middot; <strong>Normal</strong>';
       var ht=$('hl-tds'); if(ht) ht.textContent=d.tds;
       var hp=$('hl-ph'); if(hp) hp.textContent=d.ph;
@@ -2174,6 +2208,9 @@ function submitForm(){
     setTimeout(function(){ fn(); el.style.opacity=''; },150);
   }
 
+  var elSaveUnit=document.querySelector('.calc-save-unit');
+  var elSaveBig=document.querySelector('.calc-save-big');
+
   function update(){
     var current=people*rates[source];
     var saveMonth=current-plan;
@@ -2182,14 +2219,33 @@ function submitForm(){
 
     fade(elCurAmt,function(){ elCurAmt.textContent=fmt(current); });
     fade(elProAmt,function(){ elProAmt.textContent=fmt(plan); });
-    fade(elSaveAmt,function(){ elSaveAmt.textContent=fmt(Math.max(0,saveYear)); });
 
     if(saveMonth<=0){
-      elSaveExtra.innerHTML='You also gain <strong>lifetime free AMC</strong> & live quality tracking ✨';
-    } else if(monthsFree>=1){
-      elSaveExtra.innerHTML='That\u2019s like getting <strong>'+monthsFree+' month'+(monthsFree>1?'s':'')+' free</strong> \uD83C\uDF89';
+      // Near break-even on price: sell the bundled value instead of a discouraging zero
+      var headline, sub, sub2;
+      if(plan>=499){
+        headline='Hot + Normal'; sub='RO water on tap';
+        sub2='Plus a <strong>free dispenser</strong>, <strong>lifetime free AMC</strong> &amp; live quality tracking \u2014 at nearly the same monthly spend \u2728';
+      } else if(plan>=399){
+        headline='Free dispenser'; sub='included';
+        sub2='You also gain <strong>lifetime free AMC</strong> &amp; live quality tracking \u2014 for almost what you already pay \u2728';
+      } else {
+        headline='Same price'; sub='zero hassle';
+        sub2='Switch with <strong>no setup cost</strong> &amp; <strong>lifetime free AMC</strong> \u2014 no jars to carry, no purifier to service \u2728';
+      }
+      fade(elSaveAmt,function(){ elSaveAmt.textContent=headline; });
+      if(elSaveBig){ elSaveBig.classList.add('is-text'); }
+      if(elSaveUnit){ elSaveUnit.textContent=sub; }
+      elSaveExtra.innerHTML=sub2;
     } else {
-      elSaveExtra.innerHTML='Plus <strong>zero maintenance</strong> & live quality tracking \uD83C\uDF89';
+      fade(elSaveAmt,function(){ elSaveAmt.textContent=fmt(Math.max(0,saveYear)); });
+      if(elSaveBig){ elSaveBig.classList.remove('is-text'); }
+      if(elSaveUnit){ elSaveUnit.textContent='saved / year'; }
+      if(monthsFree>=1){
+        elSaveExtra.innerHTML='That\u2019s like getting <strong>'+monthsFree+' month'+(monthsFree>1?'s':'')+' free</strong> \uD83C\uDF89';
+      } else {
+        elSaveExtra.innerHTML='Plus <strong>zero maintenance</strong> & live quality tracking \uD83C\uDF89';
+      }
     }
 
     if(source==='ro'){
