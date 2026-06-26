@@ -263,10 +263,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 @media(max-width:640px){
   .cmp-table-wrap{margin:0 -5%;padding:0 5%;position:relative;}
   .cmp-sec{padding:72px 5%;}
-  .cmp-table{min-width:560px;}
-  .cmp-table thead tr th:first-child{width:96px;font-size:11px;}
-  .cmp-table tbody tr td{padding:11px 6px;font-size:12px;}
-  .cmp-table tbody tr td:first-child{font-size:11.5px;}
+  /* Give the table real room: fixed label column + wide enough data columns
+     so values like "Certified + live TDS" never wrap into the next column */
+  .cmp-table{min-width:660px;table-layout:fixed;}
+  .cmp-table thead tr th:first-child,
+  .cmp-table tbody tr td:first-child{width:120px;}
+  .cmp-table thead tr th:not(:first-child),
+  .cmp-table tbody tr td:not(:first-child){width:135px;}
+  .cmp-table thead tr th:first-child{font-size:11px;}
+  .cmp-table tbody tr td{padding:12px 8px;font-size:12px;}
+  .cmp-table tbody tr td:first-child{font-size:11.5px;line-height:1.3;white-space:normal;}
+  .ci-val{font-size:11.5px;line-height:1.35;display:inline-block;white-space:normal;word-break:normal;overflow-wrap:break-word;}
   .cmp-col-name{font-size:11.5px;}
   .cmp-col-sub{font-size:9px;}
   .cmp-best-badge{font-size:8px;padding:3px 8px;top:-8px;}
@@ -1604,7 +1611,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
   <div class="sec-inner">
     <div class="faq-wrap">
       <div style="text-align:center;margin-bottom:44px"><div class="chip" style="justify-content:center">FAQ's</div><h2 class="sh2" style="text-align:center">Common questions,<br>straight answers</h2></div>
-      <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Does the society pay anything for installation?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>No — absolutely nothing. ProWater installs the entire system. The RO plant, piping, dispensers — all infrastructure is paid for by us. Your society pays zero, upfront or ever.</p></div></div>
+      <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Does the society pay anything for installation?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>No — absolutely nothing. ProWater (a DrinkPrime initiative) funds and installs the entire system. The RO plant, piping, dispensers — all infrastructure is paid for by us. Your society pays zero, upfront or ever.</p></div></div>
       <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Can only some residents subscribe, not the whole building?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>Yes. There is no society-wide mandate. Each resident subscribes individually to whichever plan suits them. Residents who don't subscribe are unaffected, and anyone can join or cancel at any time.</p></div></div>
       <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">What does "lifetime free AMC" actually mean?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>For as long as you're a subscriber, ProWater covers all maintenance — filter replacements, dispenser repairs, system servicing, and spare parts. Zero additional charges. A dedicated technician handles everything with a same-day response SLA.</p></div></div>
       <div class="faq-i"><button class="faq-q" onclick="doFaq(this)">Is the security deposit refundable?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><p>Yes, 100%. The deposit (₹2,000 for Standard or ₹4,000 for Premium) is fully refunded on cancellation when the dispenser is returned in good condition. No deductions, no delays.</p></div></div>
