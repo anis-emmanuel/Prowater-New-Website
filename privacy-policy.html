@@ -20,7 +20,7 @@
 a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px;}
 :focus:not(:focus-visible){outline:none;}
 html{scroll-behavior:smooth;}
-body{font-family:'Poppins',sans-serif;background:var(--off);color:var(--f);overflow-x:hidden;}
+body{font-family:'Poppins',sans-serif;background:var(--off);color:var(--f);overflow-x:hidden;padding-top:66px;}
 
 /* ── NAV (matches index.html) ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(45,122,79,0.12);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .mobmenu a.mob-cta{margin-top:14px;background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);font-weight:700;padding:13px 20px;border-radius:50px;text-align:center;border:none;}
 
 /* ── POLICY HEADER ── */
-.policy-hero{background:var(--f);padding:112px 5% 56px;position:relative;overflow:hidden;}
+.policy-hero{background:var(--f);padding:56px 5% 56px;position:relative;overflow:hidden;}
 .policy-hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;top:-220px;right:-120px;background:radial-gradient(circle,rgba(168,217,64,0.12) 0%,transparent 70%);pointer-events:none;}
 .policy-hero-in{max-width:880px;margin:0 auto;position:relative;z-index:1;}
 .policy-bc{font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:18px;}
@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;background:rgba(
 .policy-pub strong{color:rgba(255,255,255,.85);font-weight:600;}
 
 /* policy cross-nav pills */
-.policy-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.policy-tabs{position:static!important;display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;height:auto;background:none;backdrop-filter:none;border:none;padding:0;}
 .policy-tabs a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 16px;border-radius:50px;border:1px solid rgba(168,217,64,.25);background:rgba(168,217,64,.06);transition:all .2s;}
 .policy-tabs a:hover{color:#fff;border-color:rgba(168,217,64,.5);background:rgba(168,217,64,.12);}
 .policy-tabs a.active{background:linear-gradient(135deg,var(--teal),var(--teal-g));color:var(--f);border-color:transparent;}
@@ -151,7 +151,7 @@ footer{background:var(--sky);padding:64px 5% 28px;border-top:1px solid var(--bor
     <div class="policy-chip">Legal</div>
     <h1 class="policy-h1">Privacy Policy</h1>
     <div class="policy-pub">Published on: <strong>27 February 2026</strong></div>
-    <nav class="policy-tabs" aria-label="Policies"><a href="privacy-policy.html" class="active">Privacy Policy</a><a href="cancellation-refund-policy.html">Cancellation and Refund Policy</a><a href="terms-of-service.html">Terms of Service</a></nav>
+    <div class="policy-tabs" role="navigation" aria-label="Policies"><a href="privacy-policy.html" class="active">Privacy Policy</a><a href="cancellation-refund-policy.html">Cancellation and Refund Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
   </div>
 </header>
 
