@@ -1,0 +1,62 @@
+# ProWater
+
+> Piped centralised RO-purified water on subscription for housing societies in Bangalore, India.
+
+ProWater installs and maintains a centralised Reverse Osmosis (RO) water purification plant inside a housing society at **zero cost** to the society or RWA. Individual residents then subscribe to receive pure, piped drinking water delivered directly to their kitchen taps. Plans start from ₹299/month.
+
+## What ProWater Does
+
+- **Centralised RO Plant**: ProWater funds, installs, and owns the entire RO system — piping, plant, and dispensers. The society pays nothing upfront, ever.
+- **Piped to Your Tap**: Purified water flows directly to the subscriber's kitchen tap. No cans, no canisters, no trips to a filling station.
+- **Live IoT Quality Monitoring**: Real-time water quality data (TDS, bacteria levels, pH) is tracked via IoT sensors and accessible to residents.
+- **Lifetime Free Maintenance (AMC)**: All filter replacements, repairs, and servicing are covered at zero additional cost for active subscribers, with a same-day SLA.
+- **Individual Subscriptions**: There is no society-wide mandate. Each flat subscribes independently and can join or cancel at any time.
+
+## Plans & Pricing
+
+| Plan      | Price/month | Best For                  |
+|-----------|-------------|---------------------------|
+| Essential | ₹299        | Single-person households  |
+| Family    | ₹399        | Families up to 4 members  |
+| Premium   | ₹499        | Larger families, priority |
+
+All plans include unlimited piped RO water and lifetime free AMC.
+
+## Key Facts
+
+- **Societies served**: 50+ across Bangalore
+- **Coverage**: Bengaluru (HSR Layout, Koramangala, Whitefield, Sarjapur, Bellandur, Electronic City, and surrounding areas)
+- **Water standard**: Purified to WHO & BIS drinking water norms; TDS maintained between 50–150 ppm
+- **No plastic waste**: Eliminates dependency on 20-litre water cans
+- **No setup cost**: ₹0 to the society or RWA for installation or infrastructure
+
+## Why Societies Choose ProWater
+
+1. Eliminates the need for individual apartment water purifiers (no more ₹15,000–₹30,000 purifier purchases or annual AMC contracts)
+2. Saves ₹300–₹700/month per household compared to 20-litre water cans
+3. RWA gets a premium amenity with zero capital outlay
+4. Reduces plastic bottle waste and carbon footprint for the community
+
+## Contact
+
+- **Website**: https://prowater.in/
+- **Phone**: +91-95387-39904
+- **WhatsApp**: https://wa.me/919513006043
+- **Email**: support@prowater.in
+- **Address**: 3rd Floor, Raj Mansion, 15b, 18th A Main Rd, Sector 3, HSR Layout, Bengaluru, Karnataka 560102
+
+## For RWAs / Society Managers
+
+RWAs can request a free site visit and feasibility study. ProWater handles all installation logistics, permissions, and ongoing maintenance. The society earns a premium water amenity at no cost and no liability.
+
+- Book a free site visit: https://prowater.in/#contact
+- WhatsApp: https://wa.me/919513006043?text=I%20want%20to%20book%20a%20free%20site%20visit
+
+## Optional Pages
+
+- [Home](https://prowater.in/)
+- [How It Works](https://prowater.in/#how-it-works)
+- [Plans & Pricing](https://prowater.in/#pricing)
+- [Savings Calculator](https://prowater.in/#calculator)
+- [FAQ](https://prowater.in/#faq)
+- [Contact / Book a Visit](https://prowater.in/#contact)
